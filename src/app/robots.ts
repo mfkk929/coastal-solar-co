@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://coastalsolarco.com.au/sitemap.xml",
+    sitemap: "https://coastalsolarco.com/sitemap.xml",
   };
 }

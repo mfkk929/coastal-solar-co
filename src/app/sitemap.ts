@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-const BASE_URL = "https://coastalsolarco.com.au";
+const BASE_URL = "https://coastalsolarco.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
