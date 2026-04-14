@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Solar Panels Wollongong & South Coast NSW | Coastal Solar Co.",
@@ -87,51 +88,69 @@ export default function HomePage() {
       />
 
       {/* HERO */}
-      <section className="gradient-hero text-white py-20 lg:py-32 relative overflow-hidden">
-        {/* Decorative solar panel shapes */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 right-10 w-64 h-64 border-2 border-white rounded-2xl rotate-12" />
-          <div className="absolute top-20 right-20 w-48 h-48 border-2 border-white rounded-xl rotate-12" />
-          <div className="absolute bottom-10 left-10 w-48 h-48 border border-white/50 rounded-xl -rotate-6" />
-        </div>
+      <section className="gradient-hero text-white py-20 lg:py-28 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="max-w-3xl">
-            <h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6"
-              style={{ fontFamily: "var(--font-montserrat)" }}
-            >
-              Stop Overpaying for Electricity.{" "}
-              <span style={{ color: "var(--color-secondary)" }}>
-                Start Owning Your Energy.
-              </span>
-            </h1>
-            <p className="text-xl text-white/85 mb-10 leading-relaxed max-w-2xl">
-              Coastal Solar Co. installs high-performance solar systems across
-              Wollongong, the Illawarra and the South Coast — with honest
-              pricing, a 5-minute callback guarantee, and a full walkthrough on
-              the day we install.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Link href="/solar-calculator" className="btn-primary text-lg px-8 py-4">
-                Calculate My Savings
-              </Link>
-              <a
-                href="tel:0212345678"
-                className="btn-outline text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary"
-                style={{ borderColor: "rgba(255,255,255,0.6)", color: "white" }}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Text */}
+            <div>
+              <h1
+                className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6"
+                style={{ fontFamily: "var(--font-montserrat)" }}
               >
-                Or talk to us now: (02) 1234 5678
-              </a>
+                Stop Overpaying for Electricity.{" "}
+                <span style={{ color: "var(--color-secondary)" }}>
+                  Start Owning Your Energy.
+                </span>
+              </h1>
+              <p className="text-xl text-white/85 mb-10 leading-relaxed">
+                Coastal Solar Co. installs high-performance solar systems across
+                Wollongong, the Illawarra and the South Coast — with honest
+                pricing, a 5-minute callback guarantee, and a full walkthrough on
+                the day we install.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 mb-10">
+                <Link href="/solar-calculator" className="btn-primary text-lg px-8 py-4">
+                  Calculate My Savings
+                </Link>
+                <a
+                  href="tel:0212345678"
+                  className="btn-outline text-lg px-8 py-4"
+                  style={{ borderColor: "rgba(255,255,255,0.6)", color: "white" }}
+                >
+                  Call (02) 1234 5678
+                </a>
+              </div>
+              <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/75">
+                <span>⭐⭐⭐⭐⭐ 200+ reviews</span>
+                <span>·</span>
+                <span>CEC Accredited</span>
+                <span>·</span>
+                <span>10-Year Warranty</span>
+                <span>·</span>
+                <span>$0 Deposit</span>
+              </div>
             </div>
-            {/* Trust bar */}
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/80">
-              <span>⭐⭐⭐⭐⭐ 200+ local five-star reviews</span>
-              <span>·</span>
-              <span>CEC Accredited</span>
-              <span>·</span>
-              <span>10-Year Workmanship Warranty</span>
-              <span>·</span>
-              <span>$0 Deposit Options Available</span>
+            {/* Hero image */}
+            <div className="relative hidden lg:block">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
+                <Image
+                  src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80&auto=format&fit=crop"
+                  alt="Solar panels installed on a coastal home in the Illawarra"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                {/* Overlay badge */}
+                <div className="absolute bottom-4 left-4 bg-white/95 rounded-xl px-4 py-3 shadow-lg">
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Average result</p>
+                  <p className="text-2xl font-black" style={{ color: "var(--color-primary)" }}>74% bill reduction</p>
+                </div>
+              </div>
+              {/* Floating stat */}
+              <div className="absolute -top-4 -right-4 rounded-xl px-4 py-3 shadow-lg text-white text-center" style={{ backgroundColor: "var(--color-secondary)" }}>
+                <p className="text-2xl font-black">6 days</p>
+                <p className="text-xs font-medium text-white/80">Quote → Install</p>
+              </div>
             </div>
           </div>
         </div>
@@ -152,16 +171,19 @@ export default function HomePage() {
                 text: "I got three quotes. Coastal Solar was the only company that showed me actual numbers upfront, not just 'call us for a price.' Installed in two days, works perfectly.",
                 author: "Meredith T.",
                 location: "Kiama",
+                avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&q=80&auto=format&fit=crop&crop=face",
               },
               {
                 text: "They called me within 3 minutes of filling in the form. The whole process from quote to install took 8 days. Genuinely impressed.",
                 author: "Dave K.",
                 location: "Nowra",
+                avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&q=80&auto=format&fit=crop&crop=face",
               },
               {
                 text: "After two dodgy quotes, I was nervous. These guys showed up on time, explained everything clearly, and my bill dropped from $480 to $40 per quarter.",
                 author: "Sandra P.",
                 location: "Shellharbour",
+                avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&q=80&auto=format&fit=crop&crop=face",
               },
             ].map((t, i) => (
               <div
@@ -172,7 +194,11 @@ export default function HomePage() {
                 <p className="text-gray-700 italic leading-relaxed mb-6">
                   &ldquo;{t.text}&rdquo;
                 </p>
-                <div>
+                <div className="flex items-center gap-3">
+                  <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                    <Image src={t.avatar} alt={t.author} fill className="object-cover" />
+                  </div>
+                  <div>
                   <p
                     className="font-bold"
                     style={{ color: "var(--color-primary)" }}
@@ -180,6 +206,7 @@ export default function HomePage() {
                     {t.author}
                   </p>
                   <p className="text-sm text-gray-500">{t.location}</p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -190,21 +217,34 @@ export default function HomePage() {
       {/* PROBLEM SECTION */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2
-              className="text-3xl lg:text-4xl font-bold mb-6"
-              style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}
-            >
-              Most solar companies make this harder than it needs to be.
-            </h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              You&apos;ve probably noticed: you can&apos;t get a price without
-              sitting through a 2-hour sales pitch. The guy who quoted you
-              isn&apos;t the person who shows up to install. The paperwork is
-              your problem. And after installation — good luck getting anyone on
-              the phone. We&apos;ve heard this story hundreds of times. So we
-              built Coastal Solar Co. to do the opposite.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg">
+              <Image
+                src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop"
+                alt="Solar panel installation team at work"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <h2
+                className="text-3xl lg:text-4xl font-bold mb-6"
+                style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}
+              >
+                Most solar companies make this harder than it needs to be.
+              </h2>
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                You&apos;ve probably noticed: you can&apos;t get a price without
+                sitting through a 2-hour sales pitch. The guy who quoted you
+                isn&apos;t the person who shows up to install. The paperwork is
+                your problem. And after installation — good luck getting anyone on
+                the phone.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                We&apos;ve heard this story hundreds of times from South Coast
+                homeowners. So we built Coastal Solar Co. to do the opposite.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -268,7 +308,7 @@ export default function HomePage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-3xl lg:text-4xl font-bold text-center mb-12"
+            className="text-3xl lg:text-4xl font-bold text-center mb-16"
             style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}
           >
             From enquiry to lower bills in 4 steps.
@@ -278,30 +318,41 @@ export default function HomePage() {
               {
                 step: "1",
                 title: "Use our free calculator",
-                desc: "See savings in 60 seconds",
+                desc: "See savings in 60 seconds — no email required.",
+                img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&q=80&auto=format&fit=crop",
+                alt: "Using solar savings calculator on laptop",
               },
               {
                 step: "2",
                 title: "Get your custom quote",
-                desc: "We call within 5 minutes",
+                desc: "We call within 5 minutes. Real numbers, no pressure.",
+                img: "https://images.unsplash.com/photo-1521791055366-0d553872952f?w=400&h=250&q=80&auto=format&fit=crop",
+                alt: "Friendly consultation call",
               },
               {
                 step: "3",
                 title: "We handle everything",
-                desc: "Paperwork, permits, installation",
+                desc: "Paperwork, permits, installation. All done for you.",
+                img: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=400&h=250&q=80&auto=format&fit=crop",
+                alt: "Solar panel installation in progress",
               },
               {
                 step: "4",
                 title: "Watch your bills drop",
-                desc: "Average 74% bill reduction",
+                desc: "Average 74% bill reduction from day one.",
+                img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&q=80&auto=format&fit=crop",
+                alt: "Happy homeowner checking electricity bill savings",
               },
             ].map((s, i) => (
               <div key={i} className="text-center">
-                <div
-                  className="w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-black mx-auto mb-4"
-                  style={{ backgroundColor: "var(--color-secondary)" }}
-                >
-                  {s.step}
+                <div className="relative rounded-xl overflow-hidden mb-5 aspect-[16/10] shadow-sm">
+                  <Image src={s.img} alt={s.alt} fill className="object-cover" />
+                  <div
+                    className="absolute top-3 left-3 w-9 h-9 rounded-full flex items-center justify-center text-white text-lg font-black shadow-md"
+                    style={{ backgroundColor: "var(--color-secondary)" }}
+                  >
+                    {s.step}
+                  </div>
                 </div>
                 <h3
                   className="text-lg font-bold mb-2"
@@ -309,7 +360,7 @@ export default function HomePage() {
                 >
                   {s.title}
                 </h3>
-                <p className="text-gray-600">{s.desc}</p>
+                <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -382,7 +433,7 @@ export default function HomePage() {
                 className={`bg-white rounded-2xl p-8 shadow-sm card-hover relative ${
                   s.popular ? "ring-2" : ""
                 }`}
-                style={s.popular ? { outline: `2px solid var(--color-secondary)` } : {}}
+                style={s.popular ? { ringColor: "var(--color-secondary)" } : {}}
               >
                 {s.popular && (
                   <div
@@ -426,12 +477,25 @@ export default function HomePage() {
       {/* TRUST SECTION */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2
-            className="text-3xl lg:text-4xl font-bold text-center mb-12"
-            style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}
-          >
-            Why 200+ South Coast families chose us.
-          </h2>
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+            <div>
+              <h2
+                className="text-3xl lg:text-4xl font-bold mb-4"
+                style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}
+              >
+                Why 200+ South Coast families chose us.
+              </h2>
+              <p className="text-gray-600 text-lg mb-8">We&apos;re not the biggest solar company in Australia. We&apos;re the one that actually answers the phone, shows up on time, and stands behind our work — for 10 years.</p>
+            </div>
+            <div className="relative rounded-2xl overflow-hidden aspect-video shadow-lg">
+              <Image
+                src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?w=800&q=80&auto=format&fit=crop"
+                alt="Coastal Solar Co. team installing solar panels on South Coast home"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               "Clean Energy Council Accredited Installer",
