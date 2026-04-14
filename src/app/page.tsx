@@ -431,9 +431,8 @@ export default function HomePage() {
               <div
                 key={i}
                 className={`bg-white rounded-2xl p-8 shadow-sm card-hover relative ${
-                  s.popular ? "ring-2" : ""
+                  s.popular ? "ring-2 ring-amber-400" : ""
                 }`}
-                style={s.popular ? { ringColor: "var(--color-secondary)" } : {}}
               >
                 {s.popular && (
                   <div
