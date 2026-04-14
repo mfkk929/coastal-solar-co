@@ -326,15 +326,15 @@ export default function HomePage() {
                 step: "2",
                 title: "Get your custom quote",
                 desc: "We call within 5 minutes. Real numbers, no pressure.",
-                img: "https://images.unsplash.com/photo-1521791055366-0d553872952f?w=400&h=250&q=80&auto=format&fit=crop",
+                img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=250&q=80&auto=format&fit=crop",
                 alt: "Friendly consultation call",
               },
               {
                 step: "3",
                 title: "We handle everything",
                 desc: "Paperwork, permits, installation. All done for you.",
-                img: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=400&h=250&q=80&auto=format&fit=crop",
-                alt: "Solar panel installation in progress",
+                img: "https://images.unsplash.com/photo-1545209463-4af15cff01a4?w=400&h=250&q=80&auto=format&fit=crop",
+                alt: "Solar panel installation on residential rooftop",
               },
               {
                 step: "4",
