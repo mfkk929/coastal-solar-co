@@ -5,10 +5,26 @@ import { useState } from "react";
 export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", suburb: "", message: "" });
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, source: "contact" }),
+      });
+      if (!res.ok) throw new Error("Failed");
+      setSent(true);
+    } catch {
+      setError("Something went wrong — please call us directly or try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (sent) {
@@ -78,8 +94,11 @@ export default function ContactPage() {
                     className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:outline-none resize-none"
                   />
                 </div>
-                <button type="submit" className="w-full btn-primary text-lg py-4">
-                  Send Message →
+                {error && (
+                  <p className="text-red-600 text-sm font-medium">{error}</p>
+                )}
+                <button type="submit" disabled={loading} className="w-full btn-primary text-lg py-4 disabled:opacity-60">
+                  {loading ? "Sending…" : "Send Message →"}
                 </button>
               </form>
             </div>
@@ -91,7 +110,7 @@ export default function ContactPage() {
               <div className="space-y-6">
                 {[
                   { icon: "📞", label: "Phone", value: "(02) 1234 5678", href: "tel:0212345678" },
-                  { icon: "✉️", label: "Email", value: "info@coastalsolar.com.au", href: "mailto:info@coastalsolar.com.au" },
+                  { icon: "✉️", label: "Email", value: "info@coastalsolarco.com", href: "mailto:info@coastalsolarco.com" },
                   { icon: "📍", label: "Office", value: "123 Crown Street, Wollongong NSW 2500", href: null },
                   { icon: "🕐", label: "Hours", value: "Mon–Fri 8am–5pm", href: null },
                 ].map((item, i) => (

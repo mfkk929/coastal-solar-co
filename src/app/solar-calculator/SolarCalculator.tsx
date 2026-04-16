@@ -116,6 +116,8 @@ export default function SolarCalculator() {
   const [results, setResults] = useState<Results | null>(null);
   const [leadForm, setLeadForm] = useState({ name: "", email: "", phone: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [leadLoading, setLeadLoading] = useState(false);
+  const [leadError, setLeadError] = useState("");
   const [errors, setErrors] = useState<Partial<FormData>>({});
 
   const validate = () => {
@@ -136,9 +138,28 @@ export default function SolarCalculator() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handleSubmitLead = (e: React.FormEvent) => {
+  const handleSubmitLead = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLeadLoading(true);
+    setLeadError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...leadForm,
+          suburb: form.postcode,
+          message: `Postcode: ${form.postcode} | Roof: ${form.direction} | Bill: ${form.bill} | Battery: ${form.battery} | System: ${results?.systemSize}kW | Est. savings: $${results?.annualSavings[0]}–$${results?.annualSavings[1]}/yr`,
+          source: "calculator",
+        }),
+      });
+      if (!res.ok) throw new Error("Failed");
+      setSubmitted(true);
+    } catch {
+      setLeadError("Something went wrong — please call us directly or try again.");
+    } finally {
+      setLeadLoading(false);
+    }
   };
 
   if (submitted) {
@@ -399,8 +420,11 @@ export default function SolarCalculator() {
                   style={{ borderColor: "#e5e7eb" }}
                 />
               </div>
-              <button type="submit" className="w-full btn-primary text-xl py-4">
-                Get My Full Report →
+              {leadError && (
+                <p className="text-red-600 text-sm font-medium">{leadError}</p>
+              )}
+              <button type="submit" disabled={leadLoading} className="w-full btn-primary text-xl py-4 disabled:opacity-60">
+                {leadLoading ? "Sending…" : "Get My Full Report →"}
               </button>
               <p className="text-center text-xs text-gray-400">No spam. No obligation. We call you with numbers, not a sales pitch.</p>
             </form>
