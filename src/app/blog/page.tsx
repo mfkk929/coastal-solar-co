@@ -1,65 +1,51 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import fs from "fs";
+import path from "path";
 
 export const metadata: Metadata = {
   title: "Solar Blog | News & Guides | Coastal Solar Co.",
   description:
     "Solar guides, rebate news, and energy tips for South Coast homeowners from Coastal Solar Co.",
-  alternates: { canonical: "https://coastalsolar.com.au/blog" },
+  alternates: { canonical: "https://coastalsolarco.com/blog" },
   openGraph: {
     title: "Solar Blog | Coastal Solar Co.",
     description: "Solar guides and energy tips for South Coast homeowners.",
-    url: "https://coastalsolar.com.au/blog",
+    url: "https://coastalsolarco.com/blog",
   },
 };
 
-const articles = [
-  {
-    slug: "2026-stc-rebate-explained",
-    title: "The 2026 STC Solar Rebate Explained — And Why You Should Act Now",
-    date: "April 10, 2026",
-    category: "Rebates",
-    excerpt:
-      "The Federal Government's Small-scale Technology Certificate scheme is the biggest solar rebate available in Australia — worth $2,800–$3,800 on a standard 6.6kW install. Here's exactly how it works, what you'll get in 2026, and why waiting costs you money.",
-    readTime: "6 min read",
-  },
-  {
-    slug: "battery-storage-worth-it-2026",
-    title: "Is Battery Storage Worth It in 2026? An Honest Look at the Numbers",
-    date: "March 28, 2026",
-    category: "Battery Storage",
-    excerpt:
-      "Feed-in tariffs have dropped to 5–8¢/kWh while electricity rates sit at 28–33¢/kWh. We run the numbers on whether adding a Tesla Powerwall or BYD battery makes financial sense for South Coast homeowners.",
-    readTime: "8 min read",
-  },
-  {
-    slug: "solar-installer-checklist",
-    title: "10 Questions to Ask Any Solar Installer Before You Sign Anything",
-    date: "March 15, 2026",
-    category: "Buying Guide",
-    excerpt:
-      "Not all solar quotes are equal — and some are downright deceptive. Before you sign anything, ask these 10 questions. A reputable installer will answer all of them without hesitation.",
-    readTime: "5 min read",
-  },
-  {
-    slug: "wollongong-solar-guide",
-    title: "Going Solar in Wollongong: What Illawarra Homeowners Need to Know",
-    date: "February 20, 2026",
-    category: "Local Guide",
-    excerpt:
-      "Wollongong and the Illawarra have some of the best solar conditions in NSW — but there are local factors that affect your system's performance. Here's what we've learned from installing 1,200+ systems in the region.",
-    readTime: "7 min read",
-  },
-];
+interface ArticleMeta {
+  slug: string;
+  title: string;
+  date: string;
+  category: string;
+  excerpt: string;
+  readTime: string;
+}
+
+function getArticles(): ArticleMeta[] {
+  const metaPath = path.join(process.cwd(), "src/app/blog/_articles/meta.json");
+  const raw = fs.readFileSync(metaPath, "utf-8");
+  const articles: ArticleMeta[] = JSON.parse(raw);
+  // Show newest first
+  return [...articles].reverse();
+}
 
 const categoryColors: Record<string, string> = {
   Rebates: "#E8A020",
   "Battery Storage": "#2B4C5E",
   "Buying Guide": "#16a34a",
   "Local Guide": "#7c3aed",
+  ROI: "#E8A020",
+  Battery: "#2B4C5E",
+  "Buyer Guide": "#16a34a",
+  Local: "#7c3aed",
 };
 
 export default function BlogPage() {
+  const articles = getArticles();
+
   return (
     <>
       <section className="gradient-hero text-white py-20">
@@ -76,42 +62,44 @@ export default function BlogPage() {
       <section className="py-20" style={{ backgroundColor: "var(--color-accent)" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8">
-            {articles.map((article, i) => (
-              <article key={i} className="bg-white rounded-2xl overflow-hidden shadow-sm card-hover">
-                {/* Article header graphic */}
-                <div
-                  className="h-48 flex items-end p-6"
-                  style={{
-                    background: `linear-gradient(135deg, var(--color-primary) 0%, ${categoryColors[article.category]}88 100%)`,
-                  }}
-                >
-                  <span
-                    className="text-xs font-bold px-3 py-1 rounded-full text-white"
-                    style={{ backgroundColor: categoryColors[article.category] }}
+            {articles.map((article, i) => {
+              const color = categoryColors[article.category] ?? "#1a3a5c";
+              return (
+                <article key={i} className="bg-white rounded-2xl overflow-hidden shadow-sm card-hover">
+                  <div
+                    className="h-48 flex items-end p-6"
+                    style={{
+                      background: `linear-gradient(135deg, var(--color-primary) 0%, ${color}88 100%)`,
+                    }}
                   >
-                    {article.category}
-                  </span>
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-3 text-xs text-gray-500 mb-3">
-                    <span>{article.date}</span>
-                    <span>·</span>
-                    <span>{article.readTime}</span>
+                    <span
+                      className="text-xs font-bold px-3 py-1 rounded-full text-white"
+                      style={{ backgroundColor: color }}
+                    >
+                      {article.category}
+                    </span>
                   </div>
-                  <h2 className="text-lg font-bold mb-3 leading-snug" style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}>
-                    {article.title}
-                  </h2>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">{article.excerpt}</p>
-                  <Link
-                    href={`/blog/${article.slug}`}
-                    className="text-sm font-bold"
-                    style={{ color: "var(--color-secondary)" }}
-                  >
-                    Read more →
-                  </Link>
-                </div>
-              </article>
-            ))}
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 text-xs text-gray-500 mb-3">
+                      <span>{article.date}</span>
+                      <span>·</span>
+                      <span>{article.readTime}</span>
+                    </div>
+                    <h2 className="text-lg font-bold mb-3 leading-snug" style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}>
+                      {article.title}
+                    </h2>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4">{article.excerpt}</p>
+                    <Link
+                      href={`/blog/${article.slug}`}
+                      className="text-sm font-bold"
+                      style={{ color: "var(--color-secondary)" }}
+                    >
+                      Read more →
+                    </Link>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
