@@ -1,14 +1,27 @@
 import { NextRequest, NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     const { name, email, phone, suburb, message, source } = body;
 
-    const apiKey = process.env.RESEND_API_KEY;
-    if (!apiKey) {
+    const smtpUser = process.env.SMTP_USER;
+    const smtpPass = process.env.SMTP_PASS;
+
+    if (!smtpUser || !smtpPass) {
       return NextResponse.json({ error: "Email service not configured" }, { status: 500 });
     }
+
+    const transporter = nodemailer.createTransport({
+      host: "smtp.hostinger.com",
+      port: 465,
+      secure: true,
+      auth: {
+        user: smtpUser,
+        pass: smtpPass,
+      },
+    });
 
     const subjectMap: Record<string, string> = {
       contact: `New Contact Form Lead – ${name}`,
@@ -60,26 +73,13 @@ export async function POST(req: NextRequest) {
       </div>
     `;
 
-    const res = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from: "Coastal Solar Co Website <leads@coastalsolarco.com>",
-        to: ["info@coastalsolarco.com"],
-        reply_to: email,
-        subject,
-        html: htmlBody,
-      }),
+    await transporter.sendMail({
+      from: `"Coastal Solar Co Website" <${smtpUser}>`,
+      to: smtpUser,
+      replyTo: email,
+      subject,
+      html: htmlBody,
     });
-
-    if (!res.ok) {
-      const err = await res.text();
-      console.error("Resend error:", err);
-      return NextResponse.json({ error: "Failed to send email" }, { status: 500 });
-    }
 
     return NextResponse.json({ success: true });
   } catch (err) {
