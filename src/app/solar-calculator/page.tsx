@@ -5,11 +5,11 @@ export const metadata: Metadata = {
   title: "Free Solar Savings Calculator | Coastal Solar Co.",
   description:
     "Use our free solar calculator to see how much you could save in 60 seconds. Personalised system recommendation, rebate estimate, and payback period.",
-  alternates: { canonical: "https://coastalsolar.com.au/solar-calculator" },
+  alternates: { canonical: "https://coastalsolarco.com/solar-calculator" },
   openGraph: {
     title: "Free Solar Savings Calculator | Coastal Solar Co.",
     description: "Calculate your solar savings in 60 seconds. No email required.",
-    url: "https://coastalsolar.com.au/solar-calculator",
+    url: "https://coastalsolarco.com/solar-calculator",
   },
 };
 

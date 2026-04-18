@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Coastal Solar Co. vs Shoalhaven Solar | Berry Solar Comparison",
+  title: "Coastal Solar Co. vs Shoalhaven Solar | Comparison",
   description: "Comparing Coastal Solar Co. and Shoalhaven Solar. Both are local, family-owned South Coast installers — here's how they differ on warranty, coverage, and transparency.",
-  alternates: { canonical: "https://coastalsolar.com.au/compare/vs-shoalhaven-solar" },
+  alternates: { canonical: "https://coastalsolarco.com/compare/vs-shoalhaven-solar" },
 };
 
 const rows = [

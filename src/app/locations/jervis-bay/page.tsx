@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Solar Panels Jervis Bay | Local Installer | Coastal Solar Co.",
+  title: "Solar Panels Jervis Bay | Coastal Solar Co.",
   description: "Solar panel installation in Jervis Bay. Honest pricing from $5,500 after rebates. 5-minute callback guarantee. 10-year workmanship warranty.",
-  alternates: { canonical: "https://coastalsolar.com.au/locations/jervis-bay" },
+  alternates: { canonical: "https://coastalsolarco.com/locations/jervis-bay" },
 };
 
 export default function JervisBayPage() {

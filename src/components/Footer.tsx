@@ -156,8 +156,8 @@ export default function Footer() {
             Based in Wollongong, NSW 2500.
           </p>
           <p className="text-white/50 text-sm">
-            <a href="tel:0212345678" className="hover:text-white transition-colors">
-              (02) 1234 5678
+            <a href="tel:0493531857" className="hover:text-white transition-colors">
+              0493 531 857
             </a>
           </p>
         </div>

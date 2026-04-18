@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Commercial Solar Systems | Coastal Solar Co. | South Coast NSW",
+  title: "Commercial Solar | South Coast NSW | Coastal Solar Co.",
   description:
     "Commercial solar installations for South Coast businesses. Reduce energy costs by up to 80%. CEC accredited. Tailored systems from 20kW to 100kW+.",
-  alternates: { canonical: "https://coastalsolar.com.au/solar-systems/commercial" },
+  alternates: { canonical: "https://coastalsolarco.com/solar-systems/commercial" },
   openGraph: {
     title: "Commercial Solar Systems | Coastal Solar Co.",
     description: "Reduce your business energy costs with a tailored commercial solar system.",
-    url: "https://coastalsolar.com.au/solar-systems/commercial",
+    url: "https://coastalsolarco.com/solar-systems/commercial",
   },
 };
 

@@ -70,8 +70,41 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const content = getContent(slug);
   const categoryColor = categoryColors[article.category] ?? "#1a3a5c";
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": article.title,
+    "description": article.metaDescription ?? article.excerpt,
+    "datePublished": article.date,
+    "dateModified": article.date,
+    "author": {
+      "@type": "Person",
+      "name": "Mo",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Coastal Solar Co.",
+        "url": "https://coastalsolarco.com"
+      }
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Coastal Solar Co.",
+      "url": "https://coastalsolarco.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://coastalsolarco.com/logo.png"
+      }
+    },
+    "mainEntityOfPage": `https://coastalsolarco.com/blog/${slug}`,
+    "url": `https://coastalsolarco.com/blog/${slug}`,
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       {/* Hero */}
       <section
         className="py-20 text-white"
@@ -100,7 +133,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             <span>·</span>
             <span>{article.readTime}</span>
             <span>·</span>
-            <span>Coastal Solar Co.</span>
+            <span>By Mo, Coastal Solar Co.</span>
           </div>
         </div>
       </section>
@@ -181,32 +214,4 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Bottom CTA */}
-      <section className="py-16 gradient-hero text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2
-            className="text-3xl font-black mb-4"
-            style={{ fontFamily: "var(--font-montserrat)" }}
-          >
-            Ready to get your personalised quote?
-          </h2>
-          <p className="text-white/85 mb-8 text-lg">
-            Our CEC-accredited team will call you back within 5 minutes during business hours.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="btn-primary text-lg px-8 py-4">
-              Get Free Quote →
-            </Link>
-            <Link href="/solar-calculator" className="btn-outline text-lg px-8 py-4">
-              Calculate Savings
-            </Link>
-          </div>
-        </div>
-      </section>
-    </>
-  );
-}
+      

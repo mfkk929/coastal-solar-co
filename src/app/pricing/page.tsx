@@ -5,11 +5,11 @@ export const metadata: Metadata = {
   title: "Solar System Pricing | Transparent Costs | Coastal Solar Co.",
   description:
     "Transparent solar pricing for Illawarra and South Coast homes. 6.6kW systems from $5,500 after rebates. No hidden costs. View full pricing table.",
-  alternates: { canonical: "https://coastalsolar.com.au/pricing" },
+  alternates: { canonical: "https://coastalsolarco.com/pricing" },
   openGraph: {
     title: "Solar Pricing | Coastal Solar Co.",
     description: "Honest, upfront solar pricing. 6.6kW from $5,500 after rebates.",
-    url: "https://coastalsolar.com.au/pricing",
+    url: "https://coastalsolarco.com/pricing",
   },
 };
 

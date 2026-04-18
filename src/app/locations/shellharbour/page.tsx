@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Solar Panels Shellharbour | Local Installer | Coastal Solar Co.",
+  title: "Solar Panels Shellharbour | Coastal Solar Co.",
   description: "Solar panel installation in Shellharbour. Honest pricing from $5,500 after rebates. 5-minute callback guarantee. 10-year workmanship warranty.",
-  alternates: { canonical: "https://coastalsolar.com.au/locations/shellharbour" },
+  alternates: { canonical: "https://coastalsolarco.com/locations/shellharbour" },
 };
 
 export default function ShellharbourPage() {

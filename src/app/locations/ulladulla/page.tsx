@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Solar Panels Ulladulla | Local Installer | Coastal Solar Co.",
   description: "Solar panel installation in Ulladulla. Honest pricing from $5,500 after rebates. 5-minute callback guarantee. 10-year workmanship warranty.",
-  alternates: { canonical: "https://coastalsolar.com.au/locations/ulladulla" },
+  alternates: { canonical: "https://coastalsolarco.com/locations/ulladulla" },
 };
 
 export default function UlladullaPage() {

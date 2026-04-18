@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Solar Panels Albion Park | Local Installer | Coastal Solar Co.",
+  title: "Solar Panels Albion Park | Coastal Solar Co.",
   description: "Solar panel installation in Albion Park. Honest pricing from $5,500 after rebates. 5-minute callback guarantee. 10-year workmanship warranty.",
-  alternates: { canonical: "https://coastalsolar.com.au/locations/albion-park" },
+  alternates: { canonical: "https://coastalsolarco.com/locations/albion-park" },
 };
 
 export default function AlbionParkPage() {

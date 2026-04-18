@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Coastal Solar Co. vs HOTT Electrics | Solar Comparison",
   description: "Comparing Coastal Solar Co. vs HOTT Electrics for solar installation in Wollongong. Review volume, warranties, pricing transparency, and coverage.",
-  alternates: { canonical: "https://coastalsolar.com.au/compare/vs-hott-electrics" },
+  alternates: { canonical: "https://coastalsolarco.com/compare/vs-hott-electrics" },
 };
 
 const rows = [

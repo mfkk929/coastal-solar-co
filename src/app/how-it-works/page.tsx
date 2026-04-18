@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "How It Works | Solar Installation Process | Coastal Solar Co.",
+  title: "How Solar Installation Works | Coastal Solar Co.",
   description:
     "See exactly how Coastal Solar Co. takes you from enquiry to installation. Transparent 4-step process. Average 6 business days from quote to install.",
-  alternates: { canonical: "https://coastalsolar.com.au/how-it-works" },
+  alternates: { canonical: "https://coastalsolarco.com/how-it-works" },
   openGraph: {
     title: "How It Works | Coastal Solar Co.",
     description: "From enquiry to lower electricity bills — our transparent 4-step solar installation process.",
-    url: "https://coastalsolar.com.au/how-it-works",
+    url: "https://coastalsolarco.com/how-it-works",
   },
 };
 

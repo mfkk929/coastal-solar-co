@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Battery Storage Systems | Tesla Powerwall | Coastal Solar Co.",
+  title: "Battery Storage Systems NSW | Coastal Solar Co.",
   description:
     "Add battery storage to your solar system. Tesla Powerwall, BYD, and Sungrow batteries from Coastal Solar Co. Get up to $3,000 off with the 2025 Federal Battery Rebate.",
-  alternates: { canonical: "https://coastalsolar.com.au/solar-systems/battery-storage" },
+  alternates: { canonical: "https://coastalsolarco.com/solar-systems/battery-storage" },
   openGraph: {
     title: "Battery Storage Systems | Coastal Solar Co.",
     description: "Store your solar energy and use it at night. Tesla Powerwall authorised installer.",
-    url: "https://coastalsolar.com.au/solar-systems/battery-storage",
+    url: "https://coastalsolarco.com/solar-systems/battery-storage",
   },
 };
 

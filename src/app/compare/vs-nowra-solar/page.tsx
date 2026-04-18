@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Coastal Solar Co. vs Nowra Solar | Shoalhaven Solar Comparison",
+  title: "Coastal Solar Co. vs Nowra Solar | Comparison",
   description: "Comparing Coastal Solar Co. vs Nowra Solar for solar installation in the Shoalhaven. Pricing, warranty, transparency, and service coverage compared.",
-  alternates: { canonical: "https://coastalsolar.com.au/compare/vs-nowra-solar" },
+  alternates: { canonical: "https://coastalsolarco.com/compare/vs-nowra-solar" },
 };
 
 const rows = [

@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Solar Panels Kiama | Local Installer | Coastal Solar Co.",
   description: "Solar panel installation in Kiama. Honest pricing from $5,500 after rebates. 5-minute callback guarantee. 10-year workmanship warranty.",
-  alternates: { canonical: "https://coastalsolar.com.au/locations/kiama" },
+  alternates: { canonical: "https://coastalsolarco.com/locations/kiama" },
 };
 
 export default function KiamaPage() {

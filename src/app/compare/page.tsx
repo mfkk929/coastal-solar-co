@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Compare Solar Companies | Coastal Solar Co. vs Local Competitors",
+  title: "Compare Solar Installers | Coastal Solar Co.",
   description: "Honest comparisons between Coastal Solar Co. and local Illawarra & South Coast solar companies. We tell you where we're better — and where competitors are worth considering.",
-  alternates: { canonical: "https://coastalsolar.com.au/compare" },
+  alternates: { canonical: "https://coastalsolarco.com/compare" },
 };
 
 const comparisons = [

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy | Coastal Solar Co.",
   description: "Coastal Solar Co. privacy policy — how we collect, use, and protect your personal information.",
-  alternates: { canonical: "https://coastalsolar.com.au/privacy" },
+  alternates: { canonical: "https://coastalsolarco.com/privacy" },
 };
 
 export default function PrivacyPage() {
@@ -35,10 +35,10 @@ export default function PrivacyPage() {
           <p>We do not sell your personal information. We may share it with trusted third parties only where necessary to provide our services (e.g., installation partners, finance providers with your explicit consent).</p>
 
           <h2 className="text-2xl font-bold mt-8" style={{ color: "var(--color-primary)" }}>Your Rights</h2>
-          <p>You have the right to access, correct, or delete personal information we hold about you. Contact us at privacy@coastalsolar.com.au.</p>
+          <p>You have the right to access, correct, or delete personal information we hold about you. Contact us at privacy@coastalsolarco.com.</p>
 
           <h2 className="text-2xl font-bold mt-8" style={{ color: "var(--color-primary)" }}>Contact</h2>
-          <p>Questions about this policy? Contact us at <a href="mailto:privacy@coastalsolar.com.au" className="underline" style={{ color: "var(--color-secondary)" }}>privacy@coastalsolar.com.au</a></p>
+          <p>Questions about this policy? Contact us at <a href="mailto:privacy@coastalsolarco.com" className="underline" style={{ color: "var(--color-secondary)" }}>privacy@coastalsolarco.com</a></p>
         </div>
       </div>
     </section>

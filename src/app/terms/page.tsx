@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms & Conditions | Coastal Solar Co.",
   description: "Coastal Solar Co. terms and conditions for solar installation services across Illawarra and South Coast NSW.",
-  alternates: { canonical: "https://coastalsolar.com.au/terms" },
+  alternates: { canonical: "https://coastalsolarco.com/terms" },
 };
 
 export default function TermsPage() {
@@ -20,7 +20,7 @@ export default function TermsPage() {
           <p>Coastal Solar Co. provides solar panel installation, battery storage installation, and related services to residential and commercial customers across Illawarra and South Coast NSW. All pricing estimates are indicative. A formal written quote is provided before any work commences.</p>
 
           <h2 className="text-2xl font-bold mt-8" style={{ color: "var(--color-primary)" }}>Warranties</h2>
-          <p>We provide a 10-year workmanship warranty on all installations. Panel and inverter manufacturer warranties are passed through to the customer as per the terms of the respective manufacturers. Warranty claims must be reported in writing to warranty@coastalsolar.com.au.</p>
+          <p>We provide a 10-year workmanship warranty on all installations. Panel and inverter manufacturer warranties are passed through to the customer as per the terms of the respective manufacturers. Warranty claims must be reported in writing to warranty@coastalsolarco.com.</p>
 
           <h2 className="text-2xl font-bold mt-8" style={{ color: "var(--color-primary)" }}>Pricing & Payment</h2>
           <p>All prices are in Australian Dollars and include GST. Government rebates (STCs) are applied as a point-of-sale discount where eligible. Final pricing is confirmed in a written quote. Payment terms are outlined in individual contracts.</p>
@@ -32,7 +32,7 @@ export default function TermsPage() {
           <p>These terms are governed by the laws of New South Wales, Australia.</p>
 
           <h2 className="text-2xl font-bold mt-8" style={{ color: "var(--color-primary)" }}>Contact</h2>
-          <p>Questions? Email us at <a href="mailto:info@coastalsolar.com.au" className="underline" style={{ color: "var(--color-secondary)" }}>info@coastalsolar.com.au</a></p>
+          <p>Questions? Email us at <a href="mailto:info@coastalsolarco.com" className="underline" style={{ color: "var(--color-secondary)" }}>info@coastalsolarco.com</a></p>
         </div>
       </div>
     </section>

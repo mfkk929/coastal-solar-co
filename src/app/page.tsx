@@ -5,13 +5,13 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Solar Panels Wollongong & South Coast NSW | Coastal Solar Co.",
   description:
-    "Get honest solar pricing for Illawarra and South Coast homes. 5-minute callback guarantee. 10-year warranty. Free savings calculator. Call (02) 1234 5678.",
-  alternates: { canonical: "https://coastalsolar.com.au" },
+    "Get honest solar pricing for Illawarra and South Coast homes. 5-minute callback guarantee. 10-year warranty. Free savings calculator. Call 0493 531 857.",
+  alternates: { canonical: "https://coastalsolarco.com" },
   openGraph: {
     title: "Solar Panels Wollongong & South Coast NSW | Coastal Solar Co.",
     description:
       "Get honest solar pricing for Illawarra and South Coast homes. 5-minute callback guarantee. 10-year warranty. Free savings calculator.",
-    url: "https://coastalsolar.com.au",
+    url: "https://coastalsolarco.com",
   },
 };
 
@@ -20,12 +20,12 @@ const schema = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://coastalsolar.com.au/#organization",
+      "@id": "https://coastalsolarco.com/#organization",
       name: "Coastal Solar Co.",
-      url: "https://coastalsolar.com.au",
-      logo: "https://coastalsolar.com.au/logo.png",
-      telephone: "(02) 1234 5678",
-      email: "info@coastalsolar.com.au",
+      url: "https://coastalsolarco.com",
+      logo: "https://coastalsolarco.com/logo.png",
+      telephone: "0493531857",
+      email: "info@coastalsolarco.com",
       sameAs: [
         "https://www.facebook.com/coastalsolarco",
         "https://www.instagram.com/coastalsolarco",
@@ -33,23 +33,24 @@ const schema = {
     },
     {
       "@type": "LocalBusiness",
-      "@id": "https://coastalsolar.com.au/#local",
+      "@id": "https://coastalsolarco.com/#local",
       name: "Coastal Solar Co.",
-      image: "https://coastalsolar.com.au/og-image.jpg",
-      telephone: "(02) 1234 5678",
+      image: "https://coastalsolarco.com/og-image.jpg",
+      telephone: "0493531857",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "123 Crown Street",
-        addressLocality: "Wollongong",
+        addressLocality: "Kiama",
         addressRegion: "NSW",
-        postalCode: "2500",
+        postalCode: "2533",
         addressCountry: "AU",
       },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: -34.4248,
-        longitude: 150.8931,
-      },
+      areaServed: [
+        { "@type": "City", "name": "Wollongong" },
+        { "@type": "City", "name": "Kiama" },
+        { "@type": "City", "name": "Shellharbour" },
+        { "@type": "City", "name": "Nowra" },
+        { "@type": "City", "name": "Ulladulla" },
+      ],
       openingHoursSpecification: [
         {
           "@type": "OpeningHoursSpecification",
@@ -59,22 +60,12 @@ const schema = {
         },
       ],
       priceRange: "$$",
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "5",
-        reviewCount: "200",
-      },
     },
     {
       "@type": "WebSite",
-      "@id": "https://coastalsolar.com.au/#website",
-      url: "https://coastalsolar.com.au",
+      "@id": "https://coastalsolarco.com/#website",
+      url: "https://coastalsolarco.com",
       name: "Coastal Solar Co.",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: "https://coastalsolar.com.au/search?q={search_term_string}",
-        "query-input": "required name=search_term_string",
-      },
     },
   ],
 };
@@ -113,11 +104,11 @@ export default function HomePage() {
                   Calculate My Savings
                 </Link>
                 <a
-                  href="tel:0212345678"
+                  href="tel:0493531857"
                   className="btn-outline text-lg px-8 py-4"
                   style={{ borderColor: "rgba(255,255,255,0.6)", color: "white" }}
                 >
-                  Call (02) 1234 5678
+                  Call 0493 531 857
                 </a>
               </div>
               <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/75">
@@ -546,3 +537,4 @@ export default function HomePage() {
     </>
   );
 }
+                                                                                                                                                                                                                                 

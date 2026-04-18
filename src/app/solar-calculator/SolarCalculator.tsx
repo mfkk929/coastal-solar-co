@@ -173,7 +173,7 @@ export default function SolarCalculator() {
           <p className="text-gray-600 mb-6">
             We&apos;ll call you within 5 minutes during business hours with your full personalised report.
           </p>
-          <p className="text-sm text-gray-400">Can&apos;t wait? Call us: <a href="tel:0212345678" className="font-semibold" style={{ color: "var(--color-secondary)" }}>(02) 1234 5678</a></p>
+          <p className="text-sm text-gray-400">Can&apos;t wait? Call us: <a href="tel:0493531857" className="font-semibold" style={{ color: "var(--color-secondary)" }}>0493 531 857</a></p>
         </div>
       </div>
     );
@@ -319,7 +319,7 @@ export default function SolarCalculator() {
                 <div className="rounded-xl p-5 text-center" style={{ backgroundColor: "var(--color-accent)" }}>
                   <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Recommended System</p>
                   <p className="text-3xl font-black" style={{ color: "var(--color-secondary)", fontFamily: "var(--font-montserrat)" }}>
-                    <AnimatedNumber target={results.systemSize * 10} suffix="kW" />
+                    {results.systemSize}kW
                   </p>
                 </div>
                 <div className="rounded-xl p-5 text-center" style={{ backgroundColor: "var(--color-accent)" }}>

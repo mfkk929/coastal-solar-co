@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Coastal Solar Co. vs SolarBlu | Which is Right for You?",
   description: "An honest comparison between Coastal Solar Co. and SolarBlu. We compare warranty, pricing transparency, callback time, coverage, and more.",
-  alternates: { canonical: "https://coastalsolar.com.au/compare/vs-solarblu" },
+  alternates: { canonical: "https://coastalsolarco.com/compare/vs-solarblu" },
 };
 
 const rows = [

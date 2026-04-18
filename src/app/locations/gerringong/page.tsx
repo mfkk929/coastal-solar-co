@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Solar Panels Gerringong | Local Installer | Coastal Solar Co.",
+  title: "Solar Panels Gerringong | Coastal Solar Co.",
   description: "Solar panel installation in Gerringong. Honest pricing from $5,500 after rebates. 5-minute callback guarantee. 10-year workmanship warranty.",
-  alternates: { canonical: "https://coastalsolar.com.au/locations/gerringong" },
+  alternates: { canonical: "https://coastalsolarco.com/locations/gerringong" },
 };
 
 export default function GerringongPage() {

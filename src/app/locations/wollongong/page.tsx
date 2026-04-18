@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Solar Panels Wollongong | Local Installer | Coastal Solar Co.",
+  title: "Solar Panels Wollongong | Coastal Solar Co.",
   description: "Solar panel installation in Wollongong. Honest pricing from $5,500 after rebates. 5-minute callback guarantee. 10-year workmanship warranty. Get your free quote.",
-  alternates: { canonical: "https://coastalsolar.com.au/locations/wollongong" },
+  alternates: { canonical: "https://coastalsolarco.com/locations/wollongong" },
 };
 
 const schema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Coastal Solar Co. — Solar Panels Wollongong",
-  "url": "https://coastalsolar.com.au/locations/wollongong",
-  "telephone": "(02) 1234 5678",
+  "url": "https://coastalsolarco.com/locations/wollongong",
+  "telephone": "0493 531 857",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Wollongong",
