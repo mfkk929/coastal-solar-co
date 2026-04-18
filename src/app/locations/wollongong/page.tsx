@@ -3,24 +3,36 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Solar Panels Wollongong | Coastal Solar Co.",
-  description: "Solar panel installation in Wollongong. Honest pricing from $5,500 after rebates. 5-minute callback guarantee. 10-year workmanship warranty. Get your free quote.",
+  description: "Solar panel installation in Wollongong. 6.6kW from $5,500 after rebates. CEC-accredited local team, 5-minute callback guarantee, 6-day installation, 10-year warranty.",
   alternates: { canonical: "https://coastalsolarco.com/locations/wollongong" },
 };
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Coastal Solar Co. — Solar Panels Wollongong",
-  "url": "https://coastalsolarco.com/locations/wollongong",
-  "telephone": "0493 531 857",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Wollongong",
-    "addressRegion": "NSW",
-    "postalCode": "2500",
-    "addressCountry": "AU",
-  },
-  "areaServed": { "@type": "City", "name": "Wollongong" },
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "Coastal Solar Co. — Solar Panels Wollongong",
+      "url": "https://coastalsolarco.com/locations/wollongong",
+      "telephone": "0493531857",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Wollongong",
+        "addressRegion": "NSW",
+        "postalCode": "2500",
+        "addressCountry": "AU",
+      },
+      "areaServed": { "@type": "City", "name": "Wollongong" },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://coastalsolarco.com" },
+        { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://coastalsolarco.com/locations" },
+        { "@type": "ListItem", "position": 3, "name": "Wollongong", "item": "https://coastalsolarco.com/locations/wollongong" },
+      ],
+    },
+  ],
 };
 
 export default function WollongongPage() {
@@ -64,6 +76,18 @@ export default function WollongongPage() {
               <p className="text-gray-700">
                 We&apos;ve installed systems across all Wollongong suburbs: Figtree, Fairy Meadow, Mount Ousley, Balgownie, Mangerton, Coniston, Port Kembla, and the CBD. We know which roofs face which way, and we design accordingly.
               </p>
+              <div className="mt-6 space-y-2">
+                <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide">Further reading</p>
+                <Link href="/blog/is-solar-worth-it-wollongong-2026" className="block text-sm font-medium hover:underline" style={{ color: "var(--color-secondary)" }}>
+                  → Is Solar Worth It in Wollongong in 2026?
+                </Link>
+                <Link href="/blog/solar-panel-cost-wollongong-2026" className="block text-sm font-medium hover:underline" style={{ color: "var(--color-secondary)" }}>
+                  → Solar Panel Cost Wollongong: Real Prices After Rebates
+                </Link>
+                <Link href="/blog/nsw-solar-rebates-2026" className="block text-sm font-medium hover:underline" style={{ color: "var(--color-secondary)" }}>
+                  → NSW Solar Rebates 2026: Every Incentive Explained
+                </Link>
+              </div>
             </div>
             <div className="rounded-2xl p-10 text-white text-center" style={{ background: "linear-gradient(135deg, #2B4C5E, #1e3545)" }}>
               <div className="text-5xl font-black mb-2" style={{ color: "var(--color-secondary)" }}>4.8</div>

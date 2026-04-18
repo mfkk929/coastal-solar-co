@@ -3,13 +3,42 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Solar Panels Thirroul | Local Installer | Coastal Solar Co.",
-  description: "Solar panel installation in Thirroul. Honest pricing from $5,500 after rebates. 5-minute callback guarantee. 10-year workmanship warranty.",
+  description: "Solar panel installation in Thirroul & Northern Illawarra. 6.6kW from $5,500 after rebates. CEC-accredited local team, 5-minute callback, 6-day installation, 10-year warranty.",
   alternates: { canonical: "https://coastalsolarco.com/locations/thirroul" },
+};
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "Coastal Solar Co. — Solar Panels Thirroul",
+      "url": "https://coastalsolarco.com/locations/thirroul",
+      "telephone": "0493531857",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Thirroul",
+        "addressRegion": "NSW",
+        "postalCode": "2515",
+        "addressCountry": "AU",
+      },
+      "areaServed": { "@type": "City", "name": "Thirroul" },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://coastalsolarco.com" },
+        { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://coastalsolarco.com/locations" },
+        { "@type": "ListItem", "position": 3, "name": "Thirroul", "item": "https://coastalsolarco.com/locations/thirroul" },
+      ],
+    },
+  ],
 };
 
 export default function ThirroulPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <section className="gradient-hero text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="text-white/60 text-sm mb-6">

@@ -3,13 +3,42 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Solar Panels Kiama | Local Installer | Coastal Solar Co.",
-  description: "Solar panel installation in Kiama. Honest pricing from $5,500 after rebates. 5-minute callback guarantee. 10-year workmanship warranty.",
+  description: "Solar panel installation in Kiama & surrounds. 6.6kW from $5,500 after rebates. Your local CEC-accredited installer — 5-minute callback, 6-day install, 10-year warranty.",
   alternates: { canonical: "https://coastalsolarco.com/locations/kiama" },
+};
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "Coastal Solar Co. — Solar Panels Kiama",
+      "url": "https://coastalsolarco.com/locations/kiama",
+      "telephone": "0493531857",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kiama",
+        "addressRegion": "NSW",
+        "postalCode": "2533",
+        "addressCountry": "AU",
+      },
+      "areaServed": { "@type": "City", "name": "Kiama" },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://coastalsolarco.com" },
+        { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://coastalsolarco.com/locations" },
+        { "@type": "ListItem", "position": 3, "name": "Kiama", "item": "https://coastalsolarco.com/locations/kiama" },
+      ],
+    },
+  ],
 };
 
 export default function KiamaPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <section className="gradient-hero text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="text-white/60 text-sm mb-6">
@@ -36,6 +65,18 @@ export default function KiamaPage() {
               <p className="text-gray-700 mb-4">Kiama&apos;s coastal hinterland position means excellent solar resource with minimal shading. Homes in Kiama Heights, Bombo, and Minnamurra are particularly well-suited to solar. We&apos;ve completed dozens of installs across the Kiama LGA and know the local grid connection process inside out.</p>
               <p className="text-gray-700 mb-4">We handle all grid connection paperwork — you don&apos;t fill in a single form. Every install includes a 30-minute walkthrough and monitoring app setup.</p>
               <p className="text-gray-700">From quote to installation, our average turnaround is just 6 business days.</p>
+              <div className="mt-6 space-y-2">
+                <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide">Further reading</p>
+                <Link href="/blog/solar-payback-period-illawarra" className="block text-sm font-medium hover:underline" style={{ color: "var(--color-secondary)" }}>
+                  → How Long Does Solar Take to Pay for Itself in the Illawarra?
+                </Link>
+                <Link href="/blog/nsw-solar-rebates-2026" className="block text-sm font-medium hover:underline" style={{ color: "var(--color-secondary)" }}>
+                  → NSW Solar Rebates 2026: Every Incentive Explained
+                </Link>
+                <Link href="/blog/complete-guide-buying-solar-nsw" className="block text-sm font-medium hover:underline" style={{ color: "var(--color-secondary)" }}>
+                  → The Complete Guide to Buying Solar in NSW
+                </Link>
+              </div>
             </div>
             <div className="rounded-2xl p-10 text-white" style={{ background: "linear-gradient(135deg, #2B4C5E, #1e3545)" }}>
               <div className="grid grid-cols-2 gap-6">
