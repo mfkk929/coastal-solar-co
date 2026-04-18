@@ -4,13 +4,52 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "How Solar Installation Works | Coastal Solar Co.",
   description:
-    "See exactly how Coastal Solar Co. takes you from enquiry to installation. Transparent 4-step process. Average 6 business days from quote to install.",
+    "See exactly how Coastal Solar Co. takes you from enquiry to installation. Our 4-step process goes from free calculator to installed system in an average of 6 business days.",
   alternates: { canonical: "https://coastalsolarco.com/how-it-works" },
   openGraph: {
     title: "How It Works | Coastal Solar Co.",
     description: "From enquiry to lower electricity bills — our transparent 4-step solar installation process.",
     url: "https://coastalsolarco.com/how-it-works",
   },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How long does solar installation take?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Most residential systems are installed in 1 day. Larger systems with batteries may take 2 days. From initial enquiry to completed installation, our average is 6 business days.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do I need to be home during solar installation?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, someone needs to be home to provide access. Our team will confirm a start time the day before installation.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What happens if it rains on installation day?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We monitor the weather and will contact you to reschedule if conditions aren't suitable for safe installation. There is no extra charge for rescheduling.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How long until my solar system is turned on?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "After installation, network energisation by Endeavour Energy typically takes 2–5 business days. Your system generates power immediately but exports to the grid after energisation.",
+      },
+    },
+  ],
 };
 
 const steps = [
@@ -71,6 +110,10 @@ const steps = [
 export default function HowItWorksPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <section className="gradient-hero text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-5xl font-black mb-6" style={{ fontFamily: "var(--font-montserrat)" }}>

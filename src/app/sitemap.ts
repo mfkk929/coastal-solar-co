@@ -5,7 +5,6 @@ import path from "path";
 const BASE_URL = "https://coastalsolarco.com";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const lastModified = new Date();
 
   const staticPages = [
     { url: "/", priority: 1.0, changeFrequency: "weekly" as const },
@@ -50,7 +49,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const articles: { slug: string; date: string }[] = JSON.parse(metaRaw);
     blogPages = articles.map((article) => ({
       url: `${BASE_URL}/blog/${article.slug}`,
-      lastModified: article.date ? new Date(article.date) : lastModified,
+      lastModified: article.date ? new Date(article.date) : new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.7,
     }));
@@ -60,7 +59,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const staticEntries = staticPages.map(({ url, priority, changeFrequency }) => ({
     url: `${BASE_URL}${url}`,
-    lastModified,
     changeFrequency,
     priority,
   }));

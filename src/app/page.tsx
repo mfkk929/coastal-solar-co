@@ -3,12 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Solar Panels Wollongong & South Coast NSW | Coastal Solar Co.",
+  title: "Solar Panels Kiama, Wollongong & South Coast NSW | Coastal Solar Co.",
   description:
-    "Get honest solar pricing for Illawarra and South Coast homes. 5-minute callback guarantee. 10-year warranty. Free savings calculator. Call 0493 531 857.",
+    "Get honest solar pricing for Kiama, Illawarra and South Coast homes. 5-minute callback guarantee. 10-year warranty. Free savings calculator. Call 0493 531 857.",
   alternates: { canonical: "https://coastalsolarco.com" },
   openGraph: {
-    title: "Solar Panels Wollongong & South Coast NSW | Coastal Solar Co.",
+    title: "Solar Panels Kiama, Wollongong & South Coast NSW | Coastal Solar Co.",
     description:
       "Get honest solar pricing for Illawarra and South Coast homes. 5-minute callback guarantee. 10-year warranty. Free savings calculator.",
     url: "https://coastalsolarco.com",
@@ -29,6 +29,7 @@ const schema = {
       sameAs: [
         "https://www.facebook.com/coastalsolarco",
         "https://www.instagram.com/coastalsolarco",
+        "https://www.google.com/maps?cid=coastalsolarco",
       ],
     },
     {

@@ -4,13 +4,13 @@ import fs from "fs";
 import path from "path";
 
 export const metadata: Metadata = {
-  title: "Solar Blog | News & Guides | Coastal Solar Co.",
+  title: "Solar Tips & Guides for NSW Homeowners | Coastal Solar Co. Blog",
   description:
-    "Solar guides, rebate news, and energy tips for South Coast homeowners from Coastal Solar Co.",
+    "Rebate news, installation guides, and honest solar advice for Wollongong, Kiama, and the South Coast. Written by Coastal Solar Co.'s CEC-accredited team.",
   alternates: { canonical: "https://coastalsolarco.com/blog" },
   openGraph: {
     title: "Solar Blog | Coastal Solar Co.",
-    description: "Solar guides and energy tips for South Coast homeowners.",
+    description: "Rebate news, installation guides, and honest solar advice for Illawarra & South Coast homeowners.",
     url: "https://coastalsolarco.com/blog",
   },
 };

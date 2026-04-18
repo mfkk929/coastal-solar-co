@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Residential Solar Panels Wollongong | Coastal Solar Co.",
   description:
-    "Residential solar systems for Illawarra and South Coast homes. 6.6kW from $5,500 after rebates. CEC accredited. 10-year warranty. Get a free quote today.",
+    "Residential solar panels for Illawarra and South Coast homes. 6.6kW from $5,500 after rebates. CEC accredited, 6-day installation, 10-year workmanship warranty. Free quote.",
   alternates: { canonical: "https://coastalsolarco.com/solar-systems/residential" },
   openGraph: {
     title: "Residential Solar Panels | Coastal Solar Co.",

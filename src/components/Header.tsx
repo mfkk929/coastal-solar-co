@@ -100,13 +100,19 @@ export default function Header() {
               Rebates
             </Link>
             <Link
-              href="/solar-calculator"
+              href="/locations"
               className="text-white/90 hover:text-white font-medium transition-colors"
             >
-              Free Calculator
+              Locations
             </Link>
             <Link
-              href="/solar-calculator"
+              href="/blog"
+              className="text-white/90 hover:text-white font-medium transition-colors"
+            >
+              Blog
+            </Link>
+            <Link
+              href="/contact"
               className="btn-primary text-sm px-5 py-2.5"
               style={{ fontFamily: "var(--font-montserrat)" }}
             >
@@ -207,6 +213,20 @@ export default function Header() {
               Rebates
             </Link>
             <Link
+              href="/locations"
+              className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+              onClick={() => setMobileOpen(false)}
+            >
+              Service Areas
+            </Link>
+            <Link
+              href="/blog"
+              className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+              onClick={() => setMobileOpen(false)}
+            >
+              Blog
+            </Link>
+            <Link
               href="/solar-calculator"
               className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
               onClick={() => setMobileOpen(false)}
@@ -215,7 +235,7 @@ export default function Header() {
             </Link>
             <div className="pt-2">
               <Link
-                href="/solar-calculator"
+                href="/contact"
                 className="btn-primary block w-full text-center"
                 onClick={() => setMobileOpen(false)}
               >

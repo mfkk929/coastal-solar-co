@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Solar System Pricing | Transparent Costs | Coastal Solar Co.",
   description:
-    "Transparent solar pricing for Illawarra and South Coast homes. 6.6kW systems from $5,500 after rebates. No hidden costs. View full pricing table.",
+    "Transparent solar pricing for Illawarra and South Coast homes. 6.6kW from $5,500, 10kW from $7,800, batteries from $7,500 — all after rebates. No hidden costs, no sales pitch.",
   alternates: { canonical: "https://coastalsolarco.com/pricing" },
   openGraph: {
     title: "Solar Pricing | Coastal Solar Co.",

@@ -153,7 +153,7 @@ export default function Footer() {
           </div>
           <p className="text-white/50 text-sm text-center">
             © {new Date().getFullYear()} Coastal Solar Co. All rights reserved. CEC Accredited Installer.
-            Based in Wollongong, NSW 2500.
+            Based in Kiama, NSW 2533.
           </p>
           <p className="text-white/50 text-sm">
             <a href="tel:0493531857" className="hover:text-white transition-colors">
