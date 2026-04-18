@@ -214,4 +214,20 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 </div>
               </div>
             </div>
-      
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 gradient-hero text-white text-center">
+        <div className="max-w-3xl mx-auto px-4">
+          <h2 className="text-3xl font-black mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>
+            Ready to go solar on the South Coast?
+          </h2>
+          <p className="text-white/85 mb-8 text-lg">Use our free calculator to see your savings in 60 seconds.</p>
+          <Link href="/solar-calculator" className="btn-primary text-lg">Calculate My Savings →</Link>
+        </div>
+      </section>
+    </>
+  );
+}
