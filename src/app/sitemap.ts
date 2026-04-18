@@ -1,8 +1,10 @@
 import { MetadataRoute } from "next";
+import { promises as fs } from "fs";
+import path from "path";
 
 const BASE_URL = "https://coastalsolarco.com";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date();
 
   const staticPages = [
@@ -23,7 +25,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/locations/thirroul", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/locations/dapto", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/locations/albion-park", priority: 0.7, changeFrequency: "monthly" as const },
-    { url: "/locations/kiama", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/locations/gerringong", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/locations/berry", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/locations/jervis-bay", priority: 0.7, changeFrequency: "monthly" as const },
@@ -41,10 +42,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/terms", priority: 0.3, changeFrequency: "yearly" as const },
   ];
 
-  return staticPages.map(({ url, priority, changeFrequency }) => ({
+  // Dynamically load all blog articles from meta.json
+  let blogPages: MetadataRoute.Sitemap = [];
+  try {
+    const metaPath = path.join(process.cwd(), "src/app/blog/_articles/meta.json");
+    const metaRaw = await fs.readFile(metaPath, "utf-8");
+    const articles: { slug: string; date: string }[] = JSON.parse(metaRaw);
+    blogPages = articles.map((article) => ({
+      url: `${BASE_URL}/blog/${article.slug}`,
+      lastModified: article.date ? new Date(article.date) : lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    }));
+  } catch {
+    // meta.json unreadable — blog pages omitted gracefully
+  }
+
+  const staticEntries = staticPages.map(({ url, priority, changeFrequency }) => ({
     url: `${BASE_URL}${url}`,
     lastModified,
     changeFrequency,
     priority,
   }));
+
+  return [...staticEntries, ...blogPages];
 }
