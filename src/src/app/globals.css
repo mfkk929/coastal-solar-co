@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #2B4C5E;
+  --color-secondary: #E8A020;
+  --color-accent: #F4F9F7;
+  --color-text: #1C2B36;
+  --color-primary-dark: #1e3545;
+  --color-secondary-dark: #c98a18;
+  --font-heading: var(--font-montserrat);
+  --font-body: var(--font-inter);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    color: var(--color-text);
+    font-family: var(--font-inter), system-ui, sans-serif;
+    background-color: #fff;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-montserrat), system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-primary { color: var(--color-primary); }
+  .text-secondary { color: var(--color-secondary); }
+  .text-accent { color: var(--color-accent); }
+  .text-charcoal { color: var(--color-text); }
+
+  .bg-primary { background-color: var(--color-primary); }
+  .bg-secondary { background-color: var(--color-secondary); }
+  .bg-accent { background-color: var(--color-accent); }
+
+  .border-primary { border-color: var(--color-primary); }
+  .border-secondary { border-color: var(--color-secondary); }
+
+  .btn-primary {
+    background-color: var(--color-secondary);
+    color: #fff;
+    font-family: var(--font-montserrat), system-ui, sans-serif;
+    font-weight: 700;
+    padding: 0.875rem 2rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s, transform 0.2s;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-secondary-dark);
+    transform: translateY(-1px);
+  }
+
+  .btn-outline {
+    border: 2px solid var(--color-secondary);
+    color: var(--color-secondary);
+    font-family: var(--font-montserrat), system-ui, sans-serif;
+    font-weight: 700;
+    padding: 0.875rem 2rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .btn-outline:hover {
+    background-color: var(--color-secondary);
+    color: #fff;
+  }
+
+  .card-hover {
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(43, 76, 94, 0.15);
+  }
+
+  .section-accent {
+    background-color: var(--color-accent);
+  }
+
+  .gradient-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1e3545 60%, #152838 100%);
+  }
+
+  .solar-panel-graphic {
+    background: linear-gradient(135deg, #1a3344 0%, #2B4C5E 50%, #3a6a82 100%);
+  }
+}
