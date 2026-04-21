@@ -2,12 +2,15 @@ import { MetadataRoute } from "next";
 import { promises as fs } from "fs";
 import path from "path";
 
-const BASE_URL = "https://coastalsolarco.com";
+const BASE_URL = "https://www.coastalsolarco.com";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const staticPages = [
     { url: "/", priority: 1.0, changeFrequency: "weekly" as const },
+    { url: "/solar-panels-nsw", priority: 1.0, changeFrequency: "weekly" as const },
+    { url: "/solar-rebates-nsw", priority: 1.0, changeFrequency: "weekly" as const },
+    { url: "/faq", priority: 0.9, changeFrequency: "weekly" as const },
     { url: "/solar-systems/residential", priority: 0.9, changeFrequency: "monthly" as const },
     { url: "/solar-systems/commercial", priority: 0.9, changeFrequency: "monthly" as const },
     { url: "/solar-systems/battery-storage", priority: 0.9, changeFrequency: "monthly" as const },
@@ -57,11 +60,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // meta.json unreadable — blog pages omitted gracefully
   }
 
-  const staticEntries = staticPages.map(({ url, priority, changeFrequency }) => ({
-    url: `${BASE_URL}${url}`,
-    changeFrequency,
-    priority,
+  const staticUrls: MetadataRoute.Sitemap = staticPages.map((page) => ({
+    url: `${BASE_URL}${page.url}`,
+    lastModified: new Date(),
+    changeFrequency: page.changeFrequency,
+    priority: page.priority,
   }));
 
-  return [...staticEntries, ...blogPages];
+  return [...staticUrls, ...blogPages];
 }
