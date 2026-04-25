@@ -28,39 +28,21 @@
   },
   {
     "slug": "2026-stc-rebate-explained",
-    "title": "The 2026 STC Solar Rebate Explained — And Why You Should Act Now",
-    "date": "April 10, 2026",
+    "title": "The 2026 STC Solar Rebate Fully Explained: How It Works, What You Get, Why It Matters",
+    "date": "April 22, 2026",
     "category": "Rebates",
-    "excerpt": "The STC scheme is Australia's biggest solar rebate — worth $2,800–$3,800 on a 6.6kW install. Here's how it works and why waiting costs you money.",
-    "readTime": "6 min read",
-    "metaDescription": "How the 2026 STC solar rebate works in NSW — what you'll get, how it's applied at point of sale, and why the rebate drops again in 2027."
-  },
-  {
-    "slug": "battery-storage-worth-it-2026",
-    "title": "Is Battery Storage Worth It in 2026? An Honest Look at the Numbers",
-    "date": "March 28, 2026",
-    "category": "Battery Storage",
-    "excerpt": "Feed-in tariffs have dropped to 5–8¢/kWh while electricity rates sit at 28–33¢/kWh. We run the real numbers on battery storage for South Coast homeowners.",
-    "readTime": "8 min read",
-    "metaDescription": "Is battery storage worth it in 2026? We run the real numbers on payback periods, savings and whether a Tesla Powerwall or BYD makes sense for NSW homes."
-  },
-  {
-    "slug": "solar-installer-checklist",
-    "title": "10 Questions to Ask Any Solar Installer Before You Sign Anything",
-    "date": "March 15, 2026",
-    "category": "Buying Guide",
-    "excerpt": "Not all solar quotes are equal — and some are deceptive. Ask these 10 questions before signing. A reputable installer will answer all of them without hesitation.",
-    "readTime": "5 min read",
-    "metaDescription": "10 questions to ask a solar installer before you sign. Covers warranties, CEC accreditation, panel brands, inverters and what a trustworthy quote looks like."
+    "excerpt": "The complete 2026 explainer on Australia's STC solar rebate — how certificates are calculated, how the rebate is applied at point of sale, what NSW homeowners actually receive, and how the annual step-down works.",
+    "readTime": "13 min read",
+    "metaDescription": "Complete 2026 guide to Australia's STC solar rebate — how it works, what NSW homeowners get, how the point-of-sale discount is applied, and why timing matters."
   },
   {
     "slug": "wollongong-solar-guide",
-    "title": "Going Solar in Wollongong: What Illawarra Homeowners Need to Know",
-    "date": "February 20, 2026",
+    "title": "Going Solar in Wollongong: The Complete 2026 Illawarra Homeowner's Guide",
+    "date": "April 22, 2026",
     "category": "Local Guide",
-    "excerpt": "Wollongong has some of the best solar conditions in NSW — but local factors affect performance. Here's what we've learned from 1,200+ Illawarra installs.",
-    "readTime": "7 min read",
-    "metaDescription": "Going solar in Wollongong? Local guide covering sun hours, roof orientation, Endeavour Energy connections, rebates and what to expect from an Illawarra installer."
+    "excerpt": "The full local guide to going solar in Wollongong — sun hours, escarpment shading, Endeavour Energy approvals, suburb-by-suburb notes and what 1,200+ Illawarra installs have taught us.",
+    "readTime": "12 min read",
+    "metaDescription": "Going solar in Wollongong in 2026? Full Illawarra guide — sun hours, escarpment shading, Endeavour Energy approvals, rebates and suburb-by-suburb notes."
   },
   {
     "slug": "cheaper-home-batteries-program-nsw",
@@ -142,5 +124,32 @@
     "excerpt": "The Richardson family cut their Kiama power bill from $1,180 to $260 a quarter with a 10kW + 10kWh system. Here's the real cost, savings and payback breakdown.",
     "readTime": "9 min read",
     "metaDescription": "Real case study: how a Kiama family cut their quarterly electricity bill 78% with solar and battery. Full system specs, costs, rebates and payback numbers."
+  },
+  {
+    "slug": "feed-in-tariffs-nsw-2026",
+    "title": "Feed-in Tariffs NSW 2026: What Your Energy Retailer Will Actually Pay You",
+    "date": "April 25, 2026",
+    "category": "Rebates",
+    "excerpt": "NSW feed-in tariffs sit between 4¢ and 12¢/kWh in 2026, with most retailers paying 5–7¢. Here's what each retailer pays and why self-consumption matters more than ever.",
+    "readTime": "8 min read",
+    "metaDescription": "Real 2026 NSW feed-in tariff rates by retailer. See what Origin, AGL, Red and others actually pay for solar exports — plus how to maximise your bill savings."
+  },
+  {
+    "slug": "solar-panels-shading",
+    "title": "Solar Panels and Shading: What to Do If Your Roof Isn't Perfect",
+    "date": "April 25, 2026",
+    "category": "Buyer Guide",
+    "excerpt": "Shading is solar's biggest performance killer, but it doesn't disqualify your home. Microinverters, DC optimisers and smart layouts can recover 80–95% of an unshaded system's output.",
+    "readTime": "9 min read",
+    "metaDescription": "Solar panels and shading explained for Illawarra homes. Learn how shade hurts solar, how microinverters and optimisers fix it, and when to trim trees."
+  },
+  {
+    "slug": "solar-add-value-home-nsw",
+    "title": "Does Solar Add Value to Your Home in NSW?",
+    "date": "April 25, 2026",
+    "category": "ROI",
+    "excerpt": "Yes — quality solar adds $4,000–$10,000 to a NSW home's sale price, with battery-equipped systems commanding an additional $3,000–$6,000 premium. Here's the data and the catch.",
+    "readTime": "9 min read",
+    "metaDescription": "Does solar add value to your home in NSW? Real research, sale premiums, and the conditions that determine whether your system adds or subtracts value at resale."
   }
 ]
