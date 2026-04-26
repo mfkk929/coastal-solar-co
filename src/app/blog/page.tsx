@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import fs from "fs";
 import path from "path";
 
@@ -22,13 +23,14 @@ interface ArticleMeta {
   category: string;
   excerpt: string;
   readTime: string;
+  image?: string;
+  imageAlt?: string;
 }
 
 function getArticles(): ArticleMeta[] {
   const metaPath = path.join(process.cwd(), "src/app/blog/_articles/meta.json");
   const raw = fs.readFileSync(metaPath, "utf-8");
   const articles: ArticleMeta[] = JSON.parse(raw);
-  // Show newest first
   return [...articles].reverse();
 }
 
@@ -65,39 +67,61 @@ export default function BlogPage() {
             {articles.map((article, i) => {
               const color = categoryColors[article.category] ?? "#1a3a5c";
               return (
-                <article key={i} className="bg-white rounded-2xl overflow-hidden shadow-sm card-hover">
-                  <div
-                    className="h-48 flex items-end p-6"
-                    style={{
-                      background: `linear-gradient(135deg, var(--color-primary) 0%, ${color}88 100%)`,
-                    }}
-                  >
-                    <span
-                      className="text-xs font-bold px-3 py-1 rounded-full text-white"
-                      style={{ backgroundColor: color }}
-                    >
-                      {article.category}
-                    </span>
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center gap-3 text-xs text-gray-500 mb-3">
-                      <span>{article.date}</span>
-                      <span>·</span>
-                      <span>{article.readTime}</span>
+                <Link
+                  key={i}
+                  href={`/blog/${article.slug}`}
+                  aria-label={article.title}
+                  className="block group focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 rounded-2xl"
+                >
+                  <article className="bg-white rounded-2xl overflow-hidden shadow-sm card-hover h-full transition-shadow group-hover:shadow-lg">
+                    <div className="relative h-48 overflow-hidden">
+                      {article.image ? (
+                        <Image
+                          src={article.image}
+                          alt={article.imageAlt ?? article.title}
+                          fill
+                          sizes="(min-width: 768px) 50vw, 100vw"
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          priority={i < 2}
+                        />
+                      ) : (
+                        <div
+                          className="absolute inset-0"
+                          style={{
+                            background: `linear-gradient(135deg, var(--color-primary) 0%, ${color}88 100%)`,
+                          }}
+                        />
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                      <span
+                        className="absolute bottom-4 left-4 text-xs font-bold px-3 py-1 rounded-full text-white"
+                        style={{ backgroundColor: color }}
+                      >
+                        {article.category}
+                      </span>
                     </div>
-                    <h2 className="text-lg font-bold mb-3 leading-snug" style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}>
-                      {article.title}
-                    </h2>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">{article.excerpt}</p>
-                    <Link
-                      href={`/blog/${article.slug}`}
-                      className="text-sm font-bold"
-                      style={{ color: "var(--color-secondary)" }}
-                    >
-                      Read more →
-                    </Link>
-                  </div>
-                </article>
+                    <div className="p-6">
+                      <div className="flex items-center gap-3 text-xs text-gray-500 mb-3">
+                        <span>{article.date}</span>
+                        <span>·</span>
+                        <span>{article.readTime}</span>
+                      </div>
+                      <h2
+                        className="text-lg font-bold mb-3 leading-snug transition-colors group-hover:text-amber-600"
+                        style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}
+                      >
+                        {article.title}
+                      </h2>
+                      <p className="text-gray-600 text-sm leading-relaxed mb-4">{article.excerpt}</p>
+                      <span
+                        className="text-sm font-bold inline-flex items-center gap-1 transition-transform group-hover:translate-x-1"
+                        style={{ color: "var(--color-secondary)" }}
+                      >
+                        Read more →
+                      </span>
+                    </div>
+                  </article>
+                </Link>
               );
             })}
           </div>
