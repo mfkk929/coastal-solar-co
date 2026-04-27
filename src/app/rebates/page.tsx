@@ -5,11 +5,11 @@ export const metadata: Metadata = {
   title: "Solar Rebates & Incentives 2026 | NSW | Coastal Solar Co.",
   description:
     "Understand all available solar rebates in 2026 — STC scheme, Federal Battery Rebate, and feed-in tariffs. The 2026 rebate is the best you'll ever get.",
-  alternates: { canonical: "https://coastalsolarco.com/rebates" },
+  alternates: { canonical: "https://www.coastalsolarco.com/rebates" },
   openGraph: {
     title: "Solar Rebates 2026 | Coastal Solar Co.",
     description: "STC rebate worth $2,800–$3,800. Federal Battery Rebate up to $3,000. Claim before rates drop.",
-    url: "https://coastalsolarco.com/rebates",
+    url: "https://www.coastalsolarco.com/rebates",
   },
 };
 

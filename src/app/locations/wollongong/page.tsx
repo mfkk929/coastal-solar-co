@@ -22,7 +22,7 @@ const data: LocationPageData = {
   ],
   gridOperator: "Endeavour Energy",
   peakSunHours: "4.8",
-  metaTitle: "Solar Panels Wollongong | CEC-Accredited Installer | Coastal Solar Co.",
+  metaTitle: "Solar Panels Wollongong | CEC-Accredited Installer",
   metaDescription:
     "Solar in Wollongong. 6.6kW from $5,500 after rebates. CEC-accredited, 5-min callback, 10-yr warranty. Over 400 Illawarra installs.",
   heroH1: "Solar Panels for Wollongong Homes",
@@ -90,7 +90,7 @@ const data: LocationPageData = {
 };
 
 export const metadata: Metadata = {
-  title: data.metaTitle,
+  title: { absolute: data.metaTitle },
   description: data.metaDescription,
   alternates: { canonical: `https://www.coastalsolarco.com/locations/${data.slug}` },
   openGraph: {

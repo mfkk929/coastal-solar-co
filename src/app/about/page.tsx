@@ -5,11 +5,11 @@ export const metadata: Metadata = {
   title: "About Coastal Solar Co. | Wollongong's Local Solar Installer",
   description:
     "Learn about Coastal Solar Co. — a local Wollongong solar company built on honest pricing, fast installation, and genuine customer service. CEC accredited.",
-  alternates: { canonical: "https://coastalsolarco.com/about" },
+  alternates: { canonical: "https://www.coastalsolarco.com/about" },
   openGraph: {
     title: "About Coastal Solar Co.",
     description: "A local Wollongong solar installer built on transparency and results.",
-    url: "https://coastalsolarco.com/about",
+    url: "https://www.coastalsolarco.com/about",
   },
 };
 

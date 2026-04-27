@@ -11,7 +11,7 @@ const data: LocationPageData = {
   serviceAreas: ["Austinmer", "Bulli", "Woonona", "Corrimal", "Towradgi", "Scarborough", "Clifton", "Coalcliff"],
   gridOperator: "Endeavour Energy",
   peakSunHours: "4.7",
-  metaTitle: "Solar Panels Thirroul | Northern Illawarra Installer | Coastal Solar Co.",
+  metaTitle: "Solar Panels Thirroul | Northern Illawarra Installer",
   metaDescription:
     "Solar in Thirroul, Austinmer & Bulli. Tile-roof expertise, escarpment shading designs, 6.6kW from $5,500. CEC-accredited, 10-yr warranty.",
   heroH1: "Solar Panels for Thirroul &amp; Northern Illawarra Homes",
@@ -78,7 +78,7 @@ const data: LocationPageData = {
 };
 
 export const metadata: Metadata = {
-  title: data.metaTitle,
+  title: { absolute: data.metaTitle },
   description: data.metaDescription,
   alternates: { canonical: `https://www.coastalsolarco.com/locations/${data.slug}` },
   openGraph: {

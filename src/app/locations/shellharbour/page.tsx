@@ -11,7 +11,7 @@ const data: LocationPageData = {
   serviceAreas: ["Shell Cove", "Oak Flats", "Blackbutt", "Barrack Heights", "Flinders", "Warilla", "Dunmore"],
   gridOperator: "Endeavour Energy",
   peakSunHours: "4.8",
-  metaTitle: "Solar Panels Shellharbour | Local Installer | Coastal Solar Co.",
+  metaTitle: "Solar Panels Shellharbour | Local Installer",
   metaDescription:
     "Solar in Shellharbour, Shell Cove & Flinders. 6.6kW from $5,500 after rebates. 3-phase advantage on newer estates — CEC-accredited, 10-yr warranty.",
   heroH1: "Solar Panels for Shellharbour Homes",
@@ -78,7 +78,7 @@ const data: LocationPageData = {
 };
 
 export const metadata: Metadata = {
-  title: data.metaTitle,
+  title: { absolute: data.metaTitle },
   description: data.metaDescription,
   alternates: { canonical: `https://www.coastalsolarco.com/locations/${data.slug}` },
   openGraph: {

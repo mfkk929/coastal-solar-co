@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FAQSection from "@/components/FAQSection";
 
 export const metadata: Metadata = {
   title: "Battery Storage Systems NSW | Coastal Solar Co.",
   description:
-    "Add battery storage to your solar system. Tesla Powerwall, BYD, and Sungrow batteries from Coastal Solar Co. Get up to $3,000 off with the 2025 Federal Battery Rebate.",
-  alternates: { canonical: "https://coastalsolarco.com/solar-systems/battery-storage" },
+    "Tesla Powerwall, BYD & Sungrow battery storage from Coastal Solar Co. Up to $3,000 off with the Federal Battery Rebate. Illawarra & South Coast.",
+  alternates: { canonical: "https://www.coastalsolarco.com/solar-systems/battery-storage" },
   openGraph: {
     title: "Battery Storage Systems | Coastal Solar Co.",
     description: "Store your solar energy and use it at night. Tesla Powerwall authorised installer.",
-    url: "https://coastalsolarco.com/solar-systems/battery-storage",
+    url: "https://www.coastalsolarco.com/solar-systems/battery-storage",
   },
 };
 
@@ -92,6 +93,14 @@ export default function BatteryStoragePage() {
         </div>
       </section>
 
+      <FAQSection
+        route="battery-storage"
+        title="Battery storage FAQs"
+        intro="Questions NSW homeowners ask about batteries — sizing, warranties, Tesla vs BYD vs Sungrow, blackout backup, VPPs and the Cheaper Home Batteries Program."
+        limit={15}
+        variant="tint"
+      />
+
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
@@ -99,14 +108,4 @@ export default function BatteryStoragePage() {
               The Federal Battery Rebate — act before it changes.
             </h2>
             <p className="text-gray-700 text-lg leading-relaxed mb-8">
-              The Cheaper Home Batteries Program (launched July 2025) gives eligible homeowners approximately 30% off the cost of a battery — up to $3,000 in savings. Paired with your existing solar or a new system, this is the best time to add battery storage.
-            </p>
-            <Link href="/rebates" className="btn-primary text-lg px-8 py-4">
-              Learn About Battery Rebates →
-            </Link>
-          </div>
-        </div>
-      </section>
-    </>
-  );
-}
+              The Cheaper Home Batteries Program (launched July 2025) gives eligible homeowners approximately 30% off the cost 

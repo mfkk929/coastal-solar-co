@@ -11,7 +11,7 @@ const data: LocationPageData = {
   serviceAreas: ["Broughton Vale", "Back Forest", "Beaumont", "Woodhill", "Jaspers Brush", "Kangaroo Valley"],
   gridOperator: "Essential Energy",
   peakSunHours: "4.7",
-  metaTitle: "Solar Panels Berry | Southern Highlands Installer | Coastal Solar Co.",
+  metaTitle: "Solar Panels Berry | Southern Highlands Installer",
   metaDescription:
     "Solar in Berry & Kangaroo Valley. Heritage-home mounting expertise, Essential Energy approvals, 6.6kW from $5,500. CEC-accredited, 10-yr warranty.",
   heroH1: "Solar Panels for Berry &amp; Southern Highlands Homes",
@@ -78,7 +78,7 @@ const data: LocationPageData = {
 };
 
 export const metadata: Metadata = {
-  title: data.metaTitle,
+  title: { absolute: data.metaTitle },
   description: data.metaDescription,
   alternates: { canonical: `https://www.coastalsolarco.com/locations/${data.slug}` },
   openGraph: {

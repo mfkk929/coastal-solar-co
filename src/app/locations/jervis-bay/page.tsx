@@ -11,7 +11,7 @@ const data: LocationPageData = {
   serviceAreas: ["Vincentia", "Hyams Beach", "Huskisson", "Sanctuary Point", "St Georges Basin", "Tomerong", "Myola"],
   gridOperator: "Essential Energy",
   peakSunHours: "5.0",
-  metaTitle: "Solar Panels Jervis Bay | Vincentia & Hyams Beach | Coastal Solar Co.",
+  metaTitle: "Solar Panels Jervis Bay | Vincentia & Hyams Beach",
   metaDescription:
     "Solar in Jervis Bay, Vincentia & Hyams Beach. Dual-rated coastal + bushfire compliant installs. 6.6kW from $5,500. Essential Energy approvals, 10-yr warranty.",
   heroH1: "Solar Panels for Jervis Bay Homes",
@@ -78,7 +78,7 @@ const data: LocationPageData = {
 };
 
 export const metadata: Metadata = {
-  title: data.metaTitle,
+  title: { absolute: data.metaTitle },
   description: data.metaDescription,
   alternates: { canonical: `https://www.coastalsolarco.com/locations/${data.slug}` },
   openGraph: {

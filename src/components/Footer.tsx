@@ -71,7 +71,10 @@ export default function Footer() {
             <ul className="space-y-2">
               {[
                 { label: "Blog", href: "/blog" },
+                { label: "FAQ", href: "/faq" },
                 { label: "Free Calculator", href: "/solar-calculator" },
+                { label: "Solar Panels NSW", href: "/solar-panels-nsw" },
+                { label: "NSW Solar Rebates", href: "/solar-rebates-nsw" },
                 { label: "Rebates Guide", href: "/rebates" },
                 { label: "Compare", href: "/compare" },
               ].map((l) => (

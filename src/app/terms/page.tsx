@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms & Conditions | Coastal Solar Co.",
   description: "Coastal Solar Co. terms and conditions for solar installation services across Illawarra and South Coast NSW.",
-  alternates: { canonical: "https://coastalsolarco.com/terms" },
+  alternates: { canonical: "https://www.coastalsolarco.com/terms" },
 };
 
 export default function TermsPage() {

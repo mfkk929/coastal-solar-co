@@ -11,7 +11,7 @@ const data: LocationPageData = {
   serviceAreas: ["Vincentia", "Myola", "Woollamia", "Cudmirrah", "Huskisson Beach", "Currambene"],
   gridOperator: "Essential Energy",
   peakSunHours: "4.9",
-  metaTitle: "Solar Panels Huskisson | Jervis Bay Village Installer | Coastal Solar Co.",
+  metaTitle: "Solar Panels Huskisson | Jervis Bay Village Installer",
   metaDescription:
     "Solar in Huskisson & Jervis Bay village. Holiday-home battery installs, marine + bushfire compliant. 6.6kW from $5,500. Essential Energy, 10-yr warranty.",
   heroH1: "Solar Panels for Huskisson &amp; Jervis Bay Village Homes",
@@ -78,7 +78,7 @@ const data: LocationPageData = {
 };
 
 export const metadata: Metadata = {
-  title: data.metaTitle,
+  title: { absolute: data.metaTitle },
   description: data.metaDescription,
   alternates: { canonical: `https://www.coastalsolarco.com/locations/${data.slug}` },
   openGraph: {

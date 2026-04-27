@@ -11,7 +11,7 @@ const data: LocationPageData = {
   serviceAreas: ["Calderwood", "Yellow Rock", "Dunmore", "Tongarra", "Albion Park Rail", "Tullimbar"],
   gridOperator: "Endeavour Energy",
   peakSunHours: "4.8",
-  metaTitle: "Solar Panels Albion Park | Calderwood Installer | Coastal Solar Co.",
+  metaTitle: "Solar Panels Albion Park | Calderwood Installer",
   metaDescription:
     "Solar in Albion Park & Calderwood. Newer three-phase estates = larger systems without grid headaches. 6.6kW from $5,500. 10-yr warranty.",
   heroH1: "Solar Panels for Albion Park &amp; Calderwood Homes",
@@ -78,7 +78,7 @@ const data: LocationPageData = {
 };
 
 export const metadata: Metadata = {
-  title: data.metaTitle,
+  title: { absolute: data.metaTitle },
   description: data.metaDescription,
   alternates: { canonical: `https://www.coastalsolarco.com/locations/${data.slug}` },
   openGraph: {

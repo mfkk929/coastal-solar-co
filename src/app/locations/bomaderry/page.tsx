@@ -11,7 +11,7 @@ const data: LocationPageData = {
   serviceAreas: ["North Nowra", "Cambewarra Village", "Illaroo", "Terara", "Brundee"],
   gridOperator: "Essential Energy",
   peakSunHours: "4.8",
-  metaTitle: "Solar Panels Bomaderry | North Nowra Installer | Coastal Solar Co.",
+  metaTitle: "Solar Panels Bomaderry | North Nowra Installer",
   metaDescription:
     "Solar in Bomaderry & North Nowra. Suburban installs on Essential Energy. 6.6kW from $5,500. CEC-accredited, 5-min callback, 10-yr warranty.",
   heroH1: "Solar Panels for Bomaderry &amp; North Nowra Homes",
@@ -78,7 +78,7 @@ const data: LocationPageData = {
 };
 
 export const metadata: Metadata = {
-  title: data.metaTitle,
+  title: { absolute: data.metaTitle },
   description: data.metaDescription,
   alternates: { canonical: `https://www.coastalsolarco.com/locations/${data.slug}` },
   openGraph: {

@@ -11,7 +11,7 @@ const data: LocationPageData = {
   serviceAreas: ["Kiama Downs", "Minnamurra", "Bombo", "Kiama Heights", "Jamberoo", "Gerringong", "Gerroa"],
   gridOperator: "Endeavour Energy",
   peakSunHours: "4.9",
-  metaTitle: "Solar Panels Kiama | Local CEC-Accredited Installer | Coastal Solar Co.",
+  metaTitle: "Solar Panels Kiama | Local CEC-Accredited Installer",
   metaDescription:
     "Solar in Kiama. 6.6kW from $5,500 after rebates. Your Kiama-based installer — marine-grade mounting, 5-min callback, 10-yr warranty.",
   heroH1: "Solar Panels for Kiama Homes",
@@ -78,7 +78,7 @@ const data: LocationPageData = {
 };
 
 export const metadata: Metadata = {
-  title: data.metaTitle,
+  title: { absolute: data.metaTitle },
   description: data.metaDescription,
   alternates: { canonical: `https://www.coastalsolarco.com/locations/${data.slug}` },
   openGraph: {

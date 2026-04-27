@@ -1,16 +1,125 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FAQSection from "@/components/FAQSection";
 
 export const metadata: Metadata = {
   title: "Solar System Pricing | Transparent Costs | Coastal Solar Co.",
   description:
-    "Transparent solar pricing for Illawarra and South Coast homes. 6.6kW from $5,500, 10kW from $7,800, batteries from $7,500 — all after rebates. No hidden costs, no sales pitch.",
-  alternates: { canonical: "https://coastalsolarco.com/pricing" },
+    "Transparent solar pricing for Illawarra & South Coast homes. 6.6kW from $5,500, 10kW from $7,800, batteries from $7,500 — all after rebates.",
+  alternates: { canonical: "https://www.coastalsolarco.com/pricing" },
   openGraph: {
     title: "Solar Pricing | Coastal Solar Co.",
     description: "Honest, upfront solar pricing. 6.6kW from $5,500 after rebates.",
-    url: "https://coastalsolarco.com/pricing",
+    url: "https://www.coastalsolarco.com/pricing",
   },
+};
+
+const offerCatalogSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Residential Solar & Battery Systems",
+  description:
+    "CEC-accredited residential solar PV and battery systems installed across the Illawarra and NSW South Coast. All prices include the federal STC rebate.",
+  brand: { "@type": "Brand", name: "Coastal Solar Co." },
+  image: "https://www.coastalsolarco.com/og-image.jpg",
+  category: "Residential Solar Installation",
+  offers: {
+    "@type": "AggregateOffer",
+    priceCurrency: "AUD",
+    lowPrice: "5500",
+    highPrice: "26000",
+    offerCount: 4,
+    availability: "https://schema.org/InStock",
+    url: "https://www.coastalsolarco.com/pricing",
+    seller: {
+      "@type": "LocalBusiness",
+      name: "Coastal Solar Co.",
+      url: "https://www.coastalsolarco.com",
+      telephone: "+61493531857",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Kiama",
+        addressRegion: "NSW",
+        postalCode: "2533",
+        addressCountry: "AU",
+      },
+    },
+    offers: [
+      {
+        "@type": "Offer",
+        name: "6.6kW Solar System",
+        description:
+          "Entry-level 6.6kW rooftop solar system — CEC-accredited installation with tier-one panels and inverter.",
+        priceCurrency: "AUD",
+        price: "5500",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "AUD",
+          minPrice: "5500",
+          maxPrice: "6500",
+        },
+        availability: "https://schema.org/InStock",
+        url: "https://www.coastalsolarco.com/pricing",
+      },
+      {
+        "@type": "Offer",
+        name: "10kW Solar System",
+        description:
+          "Most popular 10kW rooftop solar system for larger Illawarra homes and work-from-home households.",
+        priceCurrency: "AUD",
+        price: "7800",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "AUD",
+          minPrice: "7800",
+          maxPrice: "9500",
+        },
+        availability: "https://schema.org/InStock",
+        url: "https://www.coastalsolarco.com/pricing",
+      },
+      {
+        "@type": "Offer",
+        name: "10kW Solar + 10kWh Battery",
+        description:
+          "10kW solar paired with 10kWh battery storage — eligible for the NSW Cheaper Home Batteries Program.",
+        priceCurrency: "AUD",
+        price: "14000",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "AUD",
+          minPrice: "14000",
+          maxPrice: "17000",
+        },
+        availability: "https://schema.org/InStock",
+        url: "https://www.coastalsolarco.com/pricing",
+      },
+      {
+        "@type": "Offer",
+        name: "13kW Solar + 15kWh Battery",
+        description:
+          "Full off-grid-capable 13kW solar + 15kWh battery system for high-consumption households.",
+        priceCurrency: "AUD",
+        price: "20000",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "AUD",
+          minPrice: "20000",
+          maxPrice: "26000",
+        },
+        availability: "https://schema.org/InStock",
+        url: "https://www.coastalsolarco.com/pricing",
+      },
+    ],
+  },
+};
+
+const pricingBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.coastalsolarco.com" },
+    { "@type": "ListItem", position: 2, name: "Pricing", item: "https://www.coastalsolarco.com/pricing" },
+  ],
 };
 
 const pricingRows = [
@@ -36,6 +145,14 @@ const included = [
 export default function PricingPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(offerCatalogSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingBreadcrumbSchema) }}
+      />
       <section className="gradient-hero text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-5xl font-black mb-6" style={{ fontFamily: "var(--font-montserrat)" }}>
@@ -128,18 +245,17 @@ export default function PricingPage() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <FAQSection
+        route="pricing"
+        title="Solar pricing FAQs"
+        intro="The questions NSW homeowners ask most about solar system pricing, rebates, finance and what's actually included in a quote."
+        limit={15}
+        variant="tint"
+      />
+
       {/* CTA */}
       <section className="py-20 gradient-hero text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-black mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>
-            Get your exact, personalised quote.
-          </h2>
-          <p className="text-xl text-white/85 mb-8">Use our calculator for a custom estimate based on your specific home and usage.</p>
-          <Link href="/solar-calculator" className="btn-primary text-lg px-8 py-4">
-            Calculate My Exact Savings →
-          </Link>
-        </div>
-      </section>
-    </>
-  );
-}
+            Get your ex

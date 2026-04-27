@@ -11,7 +11,7 @@ const data: LocationPageData = {
   serviceAreas: ["South Nowra", "North Nowra", "Worrigee", "Cambewarra", "Bomaderry", "Terara", "Nowra Hill"],
   gridOperator: "Essential Energy",
   peakSunHours: "4.9",
-  metaTitle: "Solar Panels Nowra | Shoalhaven Specialist | Coastal Solar Co.",
+  metaTitle: "Solar Panels Nowra | Shoalhaven Specialist",
   metaDescription:
     "Solar in Nowra & the Shoalhaven. 6.6kW from $5,500 after rebates. We handle Essential Energy approvals (different from Endeavour) — 10-yr warranty.",
   heroH1: "Solar Panels for Nowra Homes",
@@ -78,7 +78,7 @@ const data: LocationPageData = {
 };
 
 export const metadata: Metadata = {
-  title: data.metaTitle,
+  title: { absolute: data.metaTitle },
   description: data.metaDescription,
   alternates: { canonical: `https://www.coastalsolarco.com/locations/${data.slug}` },
   openGraph: {

@@ -6,6 +6,7 @@ import Link from "next/link";
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [solarDropdown, setSolarDropdown] = useState(false);
+  const [aboutDropdown, setAboutDropdown] = useState(false);
 
   return (
     <header
@@ -31,7 +32,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6">
             {/* Solar Systems Dropdown */}
             <div
               className="relative"
@@ -40,77 +41,63 @@ export default function Header() {
             >
               <button className="flex items-center gap-1 text-white/90 hover:text-white font-medium transition-colors">
                 Solar Systems
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               {solarDropdown && (
                 <div className="absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-xl py-2 z-50">
-                  <Link
-                    href="/solar-systems/residential"
-                    className="block px-4 py-2.5 text-sm font-medium hover:bg-accent transition-colors"
-                    style={{ color: "var(--color-text)" }}
-                  >
+                  <Link href="/solar-systems" className="block px-4 py-2.5 text-sm font-semibold hover:bg-accent transition-colors" style={{ color: "var(--color-primary)" }}>
+                    All Solar Systems
+                  </Link>
+                  <div className="border-t border-gray-100 my-1" />
+                  <Link href="/solar-systems/residential" className="block px-4 py-2.5 text-sm font-medium hover:bg-accent transition-colors" style={{ color: "var(--color-text)" }}>
                     Residential Solar
                   </Link>
-                  <Link
-                    href="/solar-systems/commercial"
-                    className="block px-4 py-2.5 text-sm font-medium hover:bg-accent transition-colors"
-                    style={{ color: "var(--color-text)" }}
-                  >
+                  <Link href="/solar-systems/commercial" className="block px-4 py-2.5 text-sm font-medium hover:bg-accent transition-colors" style={{ color: "var(--color-text)" }}>
                     Commercial Solar
                   </Link>
-                  <Link
-                    href="/solar-systems/battery-storage"
-                    className="block px-4 py-2.5 text-sm font-medium hover:bg-accent transition-colors"
-                    style={{ color: "var(--color-text)" }}
-                  >
+                  <Link href="/solar-systems/battery-storage" className="block px-4 py-2.5 text-sm font-medium hover:bg-accent transition-colors" style={{ color: "var(--color-text)" }}>
                     Battery Storage
                   </Link>
                 </div>
               )}
             </div>
 
-            <Link
-              href="/how-it-works"
-              className="text-white/90 hover:text-white font-medium transition-colors"
+            <Link href="/how-it-works" className="text-white/90 hover:text-white font-medium transition-colors">How It Works</Link>
+            <Link href="/pricing" className="text-white/90 hover:text-white font-medium transition-colors">Pricing</Link>
+            <Link href="/rebates" className="text-white/90 hover:text-white font-medium transition-colors">Rebates</Link>
+            <Link href="/locations" className="text-white/90 hover:text-white font-medium transition-colors">Locations</Link>
+            <Link href="/compare" className="text-white/90 hover:text-white font-medium transition-colors">Compare</Link>
+            <Link href="/blog" className="text-white/90 hover:text-white font-medium transition-colors">Blog</Link>
+
+            {/* About dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setAboutDropdown(true)}
+              onMouseLeave={() => setAboutDropdown(false)}
             >
-              How It Works
-            </Link>
-            <Link
-              href="/pricing"
-              className="text-white/90 hover:text-white font-medium transition-colors"
-            >
-              Pricing
-            </Link>
-            <Link
-              href="/rebates"
-              className="text-white/90 hover:text-white font-medium transition-colors"
-            >
-              Rebates
-            </Link>
-            <Link
-              href="/locations"
-              className="text-white/90 hover:text-white font-medium transition-colors"
-            >
-              Locations
-            </Link>
-            <Link
-              href="/blog"
-              className="text-white/90 hover:text-white font-medium transition-colors"
-            >
-              Blog
-            </Link>
+              <button className="flex items-center gap-1 text-white/90 hover:text-white font-medium transition-colors">
+                About
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {aboutDropdown && (
+                <div className="absolute top-full right-0 mt-1 w-56 bg-white rounded-lg shadow-xl py-2 z-50">
+                  <Link href="/about" className="block px-4 py-2.5 text-sm font-medium hover:bg-accent transition-colors" style={{ color: "var(--color-text)" }}>
+                    About the Company
+                  </Link>
+                  <Link href="/about/mo" className="block px-4 py-2.5 text-sm font-medium hover:bg-accent transition-colors" style={{ color: "var(--color-text)" }}>
+                    Meet Mo (Founder)
+                  </Link>
+                  <Link href="/faq" className="block px-4 py-2.5 text-sm font-medium hover:bg-accent transition-colors" style={{ color: "var(--color-text)" }}>
+                    FAQs
+                  </Link>
+                </div>
+              )}
+            </div>
+
             <Link
               href="/contact"
               className="btn-primary text-sm px-5 py-2.5"
@@ -127,32 +114,12 @@ export default function Header() {
             aria-label="Toggle menu"
           >
             {mobileOpen ? (
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
           </button>
@@ -169,69 +136,49 @@ export default function Header() {
             <div className="py-2 text-white/60 text-xs font-semibold uppercase tracking-wider">
               Solar Systems
             </div>
-            <Link
-              href="/solar-systems/residential"
-              className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-              onClick={() => setMobileOpen(false)}
-            >
+            <Link href="/solar-systems" className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors font-semibold" onClick={() => setMobileOpen(false)}>
+              All Solar Systems
+            </Link>
+            <Link href="/solar-systems/residential" className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>
               Residential Solar
             </Link>
-            <Link
-              href="/solar-systems/commercial"
-              className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-              onClick={() => setMobileOpen(false)}
-            >
+            <Link href="/solar-systems/commercial" className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>
               Commercial Solar
             </Link>
-            <Link
-              href="/solar-systems/battery-storage"
-              className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-              onClick={() => setMobileOpen(false)}
-            >
+            <Link href="/solar-systems/battery-storage" className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>
               Battery Storage
             </Link>
             <div className="border-t border-white/20 my-2" />
-            <Link
-              href="/how-it-works"
-              className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-              onClick={() => setMobileOpen(false)}
-            >
+            <Link href="/how-it-works" className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>
               How It Works
             </Link>
-            <Link
-              href="/pricing"
-              className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-              onClick={() => setMobileOpen(false)}
-            >
+            <Link href="/pricing" className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>
               Pricing
             </Link>
-            <Link
-              href="/rebates"
-              className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-              onClick={() => setMobileOpen(false)}
-            >
+            <Link href="/rebates" className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>
               Rebates
             </Link>
-            <Link
-              href="/locations"
-              className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-              onClick={() => setMobileOpen(false)}
-            >
+            <Link href="/locations" className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>
               Service Areas
             </Link>
-            <Link
-              href="/blog"
-              className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-              onClick={() => setMobileOpen(false)}
-            >
+            <Link href="/compare" className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>
+              Compare
+            </Link>
+            <Link href="/blog" className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>
               Blog
             </Link>
-            <Link
-              href="/solar-calculator"
-              className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-              onClick={() => setMobileOpen(false)}
-            >
+            <Link href="/solar-calculator" className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>
               Free Calculator
+            </Link>
+            <div className="border-t border-white/20 my-2" />
+            <Link href="/about" className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>
+              About
+            </Link>
+            <Link href="/about/mo" className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>
+              Meet Mo (Founder)
+            </Link>
+            <Link href="/faq" className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors" onClick={() => setMobileOpen(false)}>
+              FAQs
             </Link>
             <div className="pt-2">
               <Link

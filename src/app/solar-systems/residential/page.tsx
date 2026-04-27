@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FAQSection from "@/components/FAQSection";
 
 export const metadata: Metadata = {
   title: "Residential Solar Panels Wollongong | Coastal Solar Co.",
   description:
-    "Residential solar panels for Illawarra and South Coast homes. 6.6kW from $5,500 after rebates. CEC accredited, 6-day installation, 10-year workmanship warranty. Free quote.",
-  alternates: { canonical: "https://coastalsolarco.com/solar-systems/residential" },
+    "Residential solar panels for Illawarra and South Coast homes. 6.6kW from $5,500 after rebates. CEC accredited, 10-year workmanship warranty. Free quote.",
+  alternates: { canonical: "https://www.coastalsolarco.com/solar-systems/residential" },
   openGraph: {
     title: "Residential Solar Panels | Coastal Solar Co.",
     description: "Solar systems designed for South Coast homes. Honest pricing, fast installation.",
-    url: "https://coastalsolarco.com/solar-systems/residential",
+    url: "https://www.coastalsolarco.com/solar-systems/residential",
   },
 };
 
@@ -130,18 +131,16 @@ export default function ResidentialPage() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <FAQSection
+        route="residential"
+        title="Residential solar FAQs"
+        intro="The most common questions we get from NSW homeowners about system sizing, panels, batteries, installation and warranties."
+        limit={15}
+        variant="tint"
+      />
+
       {/* CTA */}
       <section className="py-20 gradient-hero text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-black mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>
-            Ready to go solar?
-          </h2>
-          <p className="text-xl text-white/85 mb-8">Use our free calculator to get a personalised recommendation.</p>
-          <Link href="/solar-calculator" className="btn-primary text-lg px-8 py-4">
-            Calculate My Savings →
-          </Link>
-        </div>
-      </section>
-    </>
-  );
-}
+          <h2 className="text-3xl lg:text-4xl font-black mb-4" style={{ fontFamily: "var(--font-montse

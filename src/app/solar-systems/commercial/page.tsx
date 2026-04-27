@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FAQSection from "@/components/FAQSection";
 
 export const metadata: Metadata = {
   title: "Commercial Solar | South Coast NSW | Coastal Solar Co.",
   description:
-    "Commercial solar for Illawarra and South Coast businesses. Cut energy costs by up to 80% with a tailored 20–100kW+ system. CEC accredited, full project management included.",
-  alternates: { canonical: "https://coastalsolarco.com/solar-systems/commercial" },
+    "Commercial solar for Illawarra & South Coast businesses. Cut energy bills up to 80% with a 20–100kW+ system. CEC accredited, full project management.",
+  alternates: { canonical: "https://www.coastalsolarco.com/solar-systems/commercial" },
   openGraph: {
     title: "Commercial Solar Systems | Coastal Solar Co.",
     description: "Reduce your business energy costs with a tailored commercial solar system.",
-    url: "https://coastalsolarco.com/solar-systems/commercial",
+    url: "https://www.coastalsolarco.com/solar-systems/commercial",
   },
 };
 
@@ -81,17 +82,16 @@ export default function CommercialPage() {
         </div>
       </section>
 
+      <FAQSection
+        route="commercial"
+        title="Commercial solar FAQs"
+        intro="Common questions NSW business owners ask about commercial solar sizing, payback, depreciation and grid connection."
+        limit={12}
+        variant="tint"
+      />
+
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-black mb-4" style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}>
             Let&apos;s talk about your business energy costs.
-          </h2>
-          <p className="text-gray-600 text-lg mb-8">Commercial quotes are tailored — we&apos;ll need a few details about your premises and usage.</p>
-          <Link href="/contact" className="btn-primary text-lg px-8 py-4">
-            Request Commercial Quote
-          </Link>
-        </div>
-      </section>
-    </>
-  );
-}
+ 

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy | Coastal Solar Co.",
   description: "Coastal Solar Co. privacy policy — how we collect, use, and protect your personal information.",
-  alternates: { canonical: "https://coastalsolarco.com/privacy" },
+  alternates: { canonical: "https://www.coastalsolarco.com/privacy" },
 };
 
 export default function PrivacyPage() {

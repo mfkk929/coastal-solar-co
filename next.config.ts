@@ -13,6 +13,16 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      // Consolidate duplicate rebates URL onto canonical /rebates
+      {
+        source: "/solar-rebates-nsw",
+        destination: "/rebates",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

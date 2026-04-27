@@ -11,7 +11,7 @@ const data: LocationPageData = {
   serviceAreas: ["Gerroa", "Werri Beach", "Broughton Village", "Rose Valley", "Foxground"],
   gridOperator: "Endeavour Energy",
   peakSunHours: "4.9",
-  metaTitle: "Solar Panels Gerringong | Kiama Coastal Installer | Coastal Solar Co.",
+  metaTitle: "Solar Panels Gerringong | Kiama Coastal Installer",
   metaDescription:
     "Solar in Gerringong & Gerroa. Some of the best unshaded coastal roofs in NSW. 6.6kW from $5,500. Marine-grade mounting, 10-yr warranty.",
   heroH1: "Solar Panels for Gerringong &amp; Gerroa Homes",
@@ -78,7 +78,7 @@ const data: LocationPageData = {
 };
 
 export const metadata: Metadata = {
-  title: data.metaTitle,
+  title: { absolute: data.metaTitle },
   description: data.metaDescription,
   alternates: { canonical: `https://www.coastalsolarco.com/locations/${data.slug}` },
   openGraph: {

@@ -11,7 +11,7 @@ const data: LocationPageData = {
   serviceAreas: ["Lake Illawarra", "Primbee", "Koonawarra", "Berkeley", "Unanderra", "Kembla Grange", "Horsley"],
   gridOperator: "Endeavour Energy",
   peakSunHours: "4.8",
-  metaTitle: "Solar Panels Dapto | Lake Illawarra Installer | Coastal Solar Co.",
+  metaTitle: "Solar Panels Dapto | Lake Illawarra Installer",
   metaDescription:
     "Solar in Dapto & Lake Illawarra. Most streets have 5kW export caps — batteries pay back fast. 6.6kW from $5,500. CEC-accredited, 10-yr warranty.",
   heroH1: "Solar Panels for Dapto Homes",
@@ -78,7 +78,7 @@ const data: LocationPageData = {
 };
 
 export const metadata: Metadata = {
-  title: data.metaTitle,
+  title: { absolute: data.metaTitle },
   description: data.metaDescription,
   alternates: { canonical: `https://www.coastalsolarco.com/locations/${data.slug}` },
   openGraph: {

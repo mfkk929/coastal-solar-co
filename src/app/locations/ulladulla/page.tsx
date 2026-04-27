@@ -11,7 +11,7 @@ const data: LocationPageData = {
   serviceAreas: ["Mollymook", "Narrawallee", "Lake Tabourie", "Milton", "Burrill Lake", "Bawley Point"],
   gridOperator: "Essential Energy",
   peakSunHours: "4.9",
-  metaTitle: "Solar Panels Ulladulla | South Coast Installer | Coastal Solar Co.",
+  metaTitle: "Solar Panels Ulladulla | South Coast Installer",
   metaDescription:
     "Solar in Ulladulla, Mollymook & Milton. Bushfire-zone (BAL-rated) compliant installs, Essential Energy approvals. 6.6kW from $5,500. 10-yr warranty.",
   heroH1: "Solar Panels for Ulladulla &amp; South Coast Homes",
@@ -78,7 +78,7 @@ const data: LocationPageData = {
 };
 
 export const metadata: Metadata = {
-  title: data.metaTitle,
+  title: { absolute: data.metaTitle },
   description: data.metaDescription,
   alternates: { canonical: `https://www.coastalsolarco.com/locations/${data.slug}` },
   openGraph: {
