@@ -218,5 +218,38 @@
     "metaDescription": "Solar installation day in NSW: hour-by-hour walkthrough of a typical 6.6kW install. What to expect, how to prepare, and what happens with Endeavour Energy after.",
     "image": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&q=80&auto=format&fit=crop",
     "imageAlt": "Solar installer working on a residential roof during installation day in NSW"
+  },
+  {
+    "slug": "virtual-power-plants-nsw",
+    "title": "Virtual Power Plants in NSW: Should You Join One?",
+    "date": "April 27, 2026",
+    "category": "Battery",
+    "excerpt": "VPPs let NSW battery owners earn $200–$700/year extra by selling stored energy back to the grid during peak demand. Here's what to look for, who pays best, and the catches to read carefully.",
+    "readTime": "10 min read",
+    "metaDescription": "Virtual Power Plants in NSW 2026: real payment rates, AGL vs Origin vs Amber compared, contract terms, and whether joining a VPP is worth it for your battery.",
+    "image": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1200&q=80&auto=format&fit=crop",
+    "imageAlt": "Network of connected home batteries representing a virtual power plant in NSW"
+  },
+  {
+    "slug": "is-roof-suitable-solar",
+    "title": "Is Your Roof Suitable for Solar? The 5-Minute Assessment",
+    "date": "April 27, 2026",
+    "category": "Buyer Guide",
+    "excerpt": "About 92% of Illawarra roofs pass the basic suitability test. Here's how to check orientation, pitch, area, structure and shading in five minutes — and when to fix something before installing solar.",
+    "readTime": "9 min read",
+    "metaDescription": "Is your roof suitable for solar? A 5-minute self-assessment for NSW homes covering orientation, pitch, area, roof condition, shading and special cases.",
+    "image": "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=1200&q=80&auto=format&fit=crop",
+    "imageAlt": "Australian residential roof being assessed for solar panel suitability"
+  },
+  {
+    "slug": "solar-wollongong-local-guide-2026",
+    "title": "Solar in Wollongong: A Complete Local Guide [2026]",
+    "date": "April 27, 2026",
+    "category": "Local",
+    "excerpt": "Everything Wollongong homeowners need to know about solar in 2026 — sun hours, escarpment shading, suburb-by-suburb notes, Endeavour Energy rules, real installed prices and rebate stacks.",
+    "readTime": "12 min read",
+    "metaDescription": "Solar in Wollongong 2026: complete local guide covering sun hours, suburb notes, Endeavour Energy approvals, real prices, rebates and case studies.",
+    "image": "https://images.unsplash.com/photo-1497440001374-f26997328c1b?w=1200&q=80&auto=format&fit=crop",
+    "imageAlt": "Wollongong rooftop solar panels with the Illawarra escarpment in the background"
   }
 ]
