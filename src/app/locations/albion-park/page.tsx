@@ -1,124 +1,93 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import LocationPageLayout, {
+  getDefaultPricingRows,
+  type LocationPageData,
+} from "@/components/LocationPageLayout";
 
-export const metadata: Metadata = {
-  title: "Solar Panels Albion Park | Coastal Solar Co.",
-  description: "Solar panel installation in Albion Park & Calderwood. 6.6kW from $5,500 after rebates. CEC-accredited local team, 5-minute callback, 6-day installation, 10-year warranty.",
-  alternates: { canonical: "https://coastalsolarco.com/locations/albion-park" },
-};
-
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
+const data: LocationPageData = {
+  name: "Albion Park",
+  slug: "albion-park",
+  postcode: "2527",
+  serviceAreas: ["Calderwood", "Yellow Rock", "Dunmore", "Tongarra", "Albion Park Rail", "Tullimbar"],
+  gridOperator: "Endeavour Energy",
+  peakSunHours: "4.8",
+  metaTitle: "Solar Panels Albion Park | Calderwood Installer | Coastal Solar Co.",
+  metaDescription:
+    "Solar in Albion Park & Calderwood. Newer three-phase estates = larger systems without grid headaches. 6.6kW from $5,500. 10-yr warranty.",
+  heroH1: "Solar Panels for Albion Park &amp; Calderwood Homes",
+  heroSubhead:
+    "Calderwood's new estates are three-phase by default — giving you a 15–20kW export ceiling instead of 5kW. Most Albion Park homes we design for are hitting 10kW+ without grid-reinforcement delays.",
+  stats: [
+    { value: "60+", label: "Albion Park / Calderwood installs" },
+    { value: "74%", label: "Avg bill reduction" },
+    { value: "6 days", label: "Quote to install" },
+    { value: "10 yr", label: "Workmanship warranty" },
+  ],
+  sections: [
     {
-      "@type": "LocalBusiness",
-      "name": "Coastal Solar Co. — Solar Panels Albion Park",
-      "url": "https://coastalsolarco.com/locations/albion-park",
-      "telephone": "0493531857",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Albion Park",
-        "addressRegion": "NSW",
-        "postalCode": "2527",
-        "addressCountry": "AU",
-      },
-      "areaServed": { "@type": "City", "name": "Albion Park" },
+      heading: "Calderwood &amp; the Three-Phase Advantage",
+      paragraphs: [
+        "Calderwood is one of the youngest residential estates in the Illawarra. Construction kicked off in the mid-2010s and most homes there — along with newer sections of Yellow Rock, Tullimbar and Albion Park Rail — have three-phase power as standard. For solar, this is a meaningful advantage over older single-phase Illawarra suburbs: three-phase homes face much higher default export limits from Endeavour Energy (typically 15–20kW, sometimes more) and handle larger inverters without the grid-reinforcement dance.",
+        "What that means practically: the 4- and 5-bedroom family homes common in Calderwood justify — and can absorb the generation of — 10kW to 13kW systems. Payback for a properly sized Calderwood install frequently lands at 4 years, sometimes under, because we're not leaving generation clipped on the table.",
+      ],
     },
     {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://coastalsolarco.com" },
-        { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://coastalsolarco.com/locations" },
-        { "@type": "ListItem", "position": 3, "name": "Albion Park", "item": "https://coastalsolarco.com/locations/albion-park" },
+      heading: "Typical Calderwood / Albion Park Home Energy Profile",
+      paragraphs: [
+        "The homes we install for in this area tend to be large-family, multi-appliance setups: ducted reverse-cycle air-conditioning, electric hot water, pool pumps, sometimes EV charging. These loads drive up total electricity consumption (quarterly bills of $900–$1,500 are common) but also make self-consumption rates strong because much of that load runs during daylight.",
+        "For a typical Calderwood home running air-con most summer afternoons, a 10kW system will hit 65–75% self-consumption — meaning most of what you generate you use directly at the 32¢/kWh grid price. That's where the real economic case lives: every kWh you self-consume saves you a full 32¢, while every kWh you export only earns 5–8¢.",
+      ],
+    },
+    {
+      heading: "Albion Park's Older Streets vs Newer Estates",
+      paragraphs: [
+        "Not every Albion Park home is new. The older sections of central Albion Park, around the town centre and on streets that predate the 1990s, are single-phase and behave more like Dapto or Unanderra — 5–10kW export caps, smaller practical system sizes. Still great solar candidates; just a different design conversation.",
+        "We confirm your phase configuration (single vs three-phase) during the site assessment before quoting. Homes with the right metering in place can often upgrade to three-phase if needed, though at $3,000–$6,000 it's rarely worthwhile unless you're also planning EV charging or a large pool heat pump alongside solar.",
+      ],
+    },
+    {
+      heading: "Install Scheduling &amp; Support",
+      paragraphs: [
+        "Albion Park and Calderwood sit about halfway between Wollongong and Kiama, so our install crews pass through regularly. Typical turnaround from signed quote to install day is 6 business days — sometimes faster for Calderwood homes because access is straightforward and new-estate roofs install cleanly.",
+        "Post-install support is the same across all our suburbs: 10-year workmanship warranty, 5-minute callback guarantee during business hours, system-monitoring app walkthrough included. Calderwood's newer homes rarely throw up surprises — no roof access issues, no legacy wiring, no escarpment shading to work around.",
       ],
     },
   ],
+  pricingNote:
+    "Most Calderwood and newer Albion Park homes are three-phase and can support 10kW+ systems without grid reinforcement. Older Albion Park streets are single-phase — still fine, just a smaller practical system size. Confirmed during the free site assessment.",
+  pricingRows: getDefaultPricingRows(),
+  testimonial: {
+    quote:
+      "Calderwood home, three-phase, two kids and an air-con habit. Coastal Solar sized a 10kW system with a 10kWh battery. Bills went from $1,400 a quarter to about $180. Had one monitoring question after 6 months and got a callback in under 5 minutes.",
+    author: "Lauren B.",
+    suburb: "Calderwood",
+    systemSize: "10kW + 10kWh battery",
+    rating: 5,
+  },
+  faqIntro:
+    "Common questions from Albion Park, Calderwood, Yellow Rock, Tullimbar and Albion Park Rail homeowners about three-phase solar sizing, export limits, rebates and install timelines.",
+  faqLimit: 10,
+  relatedArticles: [
+    { slug: "6kw-vs-10kw-solar-illawarra", title: "6.6kW vs 10kW Solar: Which System Is Right for an Illawarra Home?" },
+    { slug: "are-solar-batteries-worth-it-2026", title: "Are Solar Batteries Worth It in 2026?" },
+    { slug: "solar-payback-period-illawarra", title: "How Long Does Solar Take to Pay for Itself in the Illawarra?" },
+  ],
+  ctaHeading: "Ready to go solar in Albion Park?",
+  ctaSubhead:
+    "Free site assessment. No deposit. We confirm your phase configuration and substation capacity before quoting — so the system we design matches what your home can actually take.",
+};
+
+export const metadata: Metadata = {
+  title: data.metaTitle,
+  description: data.metaDescription,
+  alternates: { canonical: `https://www.coastalsolarco.com/locations/${data.slug}` },
+  openGraph: {
+    title: data.metaTitle,
+    description: data.metaDescription,
+    url: `https://www.coastalsolarco.com/locations/${data.slug}`,
+  },
 };
 
 export default function AlbionParkPage() {
-  return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <section className="gradient-hero text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="text-white/60 text-sm mb-6">
-            <Link href="/" className="hover:text-white">Home</Link> &rsaquo; <Link href="/locations" className="hover:text-white">Locations</Link> &rsaquo; <span className="text-white">Albion Park</span>
-          </nav>
-          <h1 className="text-4xl lg:text-5xl font-black mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>
-            Solar Panels for Albion Park Homes
-          </h1>
-          <p className="text-xl text-white/85 max-w-2xl mb-8">Solar panels in Albion Park, Albion Park Rail and Calderwood.</p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/solar-calculator" className="btn-primary text-lg">Calculate My Savings &rarr;</Link>
-            <Link href="/contact" className="btn-outline text-lg">Get Free Quote</Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-black mb-6" style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}>
-                Solar Installation in Albion Park
-              </h2>
-              <p className="text-gray-700 mb-4">Albion Park and its surrounding suburbs — including Albion Park Rail, Calderwood, and Tullimbar — are among the fastest-growing areas in the Illawarra. New home builders in these estates are ideally positioned to incorporate solar from day one, and we work with many builders and homeowners in the area.</p>
-              <p className="text-gray-700 mb-4">We handle all grid connection paperwork — you don&apos;t fill in a single form. Every install includes a 30-minute walkthrough and monitoring app setup.</p>
-              <p className="text-gray-700">From quote to installation, our average turnaround is just 6 business days.</p>
-            </div>
-            <div className="rounded-2xl p-10 text-white" style={{ background: "linear-gradient(135deg, #2B4C5E, #1e3545)" }}>
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { val: "74%", label: "Average bill reduction" },
-                  { val: "6 days", label: "Quote to install" },
-                  { val: "10yr", label: "Workmanship warranty" },
-                  { val: "5 min", label: "Callback guarantee" },
-                ].map((s) => (
-                  <div key={s.label} className="text-center">
-                    <div className="text-3xl font-black" style={{ color: "var(--color-secondary)" }}>{s.val}</div>
-                    <div className="text-sm text-white/70 mt-1">{s.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 section-accent">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-black text-center mb-10" style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}>
-            Albion Park Solar Pricing (After Rebates)
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { size: "6.6kW Starter", price: "$5,500–$6,500", savings: "$1,200–$1,800/yr", best: "2–3 person household" },
-              { size: "10kW Popular", price: "$7,800–$9,500", savings: "$1,800–$2,600/yr", best: "3–5 person household", highlight: true },
-              { size: "10kW + Battery", price: "$14,000–$17,000", savings: "$2,400–$3,200/yr", best: "Energy independence" },
-            ].map((pkg) => (
-              <div key={pkg.size} className={`rounded-2xl p-8 ${pkg.highlight ? "text-white shadow-xl" : "bg-white shadow-sm"}`}
-                style={pkg.highlight ? { backgroundColor: "var(--color-primary)" } : {}}>
-                {pkg.highlight && <div className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: "var(--color-secondary)" }}>Most Popular</div>}
-                <div className="text-xl font-black mb-2" style={{ fontFamily: "var(--font-montserrat)", color: pkg.highlight ? "#fff" : "var(--color-primary)" }}>{pkg.size}</div>
-                <div className="text-3xl font-black mb-2" style={{ color: "var(--color-secondary)" }}>{pkg.price}</div>
-                <div className="text-sm mb-1" style={{ color: pkg.highlight ? "rgba(255,255,255,0.8)" : "#555" }}>Saves {pkg.savings}</div>
-                <div className="text-xs" style={{ color: pkg.highlight ? "rgba(255,255,255,0.6)" : "#888" }}>Best for: {pkg.best}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link href="/solar-calculator" className="btn-primary text-lg">Get My Exact Albion Park Quote &rarr;</Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 gradient-hero text-white text-center">
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-black mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>Ready to go solar in Albion Park?</h2>
-          <p className="text-white/85 mb-8 text-lg">No obligation. No pressure. Just honest numbers and a real quote.</p>
-          <Link href="/solar-calculator" className="btn-primary text-lg">Calculate My Savings &rarr;</Link>
-        </div>
-      </section>
-    </>
-  );
+  return <LocationPageLayout data={data} />;
 }

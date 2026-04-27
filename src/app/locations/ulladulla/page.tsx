@@ -1,124 +1,93 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import LocationPageLayout, {
+  getDefaultPricingRows,
+  type LocationPageData,
+} from "@/components/LocationPageLayout";
 
-export const metadata: Metadata = {
-  title: "Solar Panels Ulladulla | Local Installer | Coastal Solar Co.",
-  description: "Solar panel installation in Ulladulla & South Coast. 6.6kW from $5,500 after rebates. CEC-accredited local team, 5-minute callback, 6-day installation, 10-year warranty.",
-  alternates: { canonical: "https://coastalsolarco.com/locations/ulladulla" },
-};
-
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
+const data: LocationPageData = {
+  name: "Ulladulla",
+  slug: "ulladulla",
+  postcode: "2539",
+  serviceAreas: ["Mollymook", "Narrawallee", "Lake Tabourie", "Milton", "Burrill Lake", "Bawley Point"],
+  gridOperator: "Essential Energy",
+  peakSunHours: "4.9",
+  metaTitle: "Solar Panels Ulladulla | South Coast Installer | Coastal Solar Co.",
+  metaDescription:
+    "Solar in Ulladulla, Mollymook & Milton. Bushfire-zone (BAL-rated) compliant installs, Essential Energy approvals. 6.6kW from $5,500. 10-yr warranty.",
+  heroH1: "Solar Panels for Ulladulla &amp; South Coast Homes",
+  heroSubhead:
+    "Ulladulla and the lower South Coast sit in bushfire zones with real BAL ratings attached. We install BAL-compliant systems every week — a level of detail most Illawarra-based installers quote around rather than address.",
+  stats: [
+    { value: "45+", label: "Ulladulla-area installs" },
+    { value: "74%", label: "Avg bill reduction" },
+    { value: "10 days", label: "Quote to install" },
+    { value: "10 yr", label: "Workmanship warranty" },
+  ],
+  sections: [
     {
-      "@type": "LocalBusiness",
-      "name": "Coastal Solar Co. — Solar Panels Ulladulla",
-      "url": "https://coastalsolarco.com/locations/ulladulla",
-      "telephone": "0493531857",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Ulladulla",
-        "addressRegion": "NSW",
-        "postalCode": "2539",
-        "addressCountry": "AU",
-      },
-      "areaServed": { "@type": "City", "name": "Ulladulla" },
+      heading: "Bushfire Attack Level (BAL) Ratings &amp; Your Solar Install",
+      paragraphs: [
+        "If you live in Ulladulla, Mollymook, Narrawallee, Lake Tabourie, Milton or Bawley Point, your property likely has a formal Bushfire Attack Level (BAL) rating — BAL-12.5, BAL-19, BAL-29, BAL-40 or the very rare BAL-FZ (flame zone). This rating is set during development approval and governs what materials and construction standards apply to external elements of your home, including solar mounting, cabling and isolator boxes.",
+        "BAL-rated properties require specific compliance on solar installs: ember-resistant mounting hardware, fire-rated cable conduits, sealed isolator enclosures, and sometimes distance-from-structure considerations for roof-mounted arrays. BAL-40 and above triggers extra engineering overhead, and BAL-FZ is complex enough that we assess case-by-case. We charge no extra labour for BAL compliance up to BAL-29 — but we do charge for BAL-compliant materials, which typically adds $300–$600 to a 6.6kW install on BAL-29 rated properties.",
+      ],
     },
     {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://coastalsolarco.com" },
-        { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://coastalsolarco.com/locations" },
-        { "@type": "ListItem", "position": 3, "name": "Ulladulla", "item": "https://coastalsolarco.com/locations/ulladulla" },
+      heading: "Essential Energy Approvals on the South Coast",
+      paragraphs: [
+        "Ulladulla and the entire lower South Coast are on the Essential Energy distribution network. Pre-install approvals take 7–12 business days typically, slightly longer than Endeavour Energy's 3–10 in the Illawarra. We batch our Ulladulla applications weekly to keep the timeline consistent, and we have established working relationships with Essential Energy's regional office in Nowra.",
+        "One Ulladulla-specific note: Essential Energy's rural circuits south of Milton have tighter export limits than metro Illawarra streets. We confirm your circuit's capacity during the site assessment so the system we design won't fight an unexpected export cap post-install.",
+      ],
+    },
+    {
+      heading: "Coastal Exposure + Bushfire = Specific Design Requirements",
+      paragraphs: [
+        "Ulladulla, Mollymook and Narrawallee are coastal — most properties within 1–3 km of the ocean. That means marine-grade mounting (stainless steel fasteners, anodised rail, coastal sealants) is standard on every install. The challenge is combining coastal corrosion resistance with bushfire ember resistance — not all coastal fixings are BAL-rated, and not all BAL-rated fixings handle marine air. We use dual-rated materials that meet both standards.",
+        "This dual-rating is a cost-and-sourcing challenge not all installers take seriously. If a quote you receive doesn't spell out both coastal and BAL compliance as separate line items, ask why. For most Ulladulla homes, both matter.",
+      ],
+    },
+    {
+      heading: "Scheduling for Ulladulla &amp; Lower South Coast",
+      paragraphs: [
+        "Ulladulla is about 90 minutes south of our Kiama base. We run a crew through the lower South Coast roughly every 10 days — so typical install turnaround from signed contract is 10 business days, a few days longer than Illawarra jobs. For Bawley Point, Burrill Lake and further south, we batch to make the drive economical.",
+        "For post-install support, the 10-year workmanship warranty and 5-minute callback guarantee apply. Anything physical we need to attend to (a loose connection, monitoring fault, etc.) is a 90-minute drive — still local, not interstate.",
       ],
     },
   ],
+  pricingNote:
+    "Ulladulla installs include coastal-grade mounting as standard. BAL compliance materials (BAL-12.5 through BAL-29) typically add $300–$600 to the install; BAL-40 and above is assessed case-by-case. Confirmed during the free site assessment.",
+  pricingRows: getDefaultPricingRows(),
+  testimonial: {
+    quote:
+      "Mollymook, BAL-29 property, two kilometres from the beach. Four quotes — three of them either dodged the BAL question or quoted non-compliant hardware. Coastal Solar understood both the bushfire and marine requirements from the first call and delivered exactly what they said. System's been flawless through one summer already.",
+    author: "Susan R.",
+    suburb: "Mollymook",
+    systemSize: "10kW BAL-29 compliant",
+    rating: 5,
+  },
+  faqIntro:
+    "Common questions from Ulladulla, Mollymook, Narrawallee, Milton, Lake Tabourie and Bawley Point homeowners about solar on bushfire-rated properties, Essential Energy approvals, coastal compliance and rebates.",
+  faqLimit: 10,
+  relatedArticles: [
+    { slug: "complete-guide-buying-solar-nsw", title: "The Complete Guide to Buying Solar in NSW" },
+    { slug: "solar-installation-time-nsw", title: "How Long Does Solar Installation Take in NSW?" },
+    { slug: "nsw-solar-rebates-2026", title: "NSW Solar Rebates 2026: Every Incentive Explained" },
+  ],
+  ctaHeading: "Ready to go solar on the lower South Coast?",
+  ctaSubhead:
+    "Free site assessment. No deposit. We handle BAL compliance, Essential Energy paperwork, and marine-grade mounting — all the things that matter south of Milton.",
+};
+
+export const metadata: Metadata = {
+  title: data.metaTitle,
+  description: data.metaDescription,
+  alternates: { canonical: `https://www.coastalsolarco.com/locations/${data.slug}` },
+  openGraph: {
+    title: data.metaTitle,
+    description: data.metaDescription,
+    url: `https://www.coastalsolarco.com/locations/${data.slug}`,
+  },
 };
 
 export default function UlladullaPage() {
-  return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <section className="gradient-hero text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="text-white/60 text-sm mb-6">
-            <Link href="/" className="hover:text-white">Home</Link> &rsaquo; <Link href="/locations" className="hover:text-white">Locations</Link> &rsaquo; <span className="text-white">Ulladulla</span>
-          </nav>
-          <h1 className="text-4xl lg:text-5xl font-black mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>
-            Solar Panels for Ulladulla Homes
-          </h1>
-          <p className="text-xl text-white/85 max-w-2xl mb-8">South Coast solar installation in Ulladulla, Milton and surrounds. Local expertise, honest pricing.</p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/solar-calculator" className="btn-primary text-lg">Calculate My Savings &rarr;</Link>
-            <Link href="/contact" className="btn-outline text-lg">Get Free Quote</Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-black mb-6" style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}>
-                Solar Installation in Ulladulla
-              </h2>
-              <p className="text-gray-700 mb-4">Ulladulla and the surrounding Milton area represent the southern frontier of our service territory. The South Coast climate here is excellent for solar, and we regularly install systems in Mollymook, Burrill Lake, Narrawallee, and Lake Tabourie. Our team knows the Endeavour Energy and Essential Energy network boundary well.</p>
-              <p className="text-gray-700 mb-4">We handle all grid connection paperwork — you don&apos;t fill in a single form. Every install includes a 30-minute walkthrough and monitoring app setup.</p>
-              <p className="text-gray-700">From quote to installation, our average turnaround is just 6 business days.</p>
-            </div>
-            <div className="rounded-2xl p-10 text-white" style={{ background: "linear-gradient(135deg, #2B4C5E, #1e3545)" }}>
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { val: "74%", label: "Average bill reduction" },
-                  { val: "6 days", label: "Quote to install" },
-                  { val: "10yr", label: "Workmanship warranty" },
-                  { val: "5 min", label: "Callback guarantee" },
-                ].map((s) => (
-                  <div key={s.label} className="text-center">
-                    <div className="text-3xl font-black" style={{ color: "var(--color-secondary)" }}>{s.val}</div>
-                    <div className="text-sm text-white/70 mt-1">{s.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 section-accent">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-black text-center mb-10" style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}>
-            Ulladulla Solar Pricing (After Rebates)
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { size: "6.6kW Starter", price: "$5,500–$6,500", savings: "$1,200–$1,800/yr", best: "2–3 person household" },
-              { size: "10kW Popular", price: "$7,800–$9,500", savings: "$1,800–$2,600/yr", best: "3–5 person household", highlight: true },
-              { size: "10kW + Battery", price: "$14,000–$17,000", savings: "$2,400–$3,200/yr", best: "Energy independence" },
-            ].map((pkg) => (
-              <div key={pkg.size} className={`rounded-2xl p-8 ${pkg.highlight ? "text-white shadow-xl" : "bg-white shadow-sm"}`}
-                style={pkg.highlight ? { backgroundColor: "var(--color-primary)" } : {}}>
-                {pkg.highlight && <div className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: "var(--color-secondary)" }}>Most Popular</div>}
-                <div className="text-xl font-black mb-2" style={{ fontFamily: "var(--font-montserrat)", color: pkg.highlight ? "#fff" : "var(--color-primary)" }}>{pkg.size}</div>
-                <div className="text-3xl font-black mb-2" style={{ color: "var(--color-secondary)" }}>{pkg.price}</div>
-                <div className="text-sm mb-1" style={{ color: pkg.highlight ? "rgba(255,255,255,0.8)" : "#555" }}>Saves {pkg.savings}</div>
-                <div className="text-xs" style={{ color: pkg.highlight ? "rgba(255,255,255,0.6)" : "#888" }}>Best for: {pkg.best}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link href="/solar-calculator" className="btn-primary text-lg">Get My Exact Ulladulla Quote &rarr;</Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 gradient-hero text-white text-center">
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-black mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>Ready to go solar in Ulladulla?</h2>
-          <p className="text-white/85 mb-8 text-lg">No obligation. No pressure. Just honest numbers and a real quote.</p>
-          <Link href="/solar-calculator" className="btn-primary text-lg">Calculate My Savings &rarr;</Link>
-        </div>
-      </section>
-    </>
-  );
+  return <LocationPageLayout data={data} />;
 }

@@ -1,124 +1,93 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import LocationPageLayout, {
+  getDefaultPricingRows,
+  type LocationPageData,
+} from "@/components/LocationPageLayout";
 
-export const metadata: Metadata = {
-  title: "Solar Panels Bomaderry | Local Installer | Coastal Solar Co.",
-  description: "Solar panel installation in Bomaderry & North Nowra. 6.6kW from $5,500 after rebates. CEC-accredited local team, 5-minute callback, 6-day installation, 10-year workmanship warranty.",
-  alternates: { canonical: "https://coastalsolarco.com/locations/bomaderry" },
-};
-
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
+const data: LocationPageData = {
+  name: "Bomaderry",
+  slug: "bomaderry",
+  postcode: "2541",
+  serviceAreas: ["North Nowra", "Cambewarra Village", "Illaroo", "Terara", "Brundee"],
+  gridOperator: "Essential Energy",
+  peakSunHours: "4.8",
+  metaTitle: "Solar Panels Bomaderry | North Nowra Installer | Coastal Solar Co.",
+  metaDescription:
+    "Solar in Bomaderry & North Nowra. Suburban installs on Essential Energy. 6.6kW from $5,500. CEC-accredited, 5-min callback, 10-yr warranty.",
+  heroH1: "Solar Panels for Bomaderry &amp; North Nowra Homes",
+  heroSubhead:
+    "Bomaderry is north of Nowra on the Essential Energy network — a commuter-friendly suburb with straightforward suburban roofs. We install here weekly as part of our Shoalhaven rounds.",
+  stats: [
+    { value: "35+", label: "Bomaderry / North Nowra installs" },
+    { value: "74%", label: "Avg bill reduction" },
+    { value: "8 days", label: "Quote to install" },
+    { value: "10 yr", label: "Workmanship warranty" },
+  ],
+  sections: [
     {
-      "@type": "LocalBusiness",
-      "name": "Coastal Solar Co. — Solar Panels Bomaderry",
-      "url": "https://coastalsolarco.com/locations/bomaderry",
-      "telephone": "0493531857",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Bomaderry",
-        "addressRegion": "NSW",
-        "postalCode": "2541",
-        "addressCountry": "AU",
-      },
-      "areaServed": { "@type": "City", "name": "Bomaderry" },
+      heading: "Bomaderry: Straightforward Suburban Solar",
+      paragraphs: [
+        "Bomaderry sits just north of Nowra on the Essential Energy network. The housing stock is largely post-1970s suburban — Colorbond and concrete-tile roofs, generous blocks, mostly unshaded aspects, and standard residential electrical setups. Of all the South Coast suburbs we install in, Bomaderry is probably the most textbook: fast, clean installs with minimal complications.",
+        "4.8 peak sun hours a day, typical 6.6–10kW systems fitting most household profiles, payback sitting consistently in the 4.5–5.5 year range. If you're a Bomaderry homeowner with a standard roof and average household consumption, the quoting process is short and the install is quick.",
+      ],
     },
     {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://coastalsolarco.com" },
-        { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://coastalsolarco.com/locations" },
-        { "@type": "ListItem", "position": 3, "name": "Bomaderry", "item": "https://coastalsolarco.com/locations/bomaderry" },
+      heading: "Essential Energy Approval — Same as Nowra",
+      paragraphs: [
+        "Because Bomaderry sits on Essential Energy's network, approval timelines follow the same pattern as Nowra: 7–12 business days pre-install, and a standard commissioning inspection post-install. We handle all the paperwork; you fill in nothing. From signed contract to commissioned system is typically 8 business days in Bomaderry.",
+        "Export limits on Bomaderry streets are generally standard Essential Energy residential settings — not the tight caps you see on older Dapto streets. That means a 10kW system with standard inverter settings is usually approved without issue.",
+      ],
+    },
+    {
+      heading: "Bomaderry Household Profiles",
+      paragraphs: [
+        "Most Bomaderry homeowners we quote are commuters — working in Nowra, Sydney (via train), or remotely from home. Daytime self-consumption varies with lifestyle: work-from-home households hit 65–75% self-consumption and see 4-year paybacks; dual-commute households with empty daytime homes run 30–40% self-consumption and the economics shift towards battery storage to keep more generation on-site.",
+        "For Bomaderry homes where both adults work out of the area, we often recommend 10kW + 10kWh battery as the smart pairing. The battery banks daytime generation for evening use rather than exporting it at 5–8¢/kWh, which materially shifts the payback maths in your favour.",
+      ],
+    },
+    {
+      heading: "Scheduling &amp; Support",
+      paragraphs: [
+        "Bomaderry is part of our weekly Shoalhaven rounds. Our crew runs through Nowra, Bomaderry, Worrigee and Cambewarra most weeks. Typical install turnaround from signed contract is 8 business days — identical to Nowra.",
+        "Post-install support: 10-year workmanship warranty, 5-minute callback guarantee during business hours, monitoring app walkthrough included on install day. Any physical follow-up is under an hour's drive from our Kiama base; most issues are resolved remotely through the monitoring platform.",
       ],
     },
   ],
+  pricingNote:
+    "Bomaderry pricing follows our standard Illawarra/South Coast pricing. Essential Energy's 7–12 day pre-approval window is factored into the 8-day install timeline.",
+  pricingRows: getDefaultPricingRows(),
+  testimonial: {
+    quote:
+      "Straightforward install on our Bomaderry place, three days from quote acceptance to actually getting a confirmed date. System's been running perfectly for about 18 months. Bills went from $650 a quarter to about $110. No issues, no surprises.",
+    author: "Daniel H.",
+    suburb: "Bomaderry",
+    systemSize: "6.6kW",
+    rating: 5,
+  },
+  faqIntro:
+    "Common questions from Bomaderry, North Nowra, Cambewarra Village and Illaroo homeowners about solar, batteries, Essential Energy approvals and rebates.",
+  faqLimit: 10,
+  relatedArticles: [
+    { slug: "complete-guide-buying-solar-nsw", title: "The Complete Guide to Buying Solar in NSW" },
+    { slug: "6kw-vs-10kw-solar-illawarra", title: "6.6kW vs 10kW Solar: Which System Is Right?" },
+    { slug: "solar-payback-period-illawarra", title: "How Long Does Solar Take to Pay for Itself?" },
+  ],
+  ctaHeading: "Ready to go solar in Bomaderry?",
+  ctaSubhead:
+    "Free site assessment. No deposit. Quick install, clean process, 10-year workmanship warranty. The straightforward option.",
+};
+
+export const metadata: Metadata = {
+  title: data.metaTitle,
+  description: data.metaDescription,
+  alternates: { canonical: `https://www.coastalsolarco.com/locations/${data.slug}` },
+  openGraph: {
+    title: data.metaTitle,
+    description: data.metaDescription,
+    url: `https://www.coastalsolarco.com/locations/${data.slug}`,
+  },
 };
 
 export default function BomaderryPage() {
-  return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <section className="gradient-hero text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="text-white/60 text-sm mb-6">
-            <Link href="/" className="hover:text-white">Home</Link> &rsaquo; <Link href="/locations" className="hover:text-white">Locations</Link> &rsaquo; <span className="text-white">Bomaderry</span>
-          </nav>
-          <h1 className="text-4xl lg:text-5xl font-black mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>
-            Solar Panels for Bomaderry Homes
-          </h1>
-          <p className="text-xl text-white/85 max-w-2xl mb-8">Solar installation in Bomaderry and North Nowra.</p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/solar-calculator" className="btn-primary text-lg">Calculate My Savings &rarr;</Link>
-            <Link href="/contact" className="btn-outline text-lg">Get Free Quote</Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-black mb-6" style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}>
-                Solar Installation in Bomaderry
-              </h2>
-              <p className="text-gray-700 mb-4">Bomaderry forms the northern gateway to the Nowra urban area. Residential development here is strong, and the combination of inland solar resource and growing household size makes 10kW systems particularly popular. We serve all of Bomaderry, North Nowra, and the Nowra Hill area.</p>
-              <p className="text-gray-700 mb-4">We handle all grid connection paperwork — you don&apos;t fill in a single form. Every install includes a 30-minute walkthrough and monitoring app setup.</p>
-              <p className="text-gray-700">From quote to installation, our average turnaround is just 6 business days.</p>
-            </div>
-            <div className="rounded-2xl p-10 text-white" style={{ background: "linear-gradient(135deg, #2B4C5E, #1e3545)" }}>
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { val: "74%", label: "Average bill reduction" },
-                  { val: "6 days", label: "Quote to install" },
-                  { val: "10yr", label: "Workmanship warranty" },
-                  { val: "5 min", label: "Callback guarantee" },
-                ].map((s) => (
-                  <div key={s.label} className="text-center">
-                    <div className="text-3xl font-black" style={{ color: "var(--color-secondary)" }}>{s.val}</div>
-                    <div className="text-sm text-white/70 mt-1">{s.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 section-accent">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-black text-center mb-10" style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}>
-            Bomaderry Solar Pricing (After Rebates)
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { size: "6.6kW Starter", price: "$5,500–$6,500", savings: "$1,200–$1,800/yr", best: "2–3 person household" },
-              { size: "10kW Popular", price: "$7,800–$9,500", savings: "$1,800–$2,600/yr", best: "3–5 person household", highlight: true },
-              { size: "10kW + Battery", price: "$14,000–$17,000", savings: "$2,400–$3,200/yr", best: "Energy independence" },
-            ].map((pkg) => (
-              <div key={pkg.size} className={`rounded-2xl p-8 ${pkg.highlight ? "text-white shadow-xl" : "bg-white shadow-sm"}`}
-                style={pkg.highlight ? { backgroundColor: "var(--color-primary)" } : {}}>
-                {pkg.highlight && <div className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: "var(--color-secondary)" }}>Most Popular</div>}
-                <div className="text-xl font-black mb-2" style={{ fontFamily: "var(--font-montserrat)", color: pkg.highlight ? "#fff" : "var(--color-primary)" }}>{pkg.size}</div>
-                <div className="text-3xl font-black mb-2" style={{ color: "var(--color-secondary)" }}>{pkg.price}</div>
-                <div className="text-sm mb-1" style={{ color: pkg.highlight ? "rgba(255,255,255,0.8)" : "#555" }}>Saves {pkg.savings}</div>
-                <div className="text-xs" style={{ color: pkg.highlight ? "rgba(255,255,255,0.6)" : "#888" }}>Best for: {pkg.best}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link href="/solar-calculator" className="btn-primary text-lg">Get My Exact Bomaderry Quote &rarr;</Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 gradient-hero text-white text-center">
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-black mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>Ready to go solar in Bomaderry?</h2>
-          <p className="text-white/85 mb-8 text-lg">No obligation. No pressure. Just honest numbers and a real quote.</p>
-          <Link href="/solar-calculator" className="btn-primary text-lg">Calculate My Savings &rarr;</Link>
-        </div>
-      </section>
-    </>
-  );
+  return <LocationPageLayout data={data} />;
 }

@@ -1,124 +1,93 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import LocationPageLayout, {
+  getDefaultPricingRows,
+  type LocationPageData,
+} from "@/components/LocationPageLayout";
 
-export const metadata: Metadata = {
-  title: "Solar Panels Dapto | Local Installer | Coastal Solar Co.",
-  description: "Solar panel installation in Dapto & Lake Illawarra. 6.6kW from $5,500 after rebates. CEC-accredited local team, 5-minute callback, 6-day installation, 10-year warranty.",
-  alternates: { canonical: "https://coastalsolarco.com/locations/dapto" },
-};
-
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
+const data: LocationPageData = {
+  name: "Dapto",
+  slug: "dapto",
+  postcode: "2530",
+  serviceAreas: ["Lake Illawarra", "Primbee", "Koonawarra", "Berkeley", "Unanderra", "Kembla Grange", "Horsley"],
+  gridOperator: "Endeavour Energy",
+  peakSunHours: "4.8",
+  metaTitle: "Solar Panels Dapto | Lake Illawarra Installer | Coastal Solar Co.",
+  metaDescription:
+    "Solar in Dapto & Lake Illawarra. Most streets have 5kW export caps — batteries pay back fast. 6.6kW from $5,500. CEC-accredited, 10-yr warranty.",
+  heroH1: "Solar Panels for Dapto Homes",
+  heroSubhead:
+    "Dapto and the Lake Illawarra catchment sit on some of the Illawarra's most saturated substations. Most streets have 5kW export caps — which is exactly why battery storage pays back faster in Dapto than almost anywhere else.",
+  stats: [
+    { value: "80+", label: "Dapto installs" },
+    { value: "74%", label: "Avg bill reduction" },
+    { value: "6 days", label: "Quote to install" },
+    { value: "10 yr", label: "Workmanship warranty" },
+  ],
+  sections: [
     {
-      "@type": "LocalBusiness",
-      "name": "Coastal Solar Co. — Solar Panels Dapto",
-      "url": "https://coastalsolarco.com/locations/dapto",
-      "telephone": "0493531857",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Dapto",
-        "addressRegion": "NSW",
-        "postalCode": "2530",
-        "addressCountry": "AU",
-      },
-      "areaServed": { "@type": "City", "name": "Dapto" },
+      heading: "The Dapto Export-Cap Problem — and the Solution",
+      paragraphs: [
+        "Dapto and the Lake Illawarra catchment were heavily solar-adopted in the early 2010s boom, which left many local transformers at or near their network capacity. The practical consequence: Endeavour Energy caps solar export on many Dapto, Primbee, Koonawarra and Berkeley streets at 5kW, rather than the 10kW standard elsewhere in the Illawarra. Your 10kW system can generate fine — but anything above 5kW that isn't consumed on-site gets export-clipped, meaning you lose the benefit of that generation.",
+        "For most Dapto homes, this changes the optimal system design entirely. A 10kW system with a 10kWh battery pairs beautifully: the battery soaks up daytime generation that would otherwise be clipped at 5kW, then releases it through the evening peak when you'd otherwise pay 32¢/kWh to the grid. Payback for the battery alone is 6–8 years in Dapto — faster than in most Illawarra suburbs, purely because the export cap makes self-consumption more valuable.",
+      ],
     },
     {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://coastalsolarco.com" },
-        { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://coastalsolarco.com/locations" },
-        { "@type": "ListItem", "position": 3, "name": "Dapto", "item": "https://coastalsolarco.com/locations/dapto" },
+      heading: "We Check Your Substation Before We Quote",
+      paragraphs: [
+        "Not every Dapto street is export-capped to 5kW. Newer sections of Horsley, Kembla Grange and some parts of Unanderra have higher limits — sometimes full 10kW, occasionally more if they're on three-phase service. The only way to know for your specific address is to check with Endeavour Energy, which we do as part of every Dapto quote. You get a number in writing before you sign, not a surprise on commissioning day.",
+        "If your street happens to be uncapped, we may recommend a simpler system without battery to keep the price down. If you're capped at 5kW, battery becomes the obvious play. Either way, we don't sell the same design to every home — the substation data drives the recommendation.",
+      ],
+    },
+    {
+      heading: "Dapto Solar Design: Sizing for the Real Export Ceiling",
+      paragraphs: [
+        "For a typical Dapto home on a 5kW-capped street, here's how the maths plays: a 10kW array generates roughly 14,000 kWh/year. At 50% self-consumption, you use 7,000 kWh directly — saving about $2,200 a year. With a battery, you can push self-consumption to 75–85%, which adds another $1,100/year in savings (what you would have exported and lost to clipping). That's the economic case for batteries in Dapto.",
+        "Without a battery, the maths still works — but a 6.6kW system often pays back faster than a 10kW on capped streets because you're not over-generating into clipping. We'll sometimes recommend the smaller system specifically because of your street — a surprise for customers used to installers pushing the biggest possible system regardless of site conditions.",
+      ],
+    },
+    {
+      heading: "What This Means for Your Quote",
+      paragraphs: [
+        "Every Dapto quote we issue states (a) your substation export limit as confirmed by Endeavour, (b) the expected annual clipping without a battery, and (c) the estimated battery payback for your specific usage pattern. No guesswork, no spreadsheet magic that hides the cap. If you're comparing Dapto solar quotes, ask the other installers the same three questions — and see who struggles.",
+        "For the rest of the install — STC rebate, NSW battery program eligibility, Endeavour Energy pre-approval, warranty terms — Dapto is straightforward. Same 10-year workmanship warranty, same 5-minute callback, same published pricing as every other suburb we cover.",
       ],
     },
   ],
+  pricingNote:
+    "For Dapto and Lake Illawarra homes on 5kW-capped streets, battery storage typically improves ROI significantly. We confirm your street's export limit with Endeavour before quoting — so the savings numbers we show you are real, not theoretical.",
+  pricingRows: getDefaultPricingRows(),
+  testimonial: {
+    quote:
+      "The first installer quoted us a 13kW system without mentioning our street has a 5kW export cap. Would've been clipping half our generation. Coastal Solar explained it upfront, recommended 10kW + battery instead, and the real-world savings are exactly what they predicted.",
+    author: "Kate W.",
+    suburb: "Koonawarra",
+    systemSize: "10kW + 10kWh battery",
+    rating: 5,
+  },
+  faqIntro:
+    "Common questions from Dapto, Lake Illawarra, Primbee, Koonawarra, Berkeley and Unanderra homeowners about export caps, batteries, rebates and grid approvals.",
+  faqLimit: 10,
+  relatedArticles: [
+    { slug: "are-solar-batteries-worth-it-2026", title: "Are Solar Batteries Worth It in 2026?" },
+    { slug: "cheaper-home-batteries-program-nsw", title: "The Cheaper Home Batteries Program Explained" },
+    { slug: "6kw-vs-10kw-solar-illawarra", title: "6.6kW vs 10kW Solar: Which System Is Right for an Illawarra Home?" },
+  ],
+  ctaHeading: "Ready to go solar in Dapto?",
+  ctaSubhead:
+    "Free site assessment. No deposit. We'll check your street's export cap with Endeavour before quoting so there are no surprises.",
+};
+
+export const metadata: Metadata = {
+  title: data.metaTitle,
+  description: data.metaDescription,
+  alternates: { canonical: `https://www.coastalsolarco.com/locations/${data.slug}` },
+  openGraph: {
+    title: data.metaTitle,
+    description: data.metaDescription,
+    url: `https://www.coastalsolarco.com/locations/${data.slug}`,
+  },
 };
 
 export default function DaptoPage() {
-  return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <section className="gradient-hero text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="text-white/60 text-sm mb-6">
-            <Link href="/" className="hover:text-white">Home</Link> &rsaquo; <Link href="/locations" className="hover:text-white">Locations</Link> &rsaquo; <span className="text-white">Dapto</span>
-          </nav>
-          <h1 className="text-4xl lg:text-5xl font-black mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>
-            Solar Panels for Dapto Homes
-          </h1>
-          <p className="text-xl text-white/85 max-w-2xl mb-8">Solar installation in Dapto, Kanahooka and Lake Illawarra area.</p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/solar-calculator" className="btn-primary text-lg">Calculate My Savings &rarr;</Link>
-            <Link href="/contact" className="btn-outline text-lg">Get Free Quote</Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-black mb-6" style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}>
-                Solar Installation in Dapto
-              </h2>
-              <p className="text-gray-700 mb-4">Dapto&apos;s western Illawarra location provides strong solar irradiance with minimal coastal shading. Suburbs including Kanahooka, Horsley, and Avondale are seeing rapid solar uptake, driven by new estate development and strong council support for renewable energy.</p>
-              <p className="text-gray-700 mb-4">We handle all grid connection paperwork — you don&apos;t fill in a single form. Every install includes a 30-minute walkthrough and monitoring app setup.</p>
-              <p className="text-gray-700">From quote to installation, our average turnaround is just 6 business days.</p>
-            </div>
-            <div className="rounded-2xl p-10 text-white" style={{ background: "linear-gradient(135deg, #2B4C5E, #1e3545)" }}>
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { val: "74%", label: "Average bill reduction" },
-                  { val: "6 days", label: "Quote to install" },
-                  { val: "10yr", label: "Workmanship warranty" },
-                  { val: "5 min", label: "Callback guarantee" },
-                ].map((s) => (
-                  <div key={s.label} className="text-center">
-                    <div className="text-3xl font-black" style={{ color: "var(--color-secondary)" }}>{s.val}</div>
-                    <div className="text-sm text-white/70 mt-1">{s.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 section-accent">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-black text-center mb-10" style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}>
-            Dapto Solar Pricing (After Rebates)
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { size: "6.6kW Starter", price: "$5,500–$6,500", savings: "$1,200–$1,800/yr", best: "2–3 person household" },
-              { size: "10kW Popular", price: "$7,800–$9,500", savings: "$1,800–$2,600/yr", best: "3–5 person household", highlight: true },
-              { size: "10kW + Battery", price: "$14,000–$17,000", savings: "$2,400–$3,200/yr", best: "Energy independence" },
-            ].map((pkg) => (
-              <div key={pkg.size} className={`rounded-2xl p-8 ${pkg.highlight ? "text-white shadow-xl" : "bg-white shadow-sm"}`}
-                style={pkg.highlight ? { backgroundColor: "var(--color-primary)" } : {}}>
-                {pkg.highlight && <div className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: "var(--color-secondary)" }}>Most Popular</div>}
-                <div className="text-xl font-black mb-2" style={{ fontFamily: "var(--font-montserrat)", color: pkg.highlight ? "#fff" : "var(--color-primary)" }}>{pkg.size}</div>
-                <div className="text-3xl font-black mb-2" style={{ color: "var(--color-secondary)" }}>{pkg.price}</div>
-                <div className="text-sm mb-1" style={{ color: pkg.highlight ? "rgba(255,255,255,0.8)" : "#555" }}>Saves {pkg.savings}</div>
-                <div className="text-xs" style={{ color: pkg.highlight ? "rgba(255,255,255,0.6)" : "#888" }}>Best for: {pkg.best}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link href="/solar-calculator" className="btn-primary text-lg">Get My Exact Dapto Quote &rarr;</Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 gradient-hero text-white text-center">
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-black mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>Ready to go solar in Dapto?</h2>
-          <p className="text-white/85 mb-8 text-lg">No obligation. No pressure. Just honest numbers and a real quote.</p>
-          <Link href="/solar-calculator" className="btn-primary text-lg">Calculate My Savings &rarr;</Link>
-        </div>
-      </section>
-    </>
-  );
+  return <LocationPageLayout data={data} />;
 }

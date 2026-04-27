@@ -1,124 +1,93 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import LocationPageLayout, {
+  getDefaultPricingRows,
+  type LocationPageData,
+} from "@/components/LocationPageLayout";
 
-export const metadata: Metadata = {
-  title: "Solar Panels Jervis Bay | Coastal Solar Co.",
-  description: "Solar panel installation in Jervis Bay, Huskisson & Vincentia. 6.6kW from $5,500 after rebates. CEC-accredited local team, 5-minute callback, 6-day installation, 10-year warranty.",
-  alternates: { canonical: "https://coastalsolarco.com/locations/jervis-bay" },
-};
-
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
+const data: LocationPageData = {
+  name: "Jervis Bay",
+  slug: "jervis-bay",
+  postcode: "2540",
+  serviceAreas: ["Vincentia", "Hyams Beach", "Huskisson", "Sanctuary Point", "St Georges Basin", "Tomerong", "Myola"],
+  gridOperator: "Essential Energy",
+  peakSunHours: "5.0",
+  metaTitle: "Solar Panels Jervis Bay | Vincentia & Hyams Beach | Coastal Solar Co.",
+  metaDescription:
+    "Solar in Jervis Bay, Vincentia & Hyams Beach. Dual-rated coastal + bushfire compliant installs. 6.6kW from $5,500. Essential Energy approvals, 10-yr warranty.",
+  heroH1: "Solar Panels for Jervis Bay Homes",
+  heroSubhead:
+    "Vincentia, Hyams Beach, Sanctuary Point — the Bay's some of the best solar irradiance in NSW (5.0 peak sun hours) paired with BAL-rated bushfire zones and full-marine coastal exposure. Dual-rated gear is non-negotiable.",
+  stats: [
+    { value: "40+", label: "Jervis Bay installs" },
+    { value: "5.0", label: "Peak sun hours/day" },
+    { value: "10 days", label: "Quote to install" },
+    { value: "10 yr", label: "Workmanship warranty" },
+  ],
+  sections: [
     {
-      "@type": "LocalBusiness",
-      "name": "Coastal Solar Co. — Solar Panels Jervis Bay",
-      "url": "https://coastalsolarco.com/locations/jervis-bay",
-      "telephone": "0493531857",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Jervis Bay",
-        "addressRegion": "NSW",
-        "postalCode": "2540",
-        "addressCountry": "AU",
-      },
-      "areaServed": { "@type": "City", "name": "Jervis Bay" },
+      heading: "Jervis Bay's Solar Irradiance Is Genuinely Elite",
+      paragraphs: [
+        "We're not exaggerating: Jervis Bay averages around 5.0 peak sun hours a day, consistently the highest number anywhere in our service area. The combination of the bay's east-facing orientation, minimal cloud cover, and gentle coastal topography gives it solar generation numbers that embarrass most Sydney installs. A 6.6kW system in Vincentia typically generates 10,500–11,500 kWh/year — roughly 10% more than the same system in Wollongong.",
+        "On payback maths alone, Jervis Bay homes are among the strongest solar candidates we see. For holiday homes (common in Hyams Beach and Vincentia), self-consumption patterns differ — less load during the week, more on weekends — but the generation number is so strong that even moderate self-consumption rates deliver fast returns.",
+      ],
     },
     {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://coastalsolarco.com" },
-        { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://coastalsolarco.com/locations" },
-        { "@type": "ListItem", "position": 3, "name": "Jervis Bay", "item": "https://coastalsolarco.com/locations/jervis-bay" },
+      heading: "BAL Ratings + Marine Exposure: Double Compliance",
+      paragraphs: [
+        "Here's the catch that ruins lazy quotes: Jervis Bay properties typically have BAL bushfire ratings (BAL-12.5 through BAL-29 most commonly, BAL-40 in bushfire-prone parts of Tomerong and St Georges Basin) AND sit within 1–2 km of salt water. Solar hardware has to meet both standards simultaneously — ember-resistant for bushfire compliance, and marine-corrosion-resistant for 20-year coastal performance.",
+        "Not all installers understand this dual-rating requirement. We've replaced plenty of non-compliant mounting on Jervis Bay homes where the original installer used BAL-rated hardware that rusted out in five years, or marine-grade fittings that weren't ember-rated. Every Coastal Solar Co. install in Jervis Bay uses dual-rated materials — and we document which hardware meets which standard on the quote. Adds roughly $400–$700 to a standard install; non-negotiable for serious long-term performance.",
+      ],
+    },
+    {
+      heading: "Essential Energy on Rural South Coast Circuits",
+      paragraphs: [
+        "Jervis Bay sits on Essential Energy's distribution network. Pre-install approvals for standard residential are typically 7–12 business days. Some rural circuits around St Georges Basin, Tomerong and Myola have tighter export limits than town-centre Vincentia — we confirm your specific circuit capacity during the site assessment, not on install day.",
+        "For holiday-home configurations where you're away from the property much of the time, we often recommend an internet-connected monitoring setup plus a remote isolator — so you can see what the system is doing from Sydney and safely shut it down if there's an event while you're away. This adds about $300 to a standard install.",
+      ],
+    },
+    {
+      heading: "Scheduling &amp; Support from Kiama",
+      paragraphs: [
+        "Jervis Bay is about 80 minutes south of our Kiama base. We run a crew through roughly every 10 days — so install turnaround from signed contract is typically 10 business days. For urgent Vincentia work (a holiday let needing service before the Christmas rush, for example) we'll batch around it.",
+        "Post-install support is the same as for Illawarra customers: 10-year workmanship warranty, 5-minute callback guarantee during business hours. The physical drive is longer, but for monitoring and remote support — which covers 90% of post-install questions — we resolve most issues without needing a truck roll.",
       ],
     },
   ],
+  pricingNote:
+    "Jervis Bay installs include dual-rated coastal-and-bushfire compliant mounting as standard. BAL compliance for ratings above BAL-29 is quoted case-by-case. Holiday-home remote monitoring adds approximately $300 to the standard install.",
+  pricingRows: getDefaultPricingRows(),
+  testimonial: {
+    quote:
+      "Vincentia weekender, BAL-19, literally three streets back from the beach. Two installers quoted us gear that was either bushfire-rated or marine-rated but not both. Coastal Solar walked us through the dual-rating requirement, quoted specific hardware, and delivered. System produces ridiculous amounts of power — more than twice what our Sydney home's much-larger array manages.",
+    author: "Andrew &amp; Jess M.",
+    suburb: "Vincentia",
+    systemSize: "10kW + 10kWh battery",
+    rating: 5,
+  },
+  faqIntro:
+    "Common questions from Jervis Bay, Vincentia, Hyams Beach, Sanctuary Point, St Georges Basin and Tomerong homeowners about BAL-rated bushfire compliance, marine-grade installs, holiday-home monitoring and rebates.",
+  faqLimit: 10,
+  relatedArticles: [
+    { slug: "are-solar-batteries-worth-it-2026", title: "Are Solar Batteries Worth It in 2026?" },
+    { slug: "complete-guide-buying-solar-nsw", title: "The Complete Guide to Buying Solar in NSW" },
+    { slug: "nsw-solar-rebates-2026", title: "NSW Solar Rebates 2026: Every Incentive Explained" },
+  ],
+  ctaHeading: "Ready to go solar on Jervis Bay?",
+  ctaSubhead:
+    "Free site assessment. No deposit. Dual-rated hardware, Essential Energy approvals handled, and a 10-year workmanship warranty that actually applies to marine + bushfire conditions.",
+};
+
+export const metadata: Metadata = {
+  title: data.metaTitle,
+  description: data.metaDescription,
+  alternates: { canonical: `https://www.coastalsolarco.com/locations/${data.slug}` },
+  openGraph: {
+    title: data.metaTitle,
+    description: data.metaDescription,
+    url: `https://www.coastalsolarco.com/locations/${data.slug}`,
+  },
 };
 
 export default function JervisBayPage() {
-  return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <section className="gradient-hero text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="text-white/60 text-sm mb-6">
-            <Link href="/" className="hover:text-white">Home</Link> &rsaquo; <Link href="/locations" className="hover:text-white">Locations</Link> &rsaquo; <span className="text-white">Jervis Bay</span>
-          </nav>
-          <h1 className="text-4xl lg:text-5xl font-black mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>
-            Solar Panels for Jervis Bay Homes
-          </h1>
-          <p className="text-xl text-white/85 max-w-2xl mb-8">Solar panels for Jervis Bay, Huskisson, Vincentia and surrounds.</p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/solar-calculator" className="btn-primary text-lg">Calculate My Savings &rarr;</Link>
-            <Link href="/contact" className="btn-outline text-lg">Get Free Quote</Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-black mb-6" style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}>
-                Solar Installation in Jervis Bay
-              </h2>
-              <p className="text-gray-700 mb-4">The Jervis Bay area — including Huskisson, Vincentia, Callala Bay, and Hyams Beach — is one of the most solar-suitable areas on the South Coast. Many properties here are holiday homes or investment properties where solar reduces ongoing costs significantly.</p>
-              <p className="text-gray-700 mb-4">We handle all grid connection paperwork — you don&apos;t fill in a single form. Every install includes a 30-minute walkthrough and monitoring app setup.</p>
-              <p className="text-gray-700">From quote to installation, our average turnaround is just 6 business days.</p>
-            </div>
-            <div className="rounded-2xl p-10 text-white" style={{ background: "linear-gradient(135deg, #2B4C5E, #1e3545)" }}>
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { val: "74%", label: "Average bill reduction" },
-                  { val: "6 days", label: "Quote to install" },
-                  { val: "10yr", label: "Workmanship warranty" },
-                  { val: "5 min", label: "Callback guarantee" },
-                ].map((s) => (
-                  <div key={s.label} className="text-center">
-                    <div className="text-3xl font-black" style={{ color: "var(--color-secondary)" }}>{s.val}</div>
-                    <div className="text-sm text-white/70 mt-1">{s.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 section-accent">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-black text-center mb-10" style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}>
-            Jervis Bay Solar Pricing (After Rebates)
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { size: "6.6kW Starter", price: "$5,500–$6,500", savings: "$1,200–$1,800/yr", best: "2–3 person household" },
-              { size: "10kW Popular", price: "$7,800–$9,500", savings: "$1,800–$2,600/yr", best: "3–5 person household", highlight: true },
-              { size: "10kW + Battery", price: "$14,000–$17,000", savings: "$2,400–$3,200/yr", best: "Energy independence" },
-            ].map((pkg) => (
-              <div key={pkg.size} className={`rounded-2xl p-8 ${pkg.highlight ? "text-white shadow-xl" : "bg-white shadow-sm"}`}
-                style={pkg.highlight ? { backgroundColor: "var(--color-primary)" } : {}}>
-                {pkg.highlight && <div className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: "var(--color-secondary)" }}>Most Popular</div>}
-                <div className="text-xl font-black mb-2" style={{ fontFamily: "var(--font-montserrat)", color: pkg.highlight ? "#fff" : "var(--color-primary)" }}>{pkg.size}</div>
-                <div className="text-3xl font-black mb-2" style={{ color: "var(--color-secondary)" }}>{pkg.price}</div>
-                <div className="text-sm mb-1" style={{ color: pkg.highlight ? "rgba(255,255,255,0.8)" : "#555" }}>Saves {pkg.savings}</div>
-                <div className="text-xs" style={{ color: pkg.highlight ? "rgba(255,255,255,0.6)" : "#888" }}>Best for: {pkg.best}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link href="/solar-calculator" className="btn-primary text-lg">Get My Exact Jervis Bay Quote &rarr;</Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 gradient-hero text-white text-center">
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-black mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>Ready to go solar in Jervis Bay?</h2>
-          <p className="text-white/85 mb-8 text-lg">No obligation. No pressure. Just honest numbers and a real quote.</p>
-          <Link href="/solar-calculator" className="btn-primary text-lg">Calculate My Savings &rarr;</Link>
-        </div>
-      </section>
-    </>
-  );
+  return <LocationPageLayout data={data} />;
 }

@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Solar Panels Illawarra & South Coast NSW | Coastal Solar Co.",
   description: "Coastal Solar Co. installs solar panels across Wollongong, Nowra, Kiama, Shellharbour, Ulladulla and 10+ South Coast suburbs. Find your local installer.",
-  alternates: { canonical: "https://coastalsolarco.com/locations" },
+  alternates: { canonical: "https://www.coastalsolarco.com/locations" },
 };
 
 const locations = [

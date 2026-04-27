@@ -1,124 +1,93 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import LocationPageLayout, {
+  getDefaultPricingRows,
+  type LocationPageData,
+} from "@/components/LocationPageLayout";
 
-export const metadata: Metadata = {
-  title: "Solar Panels Thirroul | Local Installer | Coastal Solar Co.",
-  description: "Solar panel installation in Thirroul & Northern Illawarra. 6.6kW from $5,500 after rebates. CEC-accredited local team, 5-minute callback, 6-day installation, 10-year warranty.",
-  alternates: { canonical: "https://coastalsolarco.com/locations/thirroul" },
-};
-
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
+const data: LocationPageData = {
+  name: "Thirroul",
+  slug: "thirroul",
+  postcode: "2515",
+  serviceAreas: ["Austinmer", "Bulli", "Woonona", "Corrimal", "Towradgi", "Scarborough", "Clifton", "Coalcliff"],
+  gridOperator: "Endeavour Energy",
+  peakSunHours: "4.7",
+  metaTitle: "Solar Panels Thirroul | Northern Illawarra Installer | Coastal Solar Co.",
+  metaDescription:
+    "Solar in Thirroul, Austinmer & Bulli. Tile-roof expertise, escarpment shading designs, 6.6kW from $5,500. CEC-accredited, 10-yr warranty.",
+  heroH1: "Solar Panels for Thirroul &amp; Northern Illawarra Homes",
+  heroSubhead:
+    "Thirroul, Austinmer, Bulli and the northern Illawarra have more character tile roofs than anywhere south. We install on tile, Colorbond and tin — and we know which streets the escarpment takes at 8am in June.",
+  stats: [
+    { value: "90+", label: "Northern Illawarra installs" },
+    { value: "74%", label: "Avg bill reduction" },
+    { value: "6 days", label: "Quote to install" },
+    { value: "10 yr", label: "Workmanship warranty" },
+  ],
+  sections: [
     {
-      "@type": "LocalBusiness",
-      "name": "Coastal Solar Co. — Solar Panels Thirroul",
-      "url": "https://coastalsolarco.com/locations/thirroul",
-      "telephone": "0493531857",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Thirroul",
-        "addressRegion": "NSW",
-        "postalCode": "2515",
-        "addressCountry": "AU",
-      },
-      "areaServed": { "@type": "City", "name": "Thirroul" },
+      heading: "The Northern Illawarra's Character Tile Roof Problem",
+      paragraphs: [
+        "Thirroul, Austinmer and Bulli have a lot of older homes with concrete or terracotta tile roofs — character houses from the early 20th century, many still in original configuration. Tile roofs are perfectly fine to install solar on, but they require installers who actually work on tile regularly. Galvanised steel tile hooks (not the aluminium ones metal-roof installers reach for by default), tile replacement protocols for the inevitable cracked tile, and waterproofing approaches that don't rely on tape-and-hope.",
+        "Every Coastal Solar Co. install in the northern Illawarra includes a tile allowance — we expect to replace 2–5 tiles per install (that's normal) and we bring replacement stock on the day. Installers who don't budget for this either refuse tile jobs outright or leave homeowners with water ingress after the first heavy rain. If you're in a character home and your quote doesn't mention tile handling, ask about it explicitly.",
+      ],
     },
     {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://coastalsolarco.com" },
-        { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://coastalsolarco.com/locations" },
-        { "@type": "ListItem", "position": 3, "name": "Thirroul", "item": "https://coastalsolarco.com/locations/thirroul" },
+      heading: "Escarpment Shading in the Northern Illawarra",
+      paragraphs: [
+        "The Illawarra Escarpment runs north all the way to Stanwell Tops. Homes in western streets of Austinmer, Bulli, Thirroul and Scarborough can lose 45–90 minutes of morning sun between April and August as the cliff line shadows the eastern sky. This matters less on a well-designed system with DC optimisers or microinverters — each panel produces independently, so one shaded panel doesn't drag the whole array. It matters a lot on a cheap string-inverter quote.",
+        "Homes closer to the coast or east of the Princes Highway — much of central Thirroul, Woonona, Corrimal, Towradgi — are typically unshaded. Standard string-inverter designs work fine. We decide on site: any quote that recommends DC optimisers or microinverters on a Thirroul job should have a specific shading reason behind it, not a blanket upsell.",
+      ],
+    },
+    {
+      heading: "The Northern Illawarra Solar Sweet Spot",
+      paragraphs: [
+        "Despite the escarpment, northern Illawarra generation is still strong — 4.7 peak sun hours a day on average, and the coastal cloud patterns favour consistent generation rather than extremes. A typical 6.6kW system in Thirroul produces 9,000–10,500 kWh/year. Homes with electric hot water, reverse-cycle air-con or EV charging find payback lands between 4 and 6 years.",
+        "For homes in Scarborough, Clifton and Coalcliff — right up on the coastal cliff edge — marine-grade mounting applies. Sea spray reaches properties closer to the water here than in most of Wollongong proper. We default to marine-grade fixings on any property within 2 km of the coast, regardless of whether it was specifically quoted as such.",
+      ],
+    },
+    {
+      heading: "Scheduling in the Northern Illawarra",
+      paragraphs: [
+        "We run crews through the northern Illawarra at least once a week. Most Thirroul/Austinmer installs happen within 6–8 business days of contract signing. Access is straightforward for most homes, though some of the older terrace streets in Bulli and Woonona require careful crane or ladder positioning — we scope that during the site assessment rather than discover it on install day.",
+        "Warranty and support — 10-year workmanship warranty and 5-minute callback during business hours — apply regardless of suburb. Post-install questions come back to our Kiama office; the install crew is local to the Illawarra.",
       ],
     },
   ],
+  pricingNote:
+    "Character tile roofs (common in Thirroul, Austinmer and Bulli) add no extra charge to our standard pricing — tile replacement stock and proper hooks are included. Final quote confirmed after a free on-site assessment.",
+  pricingRows: getDefaultPricingRows(),
+  testimonial: {
+    quote:
+      "Our 1920s Thirroul place has a tile roof and three of the four quotes we got either refused the job or pushed for a roof replacement before solar. Coastal Solar replaced six tiles during install (they had replacements in the van), no leaks, clean finish. Works perfectly through winter even with the morning shading.",
+    author: "Elise J.",
+    suburb: "Thirroul",
+    systemSize: "6.6kW with SolarEdge optimisers",
+    rating: 5,
+  },
+  faqIntro:
+    "Common questions from Thirroul, Austinmer, Bulli, Woonona, Corrimal, Scarborough and northern Illawarra homeowners about solar on tile roofs, shading, rebates and install timelines.",
+  faqLimit: 10,
+  relatedArticles: [
+    { slug: "is-solar-worth-it-wollongong-2026", title: "Is Solar Worth It in Wollongong in 2026?" },
+    { slug: "questions-ask-solar-installer", title: "10 Questions to Ask a Solar Installer" },
+    { slug: "solar-installation-time-nsw", title: "How Long Does Solar Installation Take in NSW?" },
+  ],
+  ctaHeading: "Ready to go solar in Thirroul?",
+  ctaSubhead:
+    "Free site assessment. No deposit. Tile-roof experience, shading analysis, and a 10-year workmanship warranty that covers water ingress — because on older homes, that's what matters.",
+};
+
+export const metadata: Metadata = {
+  title: data.metaTitle,
+  description: data.metaDescription,
+  alternates: { canonical: `https://www.coastalsolarco.com/locations/${data.slug}` },
+  openGraph: {
+    title: data.metaTitle,
+    description: data.metaDescription,
+    url: `https://www.coastalsolarco.com/locations/${data.slug}`,
+  },
 };
 
 export default function ThirroulPage() {
-  return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <section className="gradient-hero text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="text-white/60 text-sm mb-6">
-            <Link href="/" className="hover:text-white">Home</Link> &rsaquo; <Link href="/locations" className="hover:text-white">Locations</Link> &rsaquo; <span className="text-white">Thirroul</span>
-          </nav>
-          <h1 className="text-4xl lg:text-5xl font-black mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>
-            Solar Panels for Thirroul Homes
-          </h1>
-          <p className="text-xl text-white/85 max-w-2xl mb-8">Northern Illawarra solar installation — Thirroul, Austinmer, Coledale and surrounds.</p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/solar-calculator" className="btn-primary text-lg">Calculate My Savings &rarr;</Link>
-            <Link href="/contact" className="btn-outline text-lg">Get Free Quote</Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-black mb-6" style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}>
-                Solar Installation in Thirroul
-              </h2>
-              <p className="text-gray-700 mb-4">Thirroul and the Northern Illawarra corridor — including Austinmer, Coledale, Wombarra, and Scarborough — are within our primary service area. The escarpment backdrop and coastal positioning mean careful system design is important here, and our local knowledge ensures maximum output.</p>
-              <p className="text-gray-700 mb-4">We handle all grid connection paperwork — you don&apos;t fill in a single form. Every install includes a 30-minute walkthrough and monitoring app setup.</p>
-              <p className="text-gray-700">From quote to installation, our average turnaround is just 6 business days.</p>
-            </div>
-            <div className="rounded-2xl p-10 text-white" style={{ background: "linear-gradient(135deg, #2B4C5E, #1e3545)" }}>
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { val: "74%", label: "Average bill reduction" },
-                  { val: "6 days", label: "Quote to install" },
-                  { val: "10yr", label: "Workmanship warranty" },
-                  { val: "5 min", label: "Callback guarantee" },
-                ].map((s) => (
-                  <div key={s.label} className="text-center">
-                    <div className="text-3xl font-black" style={{ color: "var(--color-secondary)" }}>{s.val}</div>
-                    <div className="text-sm text-white/70 mt-1">{s.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 section-accent">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-black text-center mb-10" style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}>
-            Thirroul Solar Pricing (After Rebates)
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { size: "6.6kW Starter", price: "$5,500–$6,500", savings: "$1,200–$1,800/yr", best: "2–3 person household" },
-              { size: "10kW Popular", price: "$7,800–$9,500", savings: "$1,800–$2,600/yr", best: "3–5 person household", highlight: true },
-              { size: "10kW + Battery", price: "$14,000–$17,000", savings: "$2,400–$3,200/yr", best: "Energy independence" },
-            ].map((pkg) => (
-              <div key={pkg.size} className={`rounded-2xl p-8 ${pkg.highlight ? "text-white shadow-xl" : "bg-white shadow-sm"}`}
-                style={pkg.highlight ? { backgroundColor: "var(--color-primary)" } : {}}>
-                {pkg.highlight && <div className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: "var(--color-secondary)" }}>Most Popular</div>}
-                <div className="text-xl font-black mb-2" style={{ fontFamily: "var(--font-montserrat)", color: pkg.highlight ? "#fff" : "var(--color-primary)" }}>{pkg.size}</div>
-                <div className="text-3xl font-black mb-2" style={{ color: "var(--color-secondary)" }}>{pkg.price}</div>
-                <div className="text-sm mb-1" style={{ color: pkg.highlight ? "rgba(255,255,255,0.8)" : "#555" }}>Saves {pkg.savings}</div>
-                <div className="text-xs" style={{ color: pkg.highlight ? "rgba(255,255,255,0.6)" : "#888" }}>Best for: {pkg.best}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link href="/solar-calculator" className="btn-primary text-lg">Get My Exact Thirroul Quote &rarr;</Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 gradient-hero text-white text-center">
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-black mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>Ready to go solar in Thirroul?</h2>
-          <p className="text-white/85 mb-8 text-lg">No obligation. No pressure. Just honest numbers and a real quote.</p>
-          <Link href="/solar-calculator" className="btn-primary text-lg">Calculate My Savings &rarr;</Link>
-        </div>
-      </section>
-    </>
-  );
+  return <LocationPageLayout data={data} />;
 }

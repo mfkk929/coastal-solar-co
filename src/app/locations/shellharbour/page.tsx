@@ -1,124 +1,108 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import LocationPageLayout, {
+  getDefaultPricingRows,
+  type LocationPageData,
+} from "@/components/LocationPageLayout";
 
-export const metadata: Metadata = {
-  title: "Solar Panels Shellharbour | Coastal Solar Co.",
-  description: "Solar panel installation in Shellharbour & surrounds. 6.6kW from $5,500 after rebates. CEC-accredited local team, 5-minute callback guarantee, 6-day installation, 10-year warranty.",
-  alternates: { canonical: "https://coastalsolarco.com/locations/shellharbour" },
-};
-
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
+const data: LocationPageData = {
+  name: "Shellharbour",
+  slug: "shellharbour",
+  postcode: "2529",
+  serviceAreas: ["Shell Cove", "Oak Flats", "Blackbutt", "Barrack Heights", "Flinders", "Warilla", "Dunmore"],
+  gridOperator: "Endeavour Energy",
+  peakSunHours: "4.8",
+  metaTitle: "Solar Panels Shellharbour | Local Installer | Coastal Solar Co.",
+  metaDescription:
+    "Solar in Shellharbour, Shell Cove & Flinders. 6.6kW from $5,500 after rebates. 3-phase advantage on newer estates — CEC-accredited, 10-yr warranty.",
+  heroH1: "Solar Panels for Shellharbour Homes",
+  heroSubhead:
+    "Shell Cove, Flinders, Blackbutt and Oak Flats — mostly three-phase, mostly unshaded, and mostly the smoothest solar installs in the Illawarra. We run weekly crews across every Shellharbour postcode.",
+  stats: [
+    { value: "120+", label: "Shellharbour installs" },
+    { value: "74%", label: "Avg bill reduction" },
+    { value: "6 days", label: "Quote to install" },
+    { value: "10 yr", label: "Workmanship warranty" },
+  ],
+  sections: [
     {
-      "@type": "LocalBusiness",
-      "name": "Coastal Solar Co. — Solar Panels Shellharbour",
-      "url": "https://coastalsolarco.com/locations/shellharbour",
-      "telephone": "0493531857",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Shellharbour",
-        "addressRegion": "NSW",
-        "postalCode": "2529",
-        "addressCountry": "AU",
-      },
-      "areaServed": { "@type": "City", "name": "Shellharbour" },
+      heading: "Shellharbour: Newer Estates, 3-Phase Power, Bigger Systems",
+      paragraphs: [
+        "Shellharbour's newer suburbs — particularly Shell Cove, Flinders, Blackbutt and Dunmore — were built from the 2000s onwards with three-phase power as standard. That matters for solar. A three-phase home has higher default export limits from Endeavour Energy (typically 15–20kW instead of the 5–10kW cap on older single-phase streets), plays nicely with larger inverters, and doesn't trip the grid-reinforcement conversations that delay some older Dapto and Warrawong installs.",
+        "What this means in practice: if you live in Shell Cove or Flinders and you have the roof space, a 10kW or even 13kW system is usually straightforward to approve and install. Older Shellharbour postcodes (Warilla, parts of Oak Flats, some of the original Blackbutt streets) are single-phase and behave more like Dapto — still fine, just with a lower practical export ceiling.",
+      ],
     },
     {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://coastalsolarco.com" },
-        { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://coastalsolarco.com/locations" },
-        { "@type": "ListItem", "position": 3, "name": "Shellharbour", "item": "https://coastalsolarco.com/locations/shellharbour" },
+      heading: "The Shellharbour Roof Advantage",
+      paragraphs: [
+        "Newer Shellharbour estates give us some of the best solar roofs in the region to work with. Clean Colorbond metal roofs with consistent pitch, generous north-facing aspects, minimal shading from neighbouring buildings, and set-back designs that mean rarely do we fight roofing-code clearances for ventilation. A 10kW install in Shell Cove typically takes our crew 5–6 hours on the roof — cleaner than almost any equivalent Wollongong job.",
+        "Coastal proximity varies. Homes in Shell Cove and Blackbutt within 2 km of the ocean get marine-grade mounting by default — same standard we use in Kiama. Further inland (parts of Flinders, Dunmore, Albion Park-adjacent Shellharbour) we use standard mounting, which keeps cost down slightly without compromising life-span.",
+      ],
+    },
+    {
+      heading: "Pricing &amp; Rebates for Shellharbour",
+      paragraphs: [
+        "Shellharbour is Zone 3 for the federal STC scheme — same as Wollongong and Kiama. A 6.6kW install in 2026 receives approximately $2,900–$3,300 as a point-of-sale STC discount, a 10kW around $4,500–$5,000. The scheme steps down each 1 January; installing in 2026 is worth roughly $400 more than waiting a year.",
+        "For battery-equipped homes, the NSW Cheaper Home Batteries Program plus the federal battery rebate combined take $2,000–$4,000 off a 10kWh battery. A growing number of our Shell Cove customers are choosing the 10kW + 10kWh package — the combination pays back faster here than in shaded inland suburbs because generation is consistently strong.",
+      ],
+    },
+    {
+      heading: "What to Ask Any Shellharbour Solar Installer",
+      paragraphs: [
+        "Three things we'd recommend any Shellharbour homeowner confirms in writing before signing a quote. First: is the system sized to take advantage of your phase capacity? On a three-phase home, quoting you a small single-phase-style system is leaving savings on the table. Second: does the quote spell out the STC rebate value and per-certificate price? Clear line items prevent disputes later. Third: what's the grid connection timeline for your specific street? Most Shell Cove approvals come back in 3–7 business days — some older Warilla streets take longer because of transformer loading.",
+        "Every Coastal Solar Co. quote answers all three. If you're collecting comparison quotes, run them against the same three questions and see who struggles.",
       ],
     },
   ],
+  pricingNote:
+    "Shellharbour homes on three-phase power (Shell Cove, Flinders, Dunmore) typically qualify for larger inverters without grid reinforcement. Final quote confirmed after a free on-site assessment.",
+  pricingRows: getDefaultPricingRows(),
+  testimonial: {
+    quote:
+      "Our Shell Cove house is three-phase. The first two companies we called quoted the same 6.6kW system they'd pitch on any single-phase Dapto job. Coastal Solar actually looked at the switchboard, sized a 13kW system, and it produces more power every day than the neighbours' 10kW combined.",
+    author: "James P.",
+    suburb: "Shell Cove",
+    systemSize: "13kW + 10kWh battery",
+    rating: 5,
+  },
+  faqIntro:
+    "Common questions from Shellharbour, Shell Cove, Oak Flats, Flinders and Warilla homeowners about solar, batteries, rebates and three-phase sizing.",
+  faqLimit: 10,
+  relatedArticles: [
+    { slug: "6kw-vs-10kw-solar-illawarra", title: "6.6kW vs 10kW Solar: Which System Is Right for an Illawarra Home?" },
+    { slug: "is-solar-worth-it-wollongong-2026", title: "Is Solar Worth It in Wollongong in 2026?" },
+    { slug: "nsw-solar-rebates-2026", title: "NSW Solar Rebates 2026: Every Incentive Explained" },
+  ],
+  ctaHeading: "Ready to go solar in Shellharbour?",
+  ctaSubhead:
+    "Free site assessment. No deposit. We'll confirm your phase capacity before we quote — so the system we design actually uses your home's headroom.",
+};
+
+export const metadata: Metadata = {
+  title: data.metaTitle,
+  description: data.metaDescription,
+  alternates: { canonical: `https://www.coastalsolarco.com/locations/${data.slug}` },
+  openGraph: {
+    title: data.metaTitle,
+    description: data.metaDescription,
+    url: `https://www.coastalsolarco.com/locations/${data.slug}`,
+  },
 };
 
 export default function ShellharbourPage() {
-  return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <section className="gradient-hero text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="text-white/60 text-sm mb-6">
-            <Link href="/" className="hover:text-white">Home</Link> &rsaquo; <Link href="/locations" className="hover:text-white">Locations</Link> &rsaquo; <span className="text-white">Shellharbour</span>
-          </nav>
-          <h1 className="text-4xl lg:text-5xl font-black mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>
-            Solar Panels for Shellharbour Homes
-          </h1>
-          <p className="text-xl text-white/85 max-w-2xl mb-8">Serving Shellharbour City with honest solar pricing and the best workmanship warranty in the region.</p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/solar-calculator" className="btn-primary text-lg">Calculate My Savings &rarr;</Link>
-            <Link href="/contact" className="btn-outline text-lg">Get Free Quote</Link>
-          </div>
-        </div>
-      </section>
+  return <LocationPageLayourm Endeavour Energy approvals before quoting and handle every form on your behalf.",
+};
 
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-black mb-6" style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}>
-                Solar Installation in Shellharbour
-              </h2>
-              <p className="text-gray-700 mb-4">Shellharbour&apos;s relatively flat terrain and north-facing roof orientations in suburbs like Flinders, Warilla, Barrack Heights, and Oak Flats make it one of the best locations for solar in the Illawarra. Average quarterly bills in Shellharbour of $300–$500 mean strong payback periods.</p>
-              <p className="text-gray-700 mb-4">We handle all grid connection paperwork — you don&apos;t fill in a single form. Every install includes a 30-minute walkthrough and monitoring app setup.</p>
-              <p className="text-gray-700">From quote to installation, our average turnaround is just 6 business days.</p>
-            </div>
-            <div className="rounded-2xl p-10 text-white" style={{ background: "linear-gradient(135deg, #2B4C5E, #1e3545)" }}>
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { val: "74%", label: "Average bill reduction" },
-                  { val: "6 days", label: "Quote to install" },
-                  { val: "10yr", label: "Workmanship warranty" },
-                  { val: "5 min", label: "Callback guarantee" },
-                ].map((s) => (
-                  <div key={s.label} className="text-center">
-                    <div className="text-3xl font-black" style={{ color: "var(--color-secondary)" }}>{s.val}</div>
-                    <div className="text-sm text-white/70 mt-1">{s.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+export const metadata: Metadata = {
+  title: data.metaTitle,
+  description: data.metaDescription,
+  alternates: { canonical: `https://www.coastalsolarco.com/locations/${data.slug}` },
+  openGraph: {
+    title: data.metaTitle,
+    description: data.metaDescription,
+    url: `https://www.coastalsolarco.com/locations/${data.slug}`,
+  },
+};
 
-      <section className="py-16 section-accent">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-black text-center mb-10" style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}>
-            Shellharbour Solar Pricing (After Rebates)
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { size: "6.6kW Starter", price: "$5,500–$6,500", savings: "$1,200–$1,800/yr", best: "2–3 person household" },
-              { size: "10kW Popular", price: "$7,800–$9,500", savings: "$1,800–$2,600/yr", best: "3–5 person household", highlight: true },
-              { size: "10kW + Battery", price: "$14,000–$17,000", savings: "$2,400–$3,200/yr", best: "Energy independence" },
-            ].map((pkg) => (
-              <div key={pkg.size} className={`rounded-2xl p-8 ${pkg.highlight ? "text-white shadow-xl" : "bg-white shadow-sm"}`}
-                style={pkg.highlight ? { backgroundColor: "var(--color-primary)" } : {}}>
-                {pkg.highlight && <div className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: "var(--color-secondary)" }}>Most Popular</div>}
-                <div className="text-xl font-black mb-2" style={{ fontFamily: "var(--font-montserrat)", color: pkg.highlight ? "#fff" : "var(--color-primary)" }}>{pkg.size}</div>
-                <div className="text-3xl font-black mb-2" style={{ color: "var(--color-secondary)" }}>{pkg.price}</div>
-                <div className="text-sm mb-1" style={{ color: pkg.highlight ? "rgba(255,255,255,0.8)" : "#555" }}>Saves {pkg.savings}</div>
-                <div className="text-xs" style={{ color: pkg.highlight ? "rgba(255,255,255,0.6)" : "#888" }}>Best for: {pkg.best}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link href="/solar-calculator" className="btn-primary text-lg">Get My Exact Shellharbour Quote &rarr;</Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 gradient-hero text-white text-center">
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-black mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>Ready to go solar in Shellharbour?</h2>
-          <p className="text-white/85 mb-8 text-lg">No obligation. No pressure. Just honest numbers and a real quote.</p>
-          <Link href="/solar-calculator" className="btn-primary text-lg">Calculate My Savings &rarr;</Link>
-        </div>
-      </section>
-    </>
-  );
+export default function ShellharbourPage() {
+  return <LocationPageLayout data={data} />;
 }

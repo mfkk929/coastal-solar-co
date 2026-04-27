@@ -1,124 +1,93 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import LocationPageLayout, {
+  getDefaultPricingRows,
+  type LocationPageData,
+} from "@/components/LocationPageLayout";
 
-export const metadata: Metadata = {
-  title: "Solar Panels Gerringong | Coastal Solar Co.",
-  description: "Solar panel installation in Gerringong & Gerroa. 6.6kW from $5,500 after rebates. CEC-accredited local team, 5-minute callback, 6-day installation, 10-year workmanship warranty.",
-  alternates: { canonical: "https://coastalsolarco.com/locations/gerringong" },
-};
-
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
+const data: LocationPageData = {
+  name: "Gerringong",
+  slug: "gerringong",
+  postcode: "2534",
+  serviceAreas: ["Gerroa", "Werri Beach", "Broughton Village", "Rose Valley", "Foxground"],
+  gridOperator: "Endeavour Energy",
+  peakSunHours: "4.9",
+  metaTitle: "Solar Panels Gerringong | Kiama Coastal Installer | Coastal Solar Co.",
+  metaDescription:
+    "Solar in Gerringong & Gerroa. Some of the best unshaded coastal roofs in NSW. 6.6kW from $5,500. Marine-grade mounting, 10-yr warranty.",
+  heroH1: "Solar Panels for Gerringong &amp; Gerroa Homes",
+  heroSubhead:
+    "Gerringong has some of the best unshaded coastal roofs in NSW — and our install crew is 10 minutes up the road in Kiama. Marine-grade mounting as standard. Fast paybacks, minimal fuss.",
+  stats: [
+    { value: "60+", label: "Gerringong / Gerroa installs" },
+    { value: "4.1 yr", label: "Avg payback" },
+    { value: "6 days", label: "Quote to install" },
+    { value: "10 yr", label: "Workmanship warranty" },
+  ],
+  sections: [
     {
-      "@type": "LocalBusiness",
-      "name": "Coastal Solar Co. — Solar Panels Gerringong",
-      "url": "https://coastalsolarco.com/locations/gerringong",
-      "telephone": "0493531857",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Gerringong",
-        "addressRegion": "NSW",
-        "postalCode": "2534",
-        "addressCountry": "AU",
-      },
-      "areaServed": { "@type": "City", "name": "Gerringong" },
+      heading: "Gerringong's Unmatched Solar Conditions",
+      paragraphs: [
+        "Gerringong sits on rolling coastal hinterland with some of the cleanest, most unshaded residential roofs in the state. 4.9 peak sun hours a day, minimal tree canopy on typical blocks, generous north-facing aspects, and steady coastal winds that keep summer panel temperatures manageable. The result: our Gerringong installs average 4.1-year paybacks — second only to Kiama proper in our service area.",
+        "For rural-leaning blocks in Rose Valley, Foxground and the hinterland behind Gerroa, sizing can go well above typical suburban limits. We've installed 10–13kW systems on hobby farms where the shed, pumps and kitchen alone justify bigger generation. If you have the roof space and the daytime load, Gerringong rarely under-delivers.",
+      ],
     },
     {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://coastalsolarco.com" },
-        { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://coastalsolarco.com/locations" },
-        { "@type": "ListItem", "position": 3, "name": "Gerringong", "item": "https://coastalsolarco.com/locations/gerringong" },
+      heading: "Coastal Exposure &amp; Mounting Specs",
+      paragraphs: [
+        "Gerringong, Gerroa and Werri Beach are all within 2–3 km of the ocean. Salt-air exposure is real and cumulative — standard aluminium mounting hardware corrodes measurably faster here than in inland Illawarra. Every Coastal Solar Co. install in Gerringong uses marine-grade stainless fasteners, anodised rail extrusions, and coastal-rated sealants. Same standard as Kiama, same price.",
+        "Gerroa specifically has a few streets close to the Werri Lagoon and Seven Mile Beach where onshore winds deposit salt nearly year-round. We sometimes specify upgraded fixings (316-grade stainless rather than 304-grade) for those properties — adds roughly $100 to the bill, doubles the expected hardware life-span.",
+      ],
+    },
+    {
+      heading: "Scheduling from Kiama",
+      paragraphs: [
+        "Gerringong is 10 minutes south of our Kiama base. That translates to faster scheduling, faster callbacks, and a crew that knows the local roads well enough to navigate a narrow Rose Valley driveway without measuring twice. Most Gerringong installs happen within 5–7 business days of signed contract.",
+        "Post-install service is the same as for Kiama customers: 10-year workmanship warranty, 5-minute callback during business hours, and a team who lives where you live. If something goes wrong in year 8, we're still around.",
+      ],
+    },
+    {
+      heading: "Gerringong Rebates &amp; Pricing",
+      paragraphs: [
+        "Gerringong is Zone 3 for the federal STC scheme, same as the rest of the Illawarra. A 6.6kW install receives approximately $2,900–$3,300 as a point-of-sale STC discount in 2026; a 10kW, around $4,500–$5,000. The rebate steps down each 1 January.",
+        "For battery storage, the NSW Cheaper Home Batteries Program plus the federal battery rebate combine to take $2,000–$4,000 off a 10kWh battery. With feed-in tariffs at 5–8¢/kWh and grid electricity at 32¢/kWh, battery payback in Gerringong sits at 7–9 years for households with moderate evening load.",
       ],
     },
   ],
+  pricingNote:
+    "Gerringong pricing includes marine-grade mounting as standard. Rural blocks in Rose Valley or Foxground with larger generation potential can be quoted for 13kW+ systems — confirmed after a free on-site assessment.",
+  pricingRows: getDefaultPricingRows(),
+  testimonial: {
+    quote:
+      "Rural block outside Gerringong, lots of roof space, no trees. Coastal Solar suggested 13kW where everyone else quoted 6.6kW. Three summers later, that system covers our entire electricity bill plus pays us about $300 a quarter in export credits. Best purchase we've made on this property.",
+    author: "Peter H.",
+    suburb: "Rose Valley",
+    systemSize: "13kW ground-mount",
+    rating: 5,
+  },
+  faqIntro:
+    "Common questions from Gerringong, Gerroa, Werri Beach, Broughton Village and Rose Valley homeowners about solar, batteries, rural systems and rebates.",
+  faqLimit: 10,
+  relatedArticles: [
+    { slug: "solar-payback-period-illawarra", title: "How Long Does Solar Take to Pay for Itself in the Illawarra?" },
+    { slug: "6kw-vs-10kw-solar-illawarra", title: "6.6kW vs 10kW Solar: Which System Is Right for an Illawarra Home?" },
+    { slug: "nsw-solar-rebates-2026", title: "NSW Solar Rebates 2026: Every Incentive Explained" },
+  ],
+  ctaHeading: "Ready to go solar in Gerringong?",
+  ctaSubhead:
+    "Free site assessment. No deposit. Our crew is 10 minutes away in Kiama — so the install experience is as local as it gets.",
+};
+
+export const metadata: Metadata = {
+  title: data.metaTitle,
+  description: data.metaDescription,
+  alternates: { canonical: `https://www.coastalsolarco.com/locations/${data.slug}` },
+  openGraph: {
+    title: data.metaTitle,
+    description: data.metaDescription,
+    url: `https://www.coastalsolarco.com/locations/${data.slug}`,
+  },
 };
 
 export default function GerringongPage() {
-  return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <section className="gradient-hero text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="text-white/60 text-sm mb-6">
-            <Link href="/" className="hover:text-white">Home</Link> &rsaquo; <Link href="/locations" className="hover:text-white">Locations</Link> &rsaquo; <span className="text-white">Gerringong</span>
-          </nav>
-          <h1 className="text-4xl lg:text-5xl font-black mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>
-            Solar Panels for Gerringong Homes
-          </h1>
-          <p className="text-xl text-white/85 max-w-2xl mb-8">Local solar installation in Gerringong, Gerroa and surrounds.</p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/solar-calculator" className="btn-primary text-lg">Calculate My Savings &rarr;</Link>
-            <Link href="/contact" className="btn-outline text-lg">Get Free Quote</Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-black mb-6" style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}>
-                Solar Installation in Gerringong
-              </h2>
-              <p className="text-gray-700 mb-4">Gerringong&apos;s coastal hillside positioning means most homes have excellent northern exposure. The area&apos;s heritage properties and newer estates both benefit from our tailored system design approach. We also serve Gerroa, Gerrringong Beach, and the Bulli Tops area.</p>
-              <p className="text-gray-700 mb-4">We handle all grid connection paperwork — you don&apos;t fill in a single form. Every install includes a 30-minute walkthrough and monitoring app setup.</p>
-              <p className="text-gray-700">From quote to installation, our average turnaround is just 6 business days.</p>
-            </div>
-            <div className="rounded-2xl p-10 text-white" style={{ background: "linear-gradient(135deg, #2B4C5E, #1e3545)" }}>
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { val: "74%", label: "Average bill reduction" },
-                  { val: "6 days", label: "Quote to install" },
-                  { val: "10yr", label: "Workmanship warranty" },
-                  { val: "5 min", label: "Callback guarantee" },
-                ].map((s) => (
-                  <div key={s.label} className="text-center">
-                    <div className="text-3xl font-black" style={{ color: "var(--color-secondary)" }}>{s.val}</div>
-                    <div className="text-sm text-white/70 mt-1">{s.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 section-accent">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-black text-center mb-10" style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}>
-            Gerringong Solar Pricing (After Rebates)
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { size: "6.6kW Starter", price: "$5,500–$6,500", savings: "$1,200–$1,800/yr", best: "2–3 person household" },
-              { size: "10kW Popular", price: "$7,800–$9,500", savings: "$1,800–$2,600/yr", best: "3–5 person household", highlight: true },
-              { size: "10kW + Battery", price: "$14,000–$17,000", savings: "$2,400–$3,200/yr", best: "Energy independence" },
-            ].map((pkg) => (
-              <div key={pkg.size} className={`rounded-2xl p-8 ${pkg.highlight ? "text-white shadow-xl" : "bg-white shadow-sm"}`}
-                style={pkg.highlight ? { backgroundColor: "var(--color-primary)" } : {}}>
-                {pkg.highlight && <div className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: "var(--color-secondary)" }}>Most Popular</div>}
-                <div className="text-xl font-black mb-2" style={{ fontFamily: "var(--font-montserrat)", color: pkg.highlight ? "#fff" : "var(--color-primary)" }}>{pkg.size}</div>
-                <div className="text-3xl font-black mb-2" style={{ color: "var(--color-secondary)" }}>{pkg.price}</div>
-                <div className="text-sm mb-1" style={{ color: pkg.highlight ? "rgba(255,255,255,0.8)" : "#555" }}>Saves {pkg.savings}</div>
-                <div className="text-xs" style={{ color: pkg.highlight ? "rgba(255,255,255,0.6)" : "#888" }}>Best for: {pkg.best}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link href="/solar-calculator" className="btn-primary text-lg">Get My Exact Gerringong Quote &rarr;</Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 gradient-hero text-white text-center">
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-black mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>Ready to go solar in Gerringong?</h2>
-          <p className="text-white/85 mb-8 text-lg">No obligation. No pressure. Just honest numbers and a real quote.</p>
-          <Link href="/solar-calculator" className="btn-primary text-lg">Calculate My Savings &rarr;</Link>
-        </div>
-      </section>
-    </>
-  );
+  return <LocationPageLayout data={data} />;
 }

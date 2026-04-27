@@ -1,124 +1,93 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import LocationPageLayout, {
+  getDefaultPricingRows,
+  type LocationPageData,
+} from "@/components/LocationPageLayout";
 
-export const metadata: Metadata = {
-  title: "Solar Panels Nowra | Local Installer | Coastal Solar Co.",
-  description: "Solar panel installation in Nowra & Shoalhaven. 6.6kW from $5,500 after rebates. CEC-accredited local team, 5-minute callback guarantee, 6-day installation, 10-year warranty.",
-  alternates: { canonical: "https://coastalsolarco.com/locations/nowra" },
-};
-
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
+const data: LocationPageData = {
+  name: "Nowra",
+  slug: "nowra",
+  postcode: "2541",
+  serviceAreas: ["South Nowra", "North Nowra", "Worrigee", "Cambewarra", "Bomaderry", "Terara", "Nowra Hill"],
+  gridOperator: "Essential Energy",
+  peakSunHours: "4.9",
+  metaTitle: "Solar Panels Nowra | Shoalhaven Specialist | Coastal Solar Co.",
+  metaDescription:
+    "Solar in Nowra & the Shoalhaven. 6.6kW from $5,500 after rebates. We handle Essential Energy approvals (different from Endeavour) — 10-yr warranty.",
+  heroH1: "Solar Panels for Nowra Homes",
+  heroSubhead:
+    "Nowra is on Essential Energy, not Endeavour — a distinction most Illawarra-based installers forget. We run weekly crews through the Shoalhaven and know the approval rules both sides of the line.",
+  stats: [
+    { value: "100+", label: "Shoalhaven installs" },
+    { value: "74%", label: "Avg bill reduction" },
+    { value: "8 days", label: "Quote to install (Nowra)" },
+    { value: "10 yr", label: "Workmanship warranty" },
+  ],
+  sections: [
     {
-      "@type": "LocalBusiness",
-      "name": "Coastal Solar Co. — Solar Panels Nowra",
-      "url": "https://coastalsolarco.com/locations/nowra",
-      "telephone": "0493531857",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Nowra",
-        "addressRegion": "NSW",
-        "postalCode": "2541",
-        "addressCountry": "AU",
-      },
-      "areaServed": { "@type": "City", "name": "Nowra" },
+      heading: "Essential Energy vs Endeavour Energy: Why It Matters in Nowra",
+      paragraphs: [
+        "Here's the thing most Illawarra-based installers miss when they quote a Nowra job: Nowra is not on the Endeavour Energy network. South of Berry, you switch to Essential Energy's distribution network — a different organisation with a different approval process, different export-limit rules and different paperwork timelines. Installers who quote all-of-NSW at the Endeavour defaults typically hit surprises in the final week before install.",
+        "Essential Energy pre-install approvals typically take 7–12 business days for a straightforward residential connection — slightly slower than Endeavour's 3–10. The commissioning inspection after install follows a similar protocol. None of this is difficult; it just has to be done correctly. We process Essential Energy paperwork every week so there are no surprises — we bake the extra few days into your install schedule upfront.",
+      ],
     },
     {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://coastalsolarco.com" },
-        { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://coastalsolarco.com/locations" },
-        { "@type": "ListItem", "position": 3, "name": "Nowra", "item": "https://coastalsolarco.com/locations/nowra" },
+      heading: "Nowra's Solar Advantage: Space, Sun, and Rural Blocks",
+      paragraphs: [
+        "Nowra enjoys 4.9 peak sun hours a day — marginally better than Wollongong, comfortably ahead of Sydney. Most Nowra residential roofs face north or north-east and are minimally shaded. For rural blocks in Worrigee, Cambewarra and Terara, roof or ground-mount options open up systems well beyond the typical 10kW ceiling — we've installed 13kW and 20kW systems on hobby farms that pay back in under 5 years because of high daytime load (pumps, sheds, air-con).",
+        "For standard suburban Nowra homes (South Nowra, North Nowra, Bomaderry), a 6.6–10kW system covers most household needs with quick paybacks. If you're on a rural block, tell us at the quoting stage — we'll size for your actual load, not the typical suburban assumption.",
+      ],
+    },
+    {
+      heading: "Which Shoalhaven Suburbs We Cover from Nowra",
+      paragraphs: [
+        "Nowra is our Shoalhaven hub. From here we install weekly through South Nowra, North Nowra, Bomaderry, Worrigee, Cambewarra, Terara, Nowra Hill, Berry, Gerringong to the north, and Huskisson, Vincentia and Jervis Bay to the east. If you're further south (Ulladulla, Mollymook), we still service you — just expect an extra day or two on scheduling while we batch jobs.",
+        "For Shoalhaven customers specifically, being based in Kiama (not Sydney or Wollongong) means our install crew doesn't drive past you back to a northern depot at 5pm. Most of our techs live in the Shoalhaven itself.",
+      ],
+    },
+    {
+      heading: "Rebates for Nowra Homeowners",
+      paragraphs: [
+        "Nowra is Zone 3 for the federal STC scheme, same as the Illawarra — so rebate values are identical. A 6.6kW install in 2026 receives approximately $2,900–$3,300 as a point-of-sale STC discount; a 10kW, around $4,500–$5,000. The scheme reduces each 1 January.",
+        "For battery storage, the NSW Cheaper Home Batteries Program plus the federal battery rebate together knock $2,000–$4,000 off a 10kWh battery. Eligibility is income-assessed; we check during the quote. For Nowra homes with rural blocks or occasional outages, batteries do double duty — payback plus backup power during short grid interruptions.",
       ],
     },
   ],
+  pricingNote:
+    "Nowra install timelines run a couple of days longer than Illawarra installs because Essential Energy pre-approval typically takes 7–12 business days (vs Endeavour's 3–10). Pricing is identical to our Illawarra pricing.",
+  pricingRows: getDefaultPricingRows(),
+  testimonial: {
+    quote:
+      "Had two quotes from Illawarra installers that totally missed that we're on Essential Energy. Coastal Solar walked us through the difference on the first call, adjusted the timeline, and delivered exactly when they said they would. 10kW system on a rural block in Cambewarra — we're basically off-grid during daylight hours.",
+    author: "Rob M.",
+    suburb: "Cambewarra",
+    systemSize: "10kW + 15kWh battery",
+    rating: 5,
+  },
+  faqIntro:
+    "Common questions from Nowra, South Nowra, North Nowra, Bomaderry, Worrigee and Cambewarra homeowners about solar, batteries, Essential Energy approvals and rebates.",
+  faqLimit: 10,
+  relatedArticles: [
+    { slug: "complete-guide-buying-solar-nsw", title: "The Complete Guide to Buying Solar in NSW" },
+    { slug: "solar-installation-time-nsw", title: "How Long Does Solar Installation Take in NSW?" },
+    { slug: "are-solar-batteries-worth-it-2026", title: "Are Solar Batteries Worth It in 2026?" },
+  ],
+  ctaHeading: "Ready to go solar in the Shoalhaven?",
+  ctaSubhead:
+    "Free site assessment. No deposit. We handle the Essential Energy paperwork — you never see a form.",
+};
+
+export const metadata: Metadata = {
+  title: data.metaTitle,
+  description: data.metaDescription,
+  alternates: { canonical: `https://www.coastalsolarco.com/locations/${data.slug}` },
+  openGraph: {
+    title: data.metaTitle,
+    description: data.metaDescription,
+    url: `https://www.coastalsolarco.com/locations/${data.slug}`,
+  },
 };
 
 export default function NowraPage() {
-  return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <section className="gradient-hero text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="text-white/60 text-sm mb-6">
-            <Link href="/" className="hover:text-white">Home</Link> &rsaquo; <Link href="/locations" className="hover:text-white">Locations</Link> &rsaquo; <span className="text-white">Nowra</span>
-          </nav>
-          <h1 className="text-4xl lg:text-5xl font-black mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>
-            Solar Panels for Nowra Homes
-          </h1>
-          <p className="text-xl text-white/85 max-w-2xl mb-8">Shoalhaven&apos;s solar specialists. Honest pricing, 5-minute callback, full walkthrough on install day.</p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/solar-calculator" className="btn-primary text-lg">Calculate My Savings &rarr;</Link>
-            <Link href="/contact" className="btn-outline text-lg">Get Free Quote</Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-black mb-6" style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}>
-                Solar Installation in Nowra
-              </h2>
-              <p className="text-gray-700 mb-4">Nowra is the commercial hub of the Shoalhaven region and benefits from excellent solar irradiance. Most Nowra homes face north or north-east, making them ideal for 6.6–10kW systems. We serve all Nowra suburbs including South Nowra, North Nowra, Cambewarra and the Shoalhaven Heads area.</p>
-              <p className="text-gray-700 mb-4">We handle all grid connection paperwork — you don&apos;t fill in a single form. Every install includes a 30-minute walkthrough and monitoring app setup.</p>
-              <p className="text-gray-700">From quote to installation, our average turnaround is just 6 business days.</p>
-            </div>
-            <div className="rounded-2xl p-10 text-white" style={{ background: "linear-gradient(135deg, #2B4C5E, #1e3545)" }}>
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { val: "74%", label: "Average bill reduction" },
-                  { val: "6 days", label: "Quote to install" },
-                  { val: "10yr", label: "Workmanship warranty" },
-                  { val: "5 min", label: "Callback guarantee" },
-                ].map((s) => (
-                  <div key={s.label} className="text-center">
-                    <div className="text-3xl font-black" style={{ color: "var(--color-secondary)" }}>{s.val}</div>
-                    <div className="text-sm text-white/70 mt-1">{s.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 section-accent">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-black text-center mb-10" style={{ fontFamily: "var(--font-montserrat)", color: "var(--color-primary)" }}>
-            Nowra Solar Pricing (After Rebates)
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { size: "6.6kW Starter", price: "$5,500–$6,500", savings: "$1,200–$1,800/yr", best: "2–3 person household" },
-              { size: "10kW Popular", price: "$7,800–$9,500", savings: "$1,800–$2,600/yr", best: "3–5 person household", highlight: true },
-              { size: "10kW + Battery", price: "$14,000–$17,000", savings: "$2,400–$3,200/yr", best: "Energy independence" },
-            ].map((pkg) => (
-              <div key={pkg.size} className={`rounded-2xl p-8 ${pkg.highlight ? "text-white shadow-xl" : "bg-white shadow-sm"}`}
-                style={pkg.highlight ? { backgroundColor: "var(--color-primary)" } : {}}>
-                {pkg.highlight && <div className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: "var(--color-secondary)" }}>Most Popular</div>}
-                <div className="text-xl font-black mb-2" style={{ fontFamily: "var(--font-montserrat)", color: pkg.highlight ? "#fff" : "var(--color-primary)" }}>{pkg.size}</div>
-                <div className="text-3xl font-black mb-2" style={{ color: "var(--color-secondary)" }}>{pkg.price}</div>
-                <div className="text-sm mb-1" style={{ color: pkg.highlight ? "rgba(255,255,255,0.8)" : "#555" }}>Saves {pkg.savings}</div>
-                <div className="text-xs" style={{ color: pkg.highlight ? "rgba(255,255,255,0.6)" : "#888" }}>Best for: {pkg.best}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link href="/solar-calculator" className="btn-primary text-lg">Get My Exact Nowra Quote &rarr;</Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 gradient-hero text-white text-center">
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-black mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>Ready to go solar in Nowra?</h2>
-          <p className="text-white/85 mb-8 text-lg">No obligation. No pressure. Just honest numbers and a real quote.</p>
-          <Link href="/solar-calculator" className="btn-primary text-lg">Calculate My Savings &rarr;</Link>
-        </div>
-      </section>
-    </>
-  );
+  return <LocationPageLayout data={data} />;
 }
